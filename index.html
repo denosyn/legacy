@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon / Browser Logo -->
+    <link rel="icon" type="image/png" sizes="48x48" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<link rel="shortcut icon" href="img/favicon.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17931847109"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17931847109');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Wealth & Visa | Guest Investor Program</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C5A059;
+            --navy: #0A1128;
+            --slate: #1C2541;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+            color: var(--navy);
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-navy { background-color: var(--navy); }
+        .text-gold { color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+        .btn-gold {
+            background-color: var(--gold);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: #b08d4a;
+            transform: translateY(-1px);
+        }
+        
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .hero-video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 17, 40, 0.75), rgba(10, 17, 40, 0.85));
+            z-index: 0;
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em;
+        }
+        #thank-you-view { display: none; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="main-content">
+        <!-- Independent Consultancy Disclaimer -->
+        <div class="bg-gray-100 py-2 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-6">
+                <p class="text-[9px] uppercase tracking-widest text-center text-gray-500 font-medium">
+                    Legacy Wealth Visa is an independent consultancy. We are not affiliated with any government body.
+                </p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 py-4">
+            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                <a href="#" class="flex flex-col group transition-opacity hover:opacity-80">
+                    <span class="text-xl font-bold tracking-tighter uppercase serif">Legacy Wealth & Visa</span>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-gold -mt-1">Advisory Group</span>
+                </a>
+                <div class="hidden md:flex space-x-8 text-[11px] font-bold uppercase tracking-widest items-center">
+                    <a href="#why-hungary" class="nav-link">Why Hungary?</a>
+                    <a href="#program" class="nav-link">The Program</a>
+                    <a href="#team" class="nav-link">Our Team</a>
+                    <a href="#process" class="nav-link">Process</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="#contact" class="nav-link text-gold">Consultation</a>
+                </div>
+                <button class="md:hidden text-navy">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header id="top" class="relative h-screen flex items-center overflow-hidden">
+            <div class="hero-video-container">
+                <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1552562708-60037f59424c?q=80&w=2070&auto=format&fit=crop">
+                    <source src="img/budapest1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6 w-full text-white">
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-7xl mb-6 leading-tight">Secure Your Family’s Future in the Heart of Europe.</h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-10 font-light leading-relaxed">
+                        Strategic wealth preservation and residency solutions in Hungary, tailored for high-net-worth global citizens.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-gold px-8 py-4 text-center rounded-sm font-semibold uppercase tracking-widest text-sm">Request a Consultation</a>
+                        <a href="#why-hungary" class="border border-white/30 hover:bg-white/10 px-8 py-4 text-center rounded-sm font-semibold uppercase tracking-widest text-sm transition-all flex items-center justify-center">
+                            Why Hungary?
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Why Section -->
+        <section id="why-hungary" class="py-24 bg-white overflow-hidden border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Strategic Advantage</h2>
+                        <p class="text-4xl serif mb-8">Why the Hungarian Golden Visa?</p>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            Hungary offers a pragmatic and secure gateway for global investors. Positioned in the heart of Europe, it serves as a critical bridge between the East and West, providing a competitive environment for both family legacy and business expansion.
+                        </p>
+                        
+                        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-10">
+                            <div>
+                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">No minimum Stay Required</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Choose to skip the travel requirements. Unlike other EU programs, your visa stays valid even if you never visit, giving you a true 'Plan B' without the need for commitment.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">European Connectivity</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">The Golden Visa provides <strong>unlimited, visa-free Schengen travel</strong> across 29 countries, placing all of Europe at your doorstep.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">Lowest EU Tax Regime</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">A flat <strong>9% corporate tax rate</strong>—the lowest in the EU—combined with highly competitive labor costs for business optimization.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">Public Infrastructure</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Access affordable world-class healthcare and education for your family. Benefit from free primary and secondary schooling, followed by affordable entry to Hungary’s world-renowned universities.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">Simplified Inclusion</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Include your spouse, children, and parents in one application. Secure residency for the whole family with Hungary’s streamlined, inclusive process.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">Capital Flexibility</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Investment funds can be withdrawn at any time for maximum liquidity. (Note: Golden Visa is maintained for a 5-year minimum holding period).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="img/budapest.jpg" class="rounded-sm shadow-xl aspect-[4/5] object-cover" alt="Budapest View" onerror="this.src='https://images.unsplash.com/photo-1516738905335-af586d5ca2bb?q=80&w=1000&auto=format&fit=crop'">
+                            <img src="img/euflag.jpg" class="rounded-sm shadow-xl aspect-[4/5] object-cover mt-8" alt="Schengen Travel" onerror="this.src='https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=1000&auto=format&fit=crop'">
+                            <img src="img/budapest2.png" class="rounded-sm shadow-xl aspect-[4/5] object-cover -mt-8" alt="Premium Lifestyle" onerror="this.src='https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1000&auto=format&fit=crop'">
+                            <img src="img/budapest4.jpg" class="rounded-sm shadow-xl aspect-[4/5] object-cover" alt="Business Opportunity" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Pathways -->
+        <section id="program" class="py-24 bg-gray-50 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">The Guest Investor Program</h2>
+                    <p class="text-4xl serif">Qualified Investment Pathways</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto mb-16">
+                    <!-- Option 1: Most Popular (Navy) -->
+                    <div class="bg-navy p-12 card-shadow text-white relative border-b-4 border-gold flex flex-col justify-between transform transition-transform hover:scale-[1.02]">
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 bg-gold text-navy text-[10px] font-bold uppercase tracking-widest px-6 py-1 shadow-lg z-10">Most Popular</div>
+                        
+                        <div class="mt-4">
+                            <h3 class="text-2xl font-bold mb-4 border-b border-gold/30 pb-4 text-center">Real Estate Fund</h3>
+                            <div class="text-5xl serif text-gold mb-8 text-center">€250,000 <span class="text-sm font-sans text-gray-400 uppercase tracking-widest">*Min.</span></div>
+                            <ul class="text-sm space-y-4 text-gray-300 mb-12">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Real Estate Backed Portfolio</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> No Minimum Stay Required</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Full Family Inclusion</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Path to 5th Strongest Passport </li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn-gold block text-center py-4 text-xs uppercase tracking-widest font-bold">Inquire for Fund Details</a>
+                    </div>
+                    
+                    <!-- Option 2: Public Donation (White) -->
+                    <div class="bg-white p-12 card-shadow border-b-4 border-navy flex flex-col justify-between transform transition-transform hover:scale-[1.02]">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4 border-b border-gray-100 pb-4 text-center">Public Donation</h3>
+                            <div class="text-5xl serif text-navy mb-8 text-center">€1,000,000 <span class="text-sm font-sans text-gray-400 uppercase tracking-widest">*Fixed</span></div>
+                            <ul class="text-sm space-y-4 text-gray-600 mb-12">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Asset Management Free</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Charitable Social Contribution</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Expedited Application Processing</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Maximum Asset Privacy</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="border-2 border-navy block text-center py-4 text-xs uppercase tracking-widest font-bold hover:bg-navy hover:text-white transition-all">Inquire for Donation</a>
+                    </div>
+                </div>
+
+                <!-- Disclaimer Section -->
+                <div class="max-w-5xl mx-auto border-l-2 border-gold/40 pl-8 space-y-6">
+                    <div>
+                        <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-navy mb-2">Minimum Investment Requirement:</h5>
+                        <p class="text-xs text-gray-500 leading-relaxed font-light">
+                            The Hungarian Guest Investor Program requires a minimum capital investment of €250,000 (Real Estate Fund) or €1,000,000 (Higher-tier options), paid directly to the qualifying investment entity.
+                        </p>
+                    </div>
+                    <div>
+                        <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-navy mb-2">Professional Advisory Fees:</h5>
+                        <p class="text-xs text-gray-500 leading-relaxed font-light">
+                            *On top of the investment, we charge a professional advisory fee for our end-to-end management of your application. Our consulting fees are customized based on the complexity of your case, the number of dependents, and specific legal requirements. These are determined during your initial strategy session and outlined in a formal engagement letter.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillars -->
+        <section id="pillars" class="py-24 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">The Legacy Foundation</h2>
+                    <p class="text-4xl serif">Our Core Pillars</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="group border-l border-gray-200 pl-6 py-4">
+                        <h3 class="text-lg font-bold mb-4">Absolute Discretion</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light">We handle high-net-worth migration with a level of confidentiality that matches the private banking sector.</p>
+                    </div>
+                    <div class="group border-l border-gray-200 pl-6 py-4">
+                        <h3 class="text-lg font-bold mb-4">Strategic Precision</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light">Navigating complex EU residency requirements through specialized procedural expertise.</p>
+                    </div>
+                    <div class="group border-l border-gray-200 pl-6 py-4">
+                        <h3 class="text-lg font-bold mb-4">Capital Security</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light">Our asset selection process prioritizes capital preservation and long-term stability within the Hungarian market.</p>
+                    </div>
+                    <div class="group border-l border-gray-200 pl-6 py-4">
+                        <h3 class="text-lg font-bold mb-4">Local Footprint</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light">Our collaboration with local Hungarian banks and authorities fuel our expertise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-24 bg-gray-50 border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Executive Leadership</h2>
+                    <p class="text-4xl serif">Distinguished Advisors</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+                    <!-- Profile 1: Richard Dóry -->
+                    <a href="#contact" class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-8 card-shadow rounded-sm transition-all hover:ring-1 hover:ring-gold/30 hover:-translate-y-1 block group">
+                        <div class="w-48 h-64 flex-shrink-0 bg-gray-200 overflow-hidden rounded-sm">
+                            <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('img/richard2.png'), url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop');"></div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl serif text-navy mb-1">Richard Dóry</h3>
+                            <p class="text-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Head of Government Relations & Compliance</p>
+                            <p class="text-sm text-gray-500 leading-relaxed font-light mb-4">
+                                Richard is a Hungarian investment specialist leveraging his vast network and regulatory expertise to guide clients through complex local landscapes.
+                            </p>
+                            <div class="flex space-x-4">
+                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">EU Compliance</span>
+                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Strategic Planning</span>
+                            </div>
+                            <div class="mt-4 text-[10px] uppercase tracking-widest font-bold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Request Briefing &rarr;</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Profile 2: Dennis Svensson -->
+                    <a href="#contact" class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-8 card-shadow rounded-sm transition-all hover:ring-1 hover:ring-gold/30 hover:-translate-y-1 block group">
+                        <div class="w-48 h-64 flex-shrink-0 bg-gray-200 overflow-hidden rounded-sm">
+                            <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('img/dennis.jpg'), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop');"></div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl serif text-navy mb-1">Dennis Svensson</h3>
+                            <p class="text-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Head of Client Relations</p>
+                            <p class="text-sm text-gray-500 leading-relaxed font-light mb-4">
+                                Dennis is an experienced international investment specialist and senior consultant delivering tailored, client-focused strategies for global growth.
+                            </p>
+                            <div class="flex space-x-4">
+                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Family Office</span>
+                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Global Mobility</span>
+                            </div>
+                            <div class="mt-4 text-[10px] uppercase tracking-widest font-bold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Request Briefing &rarr;</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process" class="py-24 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Execution Roadmap</h2>
+                    <p class="text-4xl serif">The Path to Permanent Residency</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="text-center p-6">
+                        <div class="text-5xl font-light text-gray-400 mb-4 serif">01</div>
+                        <h4 class="font-bold mb-2 text-navy text-sm uppercase tracking-wider">Consultation</h4>
+                        <p class="text-[11px] text-gray-500 leading-relaxed font-light">Initial vetting and personalized strategy development.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl font-light text-gray-400 mb-4 serif">02</div>
+                        <h4 class="font-bold mb-2 text-navy text-sm uppercase tracking-wider">Selection</h4>
+                        <p class="text-[11px] text-gray-500 leading-relaxed font-light">Identifying and selecting the optimal investment vehicle.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl font-light text-gray-400 mb-4 serif">03</div>
+                        <div class="font-bold mb-2 text-navy text-sm uppercase tracking-wider">Transfer</div>
+                        <p class="text-[11px] text-gray-500 leading-relaxed font-light">Payment of fees and secure execution of capital deployment into chosen fund.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl font-light text-gray-400 mb-4 serif">04</div>
+                        <h4 class="font-bold mb-2 text-navy text-sm uppercase tracking-wider">Application</h4>
+                        <p class="text-[11px] text-gray-500 leading-relaxed font-light">Submitting residency file to the Hungarian authorities.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl font-light text-gray-400 mb-4 serif">05</div>
+                        <h4 class="font-bold mb-2 text-navy text-sm uppercase tracking-wider">Residence</h4>
+                        <p class="text-[11px] text-gray-500 leading-relaxed font-light">Receiving your 10-year Guest Investor permit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 bg-gray-50 border-t border-gray-100">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Knowledge Base</h2>
+                    <p class="text-4xl serif">Frequently Asked Questions</p>
+                </div>
+                <div class="space-y-4">
+                    <details class="group bg-white border border-gray-200 rounded-sm">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
+                            Who is eligible for the Hungarian Guest Investor Program?
+                            <span class="text-gold group-open:rotate-180 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
+                            The program is open to non-EU/EEA nationals who can prove the source of their investment funds and have a clean criminal record.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-sm">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
+                            Can this program lead to Hungarian citizenship?
+                            <span class="text-gold group-open:rotate-180 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
+                            Yes. After the initial 10-year residency, you can apply for naturalization following 8 years of legal status. A major advantage for global investors is the flexible physical presence rule, requiring you to spend only 50% of your time (average of 183 days per year) in Hungary to qualify for a passport, provided you pass the standard language and civics exams.
+                        </div>
+                         <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
+                        Note that while we maintain a high success rate through rigorous pre-screening, the final decision on any "Guest Investor Visa" or residency permit rests solely with the Hungarian government. Our fees are for professional services rendered and do not constitute a "purchase" of a visa.
+                    </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-sm">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
+                            Can I include my family members?
+                            <span class="text-gold group-open:rotate-180 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
+                            <p class="mb-3">Yes, the program is designed for multi-generational security. You may include:</p>
+                            <ul class="space-y-2 list-disc ml-5">
+                                <li><span class="font-semibold text-navy">Spouse:</span> Registered partner.</li>
+                                <li><span class="font-semibold text-navy">Children:</span> Up to <span class="text-gold font-bold">5 children</span>. They must be <span class="text-gold font-bold">under the age of 30</span> at the time of application.</li>
+                                <li><span class="font-semibold text-navy">Parents & Grandparents:</span> You can also include the parents and even the grandparents of the main applicant within the same residency application.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-sm">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
+                            How long is the Guest Investor residency valid?
+                            <span class="text-gold group-open:rotate-180 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
+                            The Guest Investor permit is granted for an initial period of 10 years and can be renewed for an additional 10 years.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-sm">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
+                            Is the investment refundable?
+                            <span class="text-gold group-open:rotate-180 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
+                            The Real Estate Fund pathway (€250,000) offers maximum exit flexibility; as the owner of the investment, you retain the right to sell or transfer your position at any time based on market conditions. While maintaining the investment is required to support your residency status, you are never locked out of your capital. In contrast, the Public Donation pathway (€1,000,000) is a non-refundable social contribution. All management fees are non-refundable.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-sm">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
+                            Is there a minimum stay requirement?
+                            <span class="text-gold group-open:rotate-180 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
+                            No. One of the primary advantages of this program is that there is no physical residence requirement to maintain the 10-year permit.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-navy text-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-20 items-start">
+                    <div>
+                        <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Confidential Inquiry</h2>
+                        <p class="text-5xl serif mb-8 leading-tight">Arrange Your Private Briefing</p>
+                        <p class="text-gray-400 font-light leading-relaxed mb-10 max-w-md">
+                            Please provide your preliminary details below. Our senior advisors will review your eligibility and contact you for a secure, multi-generational wealth planning session.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-4 border-l border-gold/30 pl-4">
+                                <span class="text-[10px] uppercase tracking-widest text-gold font-bold">Global Access</span>
+                                <span class="text-xs text-gray-300">Available via Secure Signal/WhatsApp/Telegram</span>
+                            </div>
+                            <div class="flex items-center space-x-4 border-l border-gold/30 pl-4">
+                                <span class="text-[10px] uppercase tracking-widest text-gold font-bold">Direct Line</span>
+                                <span class="text-xs text-gray-300">+36 30 970 2874</span>
+                            </div>
+                            <div class="flex items-center space-x-4 border-l border-gold/30 pl-4">
+                                <span class="text-[10px] uppercase tracking-widest text-gold font-bold">Email</span>
+                                <span class="text-xs text-gray-300">richard@legacywealthvisa.com</span>
+                            </div>
+                        </div>
+
+                        <!-- Office Locations -->
+                        <div class="space-y-6">
+                            <div class="border-t border-white/10 pt-6">
+                                <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">Hungary Office Location:</h5>
+                                <p class="text-xs text-gray-300 leading-relaxed font-light">
+                                    1136 Budapest, Pannónia utca 19. 1. emelet 4
+                                </p>
+                            </div>
+                            <div class="border-t border-white/10 pt-6">
+                                <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">South Africa Office Location:</h5>
+                                <p class="text-xs text-gray-300 leading-relaxed font-light">
+                                    333 University-rd Mankweng, 0727
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 md:p-12 rounded-sm card-shadow text-black">
+                        <!-- Formspree Integration -->
+                        <form id="leadForm" action="https://formspree.io/f/mlgloddr" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Full Name</label>
+                                    <input type="text" name="name" placeholder="John Doe" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm transition-colors" required>
+                                </div>
+                                <div>
+                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Email Address</label>
+                                    <input type="email" name="email" placeholder="john@example.com" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm transition-colors" required>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Phone Number</label>
+                                    <input type="tel" name="phone" placeholder="+1 (555) 000-0000" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm transition-colors" required>
+                                </div>
+                                <div>
+                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Preferred Contact Method</label>
+                                    <select name="contact_method" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm bg-transparent transition-colors" required>
+                                        <option value="" disabled selected>Select method</option>
+                                        <option value="Email">Email</option>
+                                        <option value="Phone Call">Phone Call</option>
+                                        <option value="WhatsApp">WhatsApp</option>
+                                        <option value="Telegram">Telegram</option>
+                                        <option value="Signal">Signal</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Investment Vehicle</label>
+                                    <select name="pathway" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm bg-transparent transition-colors" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Real Estate Fund">Real Estate Fund (€250k+)</option>
+                                        <option value="Public Donation">Public Donation (€1m)</option>
+                                        <option value="Undecided">Undecided / Consultation needed</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Investment Amount</label>
+                                    <select name="budget" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm bg-transparent transition-colors" required>
+                                        <option value="" disabled selected>Select range</option>
+                                        <option value="€250k - €500k">€250k - €500k</option>
+                                        <option value="€500k - €1M">€500k - €1M</option>
+                                        <option value="€1M+">€1M+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Additional Requirements</label>
+                                <textarea name="message" rows="3" placeholder="Briefly describe your goals (family inclusion, timeline, etc.)" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm resize-none transition-colors"></textarea>
+                            </div>
+
+                            <!-- Transparency Disclaimer -->
+                            <div class="bg-gray-50 border-l-2 border-gold p-4 mb-2">
+                                <p class="text-[10px] leading-relaxed text-gray-600">
+                                    <span class="font-bold text-navy uppercase tracking-wider">Transparency Commitment:</span> We do not charge hidden success fees. All professional advisory costs will be outlined in a formal engagement letter following your consultation.
+                                </p>
+                            </div>
+
+                            <!-- Formspree Subject Setting -->
+                            <input type="hidden" name="_subject" value="New Golden Visa Inquiry">
+
+                            <button type="submit" class="w-full btn-gold py-4 uppercase text-xs tracking-[0.2em] font-bold mt-2">Secure Connection</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-12 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <p class="text-[10px] uppercase tracking-widest text-navy font-bold mb-4">
+                    Legacy Wealth Visa is a private consulting firm and is not a government agency, embassy, or official visa-issuing body. We provide independent strategic advisory and documentation assistance for a fee. All government application fees are separate and are paid directly to the respective authorities. Final decisions on residency and visas are at the sole discretion of the Hungarian government. 
+                </p>
+                <p class="text-[10px] uppercase tracking-widest text-navy font-bold mb-4">
+                    Regulatory Compliance: We only support legitimate and officially approved pathways for residency. All advisory services are conducted in strict adherence to Hungarian and EU immigration statutes.
+                </p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">
+                    &copy; 2025 Legacy Wealth & Visa Advisory Group.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Thank You View (Professional Submission Page) -->
+    <div id="thank-you-view" class="fixed inset-0 z-[100] min-h-screen bg-navy flex items-center justify-center p-6" style="display: none;">
+        <div class="max-w-2xl w-full bg-white p-12 text-center rounded-sm shadow-2xl animate-fade-in">
+            <div class="mb-8 flex justify-center">
+                <div class="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-3xl md:text-4xl serif text-navy mb-4">Thank You for Your Interest</h1>
+            <p class="text-gray-600 font-light leading-relaxed mb-10">
+                Your inquiry has been securely received. A senior advisor from our team will review your preliminary details and reach out to you shortly to arrange a private briefing.
+            </p>
+            <div class="border-t border-gray-100 pt-8 flex flex-col items-center">
+                <p class="text-[10px] uppercase tracking-widest text-gold font-bold mb-2">Direct Advisory Contact</p>
+                <p class="text-sm text-navy font-medium">richard@legacywealthvisa.com</p>
+                <button onclick="location.reload()" class="mt-8 text-xs uppercase tracking-widest font-bold border-b border-navy pb-1">Return to Homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Tracking Logic -->
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            // Trigger Google Ads Conversion
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17931847109/submit_form'
+            });
+
+            // Delay showing the thank you view slightly to ensure the browser registers the hash change and tag trigger
+            setTimeout(() => {
+                // Hide the main website
+                document.getElementById('main-content').style.display = 'none';
+                
+                // Show the professional Thank You view
+                const thankYou = document.getElementById('thank-you-view');
+                thankYou.style.display = 'flex';
+                
+                // Change the URL to #thank-you for your tracking purposes
+                window.location.hash = 'thank-you';
+                
+                // Scroll to top of the view
+                window.scrollTo(0, 0);
+            }, 300);
+        });
+    </script>
+</body>
+</html>
