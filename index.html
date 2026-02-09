@@ -674,12 +674,17 @@
     <!-- Form Tracking Logic -->
     <script>
         document.getElementById('leadForm').addEventListener('submit', function(e) {
-            // Trigger Google Ads Conversion
+            // 1. Trigger Google Ads Conversion with the specific label provided in configuration
             gtag('event', 'conversion', {
-                'send_to': 'AW-17931847109/submit_form'
+                'send_to': 'AW-17931847109/7dRSCKTUkfUbEMWLyeZC',
+                'event_callback': function() {
+                   console.log('Conversion tracked successfully');
+                }
             });
 
-            // Delay showing the thank you view slightly to ensure the browser registers the hash change and tag trigger
+            // 2. Allow form to submit to Formspree, then show UI changes
+            // Note: Since Formspree is a standard POST, we show the thank you view 
+            // after a small delay to ensure the gtag request is dispatched.
             setTimeout(() => {
                 // Hide the main website
                 document.getElementById('main-content').style.display = 'none';
@@ -688,15 +693,13 @@
                 const thankYou = document.getElementById('thank-you-view');
                 thankYou.style.display = 'flex';
                 
-                // Change the URL to #thank-you for your tracking purposes
+                // Change the URL to #thank-you for tracking purposes
                 window.location.hash = 'thank-you';
                 
                 // Scroll to top of the view
                 window.scrollTo(0, 0);
-            }, 300);
+            }, 600); 
         });
     </script>
 </body>
 </html>
-
-
