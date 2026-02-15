@@ -651,6 +651,17 @@
                         </div>
                     </div>
                     <div class="bg-white p-8 md:p-12 rounded-sm card-shadow text-black">
+                        <!-- Strict Pre-screening Warning -->
+                        <div class="mb-8 border-2 border-red-600 p-4 bg-red-50">
+                            <h4 class="text-red-700 font-bold uppercase tracking-widest text-[11px] mb-2 flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                Eligibility Restriction
+                            </h4>
+                            <p class="text-[11px] text-red-800 leading-relaxed font-bold italic">
+                                This form is for CAPITAL INVESTMENT RESIDENCY only (€250,000 minimum). We do NOT process work permits, job sponsorships, or study visas. Inquiries of this nature will be automatically discarded.
+                            </p>
+                        </div>
+
                         <!-- Formspree Integration -->
                         <form id="leadForm" action="https://formspree.io/f/mlgloddr" method="POST" class="space-y-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -687,29 +698,34 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Investment Vehicle</label>
-                                    <select name="pathway" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm bg-transparent transition-colors" required>
-                                        <option value="" disabled selected>Select an option</option>
-                                        <option value="Real Estate Fund">Real Estate Fund (€250k+)</option>
-                                        <option value="Public Donation">Public Donation (€1m)</option>
-                                        <option value="Undecided">Undecided / Consultation needed</option>
+                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Investment Pathway Selection</label>
+                                    <select name="pathway" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm bg-transparent transition-colors font-bold text-navy" required>
+                                        <option value="" disabled selected>Choose investment type</option>
+                                        <option value="Real Estate Fund">Real Estate Fund (€250,000+)</option>
+                                        <option value="Public Donation">Public Donation (€1,000,000)</option>
+                                        <option value="INELIGIBLE: WORK/STUDY">NOT AN INVESTOR (Work/Study/Job Seeking)</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div>
-                                <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Investment Amount</label>
-                                <select name="budget" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm bg-transparent transition-colors" required>
-                                    <option value="" disabled selected>Select range</option>
-                                    <option value="€250k - €500k">€250k - €500k</option>
-                                    <option value="€500k - €1M">€500k - €1M</option>
-                                    <option value="€1M+">€1M+</option>
-                                </select>
+                            <div class="space-y-4 py-4 border-y border-gray-100">
+                                <label class="flex items-start space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="confirm_funds" class="mt-1 h-4 w-4 rounded border-gray-300 text-navy focus:ring-navy" required>
+                                    <span class="text-[11px] text-gray-600 group-hover:text-navy transition-colors font-medium">
+                                        I confirm I possess the minimum <strong>€250,000</strong> in liquid capital required for this program.
+                                    </span>
+                                </label>
+                                <label class="flex items-start space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="not_seeking_job" class="mt-1 h-4 w-4 rounded border-gray-300 text-navy focus:ring-navy" required>
+                                    <span class="text-[11px] text-gray-600 group-hover:text-navy transition-colors font-medium">
+                                        I acknowledge that Legacy Wealth Visa does <strong>NOT</strong> provide work permits or job placement services.
+                                    </span>
+                                </label>
                             </div>
 
                             <div>
-                                <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Additional Requirements</label>
-                                <textarea name="message" rows="3" placeholder="Briefly describe your goals (family inclusion, timeline, etc.)" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm resize-none transition-colors"></textarea>
+                                <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Inquiry Specifics</label>
+                                <textarea name="message" rows="3" placeholder="Please state your investment goals and family inclusion requirements." class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm resize-none transition-colors"></textarea>
                             </div>
 
                             <!-- Transparency Disclaimer -->
@@ -720,7 +736,7 @@
                             </div>
 
                             <!-- Formspree Subject Setting -->
-                            <input type="hidden" name="_subject" value="New Golden Visa Inquiry">
+                            <input type="hidden" name="_subject" value="Qualified Golden Visa Inquiry">
 
                             <button type="submit" class="w-full btn-gold py-4 uppercase text-xs tracking-[0.2em] font-bold mt-2">Secure Connection</button>
                         </form>
@@ -793,8 +809,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
