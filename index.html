@@ -13,7 +13,9 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
+      // Initializing both requested Tag IDs
       gtag('config', 'AW-17931847109');
+      gtag('config', 'GT-PHC2J3DZ');
     </script>
 
     <meta charset="UTF-8">
@@ -785,12 +787,18 @@
     <!-- Form Tracking Logic -->
     <script>
         document.getElementById('leadForm').addEventListener('submit', function(e) {
-            // Trigger Google Ads Conversion
+            // 1. Explicitly Trigger Google Ads Conversion
+            // We use the ID and a generic 'conversion' label for leads.
             gtag('event', 'conversion', {
                 'send_to': 'AW-17931847109/submit_form'
             });
+            
+            // Also trigger for the secondary tag if used for measurement
+            gtag('event', 'generate_lead', {
+                'send_to': 'GT-PHC2J3DZ'
+            });
 
-            // Delay showing the thank you view slightly to ensure the browser registers the hash change and tag trigger
+            // 2. Delay UI update slightly to allow tracking beacons to fire
             setTimeout(() => {
                 // Hide the main website
                 document.getElementById('main-content').style.display = 'none';
@@ -799,15 +807,13 @@
                 const thankYou = document.getElementById('thank-you-view');
                 thankYou.style.display = 'flex';
                 
-                // Change the URL to #thank-you for your tracking purposes
+                // Change the URL to #thank-you for tracking/analytics purposes
                 window.location.hash = 'thank-you';
                 
                 // Scroll to top of the view
                 window.scrollTo(0, 0);
-            }, 300);
+            }, 400); 
         });
     </script>
 </body>
 </html>
-
-
