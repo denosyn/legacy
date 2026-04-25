@@ -2,24 +2,11 @@
 <html lang="en">
 <head>
     <!-- Favicon / Browser Logo -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A1128'/%3E%3Cpath d='M35 25 L45 25 L45 65 L70 65 L70 75 L35 75 Z' fill='%23C5A059'/%3E%3C/svg%3E">
-<link rel="icon" type="image/png" sizes="48x48" href="/img/favicon.png">
-<link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17931847109"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      // Added enhanced conversions support
-      gtag('config', 'AW-17931847109', { 'allow_enhanced_conversions': true });
-    </script>
-
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A1128'/%3E%3Cpath d='M35 25 L45 25 L45 65 L70 65 L70 75 L35 75 Z' fill='%23C5A059'/%3E%3C/svg%3E">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legacy Wealth & Visa | Guest Investor Program</title>
+    <title>Legacy Wealth & Visa | Global Citizenship & Residency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -40,6 +27,7 @@
         .bg-navy { background-color: var(--navy); }
         .text-gold { color: var(--gold); }
         .border-gold { border-color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
         .btn-gold {
             background-color: var(--gold);
             color: white;
@@ -58,8 +46,9 @@
             height: 100%;
             overflow: hidden;
             z-index: -1;
+            background-color: var(--navy);
         }
-        .hero-video-container video {
+        .hero-video-container img {
             min-width: 100%;
             min-height: 100%;
             width: auto;
@@ -69,6 +58,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             object-fit: cover;
+            opacity: 0.5;
         }
         .hero-overlay {
             position: absolute;
@@ -76,7 +66,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(10, 17, 40, 0.75), rgba(10, 17, 40, 0.85));
+            background: linear-gradient(rgba(10, 17, 40, 0.7), rgba(10, 17, 40, 0.9));
             z-index: 0;
         }
 
@@ -131,19 +121,24 @@
         @media (max-width: 768px) {
             .timeline-line { display: none; }
         }
+
+        .program-card {
+            transition: all 0.3s ease;
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        /* Star Rating CSS */
+        .star { color: #E5E7EB; }
+        .star.filled { color: var(--gold); }
     </style>
 </head>
 <body class="antialiased">
 
     <div id="main-content">
-        <!-- Independent Consultancy Disclaimer -->
-        <div class="bg-gray-100 py-2 border-b border-gray-200">
-            <div class="max-w-7xl mx-auto px-6">
-                <p class="text-[9px] uppercase tracking-widest text-center text-gray-500 font-medium">
-                    Legacy Wealth Visa is an independent consultancy. We are not affiliated with any government body.
-                </p>
-            </div>
-        </div>
 
         <!-- Navigation -->
         <nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 py-4">
@@ -153,11 +148,11 @@
                     <span class="text-[10px] tracking-[0.2em] uppercase text-gold -mt-1">Advisory Group</span>
                 </a>
                 <div class="hidden md:flex space-x-8 text-[11px] font-bold uppercase tracking-widest items-center">
-                    <a href="#why-hungary" class="nav-link">Why Hungary?</a>
-                    <a href="#program" class="nav-link">The Program</a>
-                    <a href="#team" class="nav-link">Our Team</a>
-                    <a href="#process" class="nav-link">Process</a>
-                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="#cbi-programs" class="nav-link">CBI Programs</a>
+                    <a href="#rbi-programs" class="nav-link">RBI Programs</a>
+                    <a href="#why-plan-b" class="nav-link">Why a Plan B?</a>
+                    <a href="#eu-citizenship" class="nav-link">EU Citizenship</a>
+                    <a href="#team" class="nav-link">Advisors</a>
                     <a href="#contact" class="nav-link text-gold">Consultation</a>
                 </div>
                 <button class="md:hidden text-navy">
@@ -169,206 +164,846 @@
         </nav>
 
         <!-- Hero Section -->
-        <header id="top" class="relative h-screen flex items-center overflow-hidden">
-            <div class="hero-video-container">
-                <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1552562708-60037f59424c?q=80&w=2070&auto=format&fit=crop">
-                    <source src="img/budapest1.mp4" type="video/mp4">
-                </video>
+        <header id="top" class="relative h-screen flex items-center overflow-hidden bg-navy">
+            <div class="hero-video-container opacity-30 mix-blend-luminosity">
+                <!-- Abstract dark fluid background representing seamless wealth transition -->
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="Abstract Wealth Background" class="object-cover w-full h-full">
             </div>
-            <div class="hero-overlay"></div>
+            
+            <!-- Custom CSS Grid overlay representing structure, coordinates, and global reach -->
+            <div class="absolute inset-0 z-0 opacity-40" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik00MCA0MFYwSDAiIHN0cm9rZT0icmdiYSgxOTcsIDE2MCwgODksIDAuMjUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=');"></div>
+            
+            <div class="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/70 to-navy z-0"></div>
+
             <div class="relative z-10 max-w-7xl mx-auto px-6 w-full text-white">
                 <div class="max-w-3xl">
-                    <h1 class="text-5xl md:text-7xl mb-6 leading-tight">Secure Your Family’s Future in the Heart of Europe.</h1>
+                    <p class="text-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">Structural Tax Efficiency & Legacy Planning</p>
+                    <h1 class="text-5xl md:text-7xl mb-6 leading-tight serif">Secure Your Global Freedom.</h1>
                     <p class="text-xl md:text-2xl text-gray-300 mb-10 font-light leading-relaxed">
-                        Strategic wealth preservation and residency solutions in Hungary, tailored for high-net-worth global citizens.
+                        We facilitate the acquisition of secondary citizenship and residency through a highly curated selection of the world's most robust investment programs.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#contact" class="btn-gold px-8 py-4 text-center rounded-sm font-semibold uppercase tracking-widest text-sm">Request a Consultation</a>
-                        <a href="#why-hungary" class="border border-white/30 hover:bg-white/10 px-8 py-4 text-center rounded-sm font-semibold uppercase tracking-widest text-sm transition-all flex items-center justify-center">
-                            Why Hungary?
+                        <a href="#cbi-programs" class="border border-white/30 hover:bg-white/10 px-8 py-4 text-center rounded-sm font-semibold uppercase tracking-widest text-sm transition-all flex items-center justify-center">
+                            Explore Portfolios
                         </a>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- Profile Section (Who this is for vs Who it is not) -->
-        <section id="ideal-profile" class="py-24 bg-white border-b border-gray-100 overflow-hidden">
+        <!-- CBI Programs -->
+        <section id="cbi-programs" class="py-24 bg-gray-50 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Direct Passport Acquisition</h2>
+                    <p class="text-4xl serif mb-6">Citizenship by Investment (CBI)</p>
+                    <p class="text-gray-500 max-w-2xl mx-auto font-light">
+                        The 2026 landscape features consolidated pricing. These structured pathways offer fast processing times and extensive visa free travel, granting irrevocable citizenship for investors and their families.
+                    </p>
+                    <div class="inline-block bg-white border border-gray-200 shadow-sm rounded-sm px-5 py-3 mt-6">
+                        <p class="text-[10px] text-navy uppercase tracking-widest font-bold flex items-center justify-center">
+                            <span class="text-gold mr-2 text-base">★</span> Note: Star ratings indicate global popularity & market demand, NOT intrinsic program quality.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Saint Kitts & Nevis -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/saintkitts.jpg" alt="Saint Kitts & Nevis" class="w-full h-full object-cover object-[center_80%] group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Donation</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Public Benefit</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Saint Kitts & Nevis</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~$261,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">$250,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$11,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">6 to 9 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The oldest, gold standard CBI. The flat SISC pricing perfectly covers up to a family of four.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Grenada -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/grenada.jpg" alt="Grenada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1580979450379-3c35b84c8a81?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Donation</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Grenada</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~$245,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">$235,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$10,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">7 to 8 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants access to the USA E2 treaty and visa free access to China; allows inclusion of unmarried siblings over 18.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Saint Lucia -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/saintlucia.jpg" alt="Saint Lucia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1583804825983-500e57577541?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Donation</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Gov. Bonds</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Saint Lucia</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~$250,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">$240,000 / $300k</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$10,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">6 to 10 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The $300k government bond guarantees full principal return after 5 yrs; 90 day grace period to invest post approval.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Antigua & Barbuda -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/antigua.jpg" alt="Antigua & Barbuda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1574347209709-a1b7e4dd38b6?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Donation</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Univ. Fund</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Antigua & Barbuda</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~$251,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">$230,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$21,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">3 to 6 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The UWI Fund ($260k) is the most cost effective globally for families of 6+; mandates a 5 day physical residency.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Dominica -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/dominica.jpg" alt="Dominica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1549466710-534fc181cda6?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Donation</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Dominica</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~$211,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">$200,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$11,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">6+ Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Deep eco development integration; highly flexible inclusion rules allowing unmarried daughters under 25 & students up to 30.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Vanuatu -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/vanuatu.jpg" alt="Vanuatu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1550742137-b4d619ed1d03?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Donation</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Vanuatu</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~$136,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">$130,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$6,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">30 to 90 Days</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The fastest processing globally via a completely remote process. Functions as a pure tax haven (zero income, corporate, or wealth tax).</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- RBI Programs -->
+        <section id="rbi-programs" class="py-24 bg-white overflow-hidden border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">The European & Global Base</h2>
+                    <p class="text-4xl serif mb-6">Residence by Investment (RBI)</p>
+                    <p class="text-gray-500 max-w-2xl mx-auto font-light">
+                        Secure a safe haven, exceptional corporate tax regimes, and high living standards. These fast track residency programs allow investors to establish a strategic base, with many leading to citizenship without physical disruption.
+                    </p>
+                    <div class="inline-block bg-gray-50 border border-gray-200 shadow-sm rounded-sm px-5 py-3 mt-6">
+                        <p class="text-[10px] text-navy uppercase tracking-widest font-bold flex items-center justify-center">
+                            <span class="text-gold mr-2 text-base">★</span> Note: Star ratings indicate global popularity & market demand, NOT intrinsic program quality.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Greece -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/greece.jpg" alt="Greece" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1503152394-c571994fd383?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Com Conversion</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Greece</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~€270,000+</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">From €250,000*</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~€20,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">3 to 4 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed"><strong>*CRITICAL:</strong> The €250,000 threshold strictly requires a commercial to residential conversion. Standard real estate investments now require €400,000 to €800,000.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Hungary -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/hungary.jpg" alt="Hungary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1516738905335-af586d5ca2bb?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">REIF Fund</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Public Trust</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Hungary</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~€320,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">€250,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~€70,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">3 to 6 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants a 10 year upfront residence permit and features a low risk "approve first, invest later" model.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Portugal -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/portugal.jpg" alt="Portugal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">VC/PE Funds</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Cultural Heritage</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Portugal</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~€542,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">€500,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~€42,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">24+ Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Requires only an average of 7 days per year of physical presence to qualify for EU citizenship after 5 years.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Cyprus -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/cyprus.jpg" alt="Cyprus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1523910375841-a1e4ba29f5f0?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Funds</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Shares</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Cyprus</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~€320,000+</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">€300,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~€20,000+</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">2 to 6 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Residency is granted for life; features an excellent non domicile tax regime (requires proof of €50k/yr offshore income).</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Malta -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/malta.jpg" alt="Malta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Property Purchase</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Property Lease</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Malta</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~€170,000 (Sunk)</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">Lease from €14k/yr</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~€100,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">6 to 8 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Flat €37k state contribution whether buying/renting; grants immediate 1 year temp residence upon application.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- The Bahamas -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/bahamas.jpg" alt="The Bahamas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Gov. Bonds</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">The Bahamas</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~$1,021,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">$1,000,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$21,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">8 to 18 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Lifetime sanctuary from income & wealth taxes. Submitting a $1.5M+ property investment triggers automatic priority processing (3 to 6m).</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Uruguay -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/uruguay.jpg" alt="Uruguay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1598284566378-005dc9b04f7a?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Innovation Fund</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Uruguay</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">Varies</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$2M (Tax Res.)</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">Varies</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">6 to 18 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants an unparalleled 11 year absolute tax holiday on foreign sourced income for qualifying tax residents.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Paraguay -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/paraguay.jpg" alt="Paraguay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1589139599187-54b67d53bb21?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Business Investment</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Paraguay</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~$84,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">$70,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$14,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">45 to 90 Days</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Secures immediate 10 year permanent residency. Features a highly efficient strict territorial tax system (zero tax on foreign income).</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Bulgaria -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/bulgaria.jpg" alt="Bulgaria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1513069020900-a162c4db0762?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">AIFs / ETFs</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl serif text-navy font-bold">Bulgaria</h3>
+                            </div>
+                            <div class="flex text-sm mb-1" title="Popularity: 3/5">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~€525,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">€512,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~€13,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">3 to 6 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants immediate PR in under 6 months; the eligible AIFs are legally allowed to hold real estate internally.</p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section / The Significance of a Plan B -->
+        <section id="why-plan-b" class="py-24 bg-white border-b border-gray-100 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col lg:flex-row gap-16">
                     <div class="lg:w-1/2">
-                        <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Qualification Criteria</h2>
-                        <p class="text-4xl serif mb-8">Who is this program for?</p>
-                        <p class="text-gray-600 font-light leading-relaxed mb-8">
-                            The Guest Investor Program is exclusively a <strong>Capital-Based Residency</strong> pathway. It is designed for individuals who possess the financial liquidity to invest in Hungary's future in exchange for long-term European residency.
+                        <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Strategic Diversification</h2>
+                        <p class="text-4xl serif mb-8">The Significance of a Plan B</p>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            In a rapidly changing world, relying on just one country leaves your wealth and your family completely vulnerable. If a sudden crisis closed your borders tomorrow, do you have a guaranteed escape route?
+                        </p>
+                        <p class="text-gray-600 font-light leading-relaxed mb-10">
+                            We help the world's most successful families secure a definitive “Plan B” through alternative residency and citizenship. This provides an immediate safety net to protect your assets, ensure your family's security, and travel the globe without limits. Crucially, it also unlocks strategic tax optimization that can save you huge amounts of capital in the long run. Take control of your future today because the ultimate luxury is permanent, undeniable freedom.
                         </p>
                         
                         <div class="space-y-6">
-                            <div class="bg-gray-50 p-6 border-l-4 border-gold rounded-sm">
-                                <h4 class="font-bold text-navy text-xs uppercase tracking-widest mb-3">Ideal Profile: The Investor</h4>
-                                <ul class="text-xs text-gray-600 space-y-3">
-                                    <li class="flex items-start"><svg class="w-4 h-4 text-gold mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> High-Net-Worth Individuals (HNWI) seeking a "Plan B" in Europe.</li>
-                                    <li class="flex items-start"><svg class="w-4 h-4 text-gold mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Families prioritizing safety, global mobility, and top-tier education.</li>
-                                    <li class="flex items-start"><svg class="w-4 h-4 text-gold mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Business owners looking for the EU's lowest corporate tax environment (9%).</li>
-                                </ul>
-                            </div>
-
-                            <div class="bg-navy p-6 border-l-4 border-red-500 rounded-sm">
-                                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-3">Important Notice: Employment</h4>
-                                <p class="text-xs text-gray-300 leading-relaxed mb-4">
-                                    We <strong>do not</strong> provide services for work permits, job placements, or skilled labor migration.
-                                </p>
-                                <ul class="text-xs text-gray-400 space-y-2">
-                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg> No Recruitment Services</li>
-                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg> No Sponsored Work Visas</li>
-                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg> Minimum Investment Capital Required</li>
+                            <div class="bg-gray-50 p-8 border-l-4 border-gold rounded-sm shadow-sm">
+                                <h4 class="font-bold text-navy text-xs uppercase tracking-widest mb-8">Core Strategic Benefits</h4>
+                                <ul class="text-sm text-gray-600 space-y-8">
+                                    <li class="flex items-start gap-5">
+                                        <div class="mt-0.5 bg-gold/10 p-2 rounded-full flex-shrink-0">
+                                            <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <strong class="text-navy font-bold mb-2 uppercase tracking-wide text-xs">Unrestricted Global Mobility</strong>
+                                            <span class="leading-relaxed font-light text-gray-500">Guarantee your right to travel and relocate instantly. Secure undisputed access to the UK, the Schengen Area, and vital safe havens, allowing you to bypass closed borders and global crises.</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-5">
+                                        <div class="mt-0.5 bg-gold/10 p-2 rounded-full flex-shrink-0">
+                                            <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <strong class="text-navy font-bold mb-2 uppercase tracking-wide text-xs">Strategic Wealth Protection</strong>
+                                            <span class="leading-relaxed font-light text-gray-500">Legally shield your assets from sudden tax increases, regulatory changes, and economic instability. We anchor your capital in highly secure, low tax, and business friendly jurisdictions.</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-5">
+                                        <div class="mt-0.5 bg-gold/10 p-2 rounded-full flex-shrink-0">
+                                            <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <strong class="text-navy font-bold mb-2 uppercase tracking-wide text-xs">Generational Resilience</strong>
+                                            <span class="leading-relaxed font-light text-gray-500">Build a permanent "Plan B" for your family. Secure lifelong residencies and second passports that guarantee premium healthcare, education, and undeniable safety for your descendants.</span>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="lg:w-1/2 flex items-center">
-                        <div class="relative w-full">
-                            <img src="img/hungary1.png" class="rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" alt="Executive consultation">
-                        
+                        <div class="grid grid-cols-2 gap-4 w-full">
+                            <div class="rounded-sm shadow-xl aspect-[4/5] bg-cover bg-center" style="background-image: url('img/hero1.jpg');"></div>
+                            <div class="rounded-sm shadow-xl aspect-[4/5] bg-cover bg-center mt-8" style="background-image: url('img/hero2.jpg');"></div>
+                            <div class="rounded-sm shadow-xl aspect-[4/5] bg-cover bg-center -mt-8" style="background-image: url('img/hero3.jpg');"></div>
+                            <div class="rounded-sm shadow-xl aspect-[4/5] bg-cover bg-center" style="background-image: url('img/hero4.jpg');"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Why Section -->
-        <section id="why-hungary" class="py-24 bg-white overflow-hidden border-b border-gray-100">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col lg:flex-row items-center gap-16">
-                    <div class="lg:w-1/2">
-                        <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Strategic Advantage</h2>
-                        <p class="text-4xl serif mb-8">Why the Hungarian Golden Visa?</p>
-                        <p class="text-gray-600 font-light leading-relaxed mb-8">
-                            Hungary offers a pragmatic and secure gateway for global investors. Positioned in the heart of Europe, it serves as a critical bridge between the East and West, providing a competitive environment for both family legacy and business expansion.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-10">
-                            <div>
-                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">No minimum Stay Required</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">Choose to skip the travel requirements. Unlike other EU programs, your visa stays valid even if you never visit, giving you a true 'Plan B' without the need for commitment.</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">European Connectivity</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">The Golden Visa provides <strong>unlimited, visa-free Schengen travel</strong> across 29 countries, placing all of Europe at your doorstep.</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">Lowest EU Tax Regime</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">A flat <strong>9% corporate tax rate</strong>—the lowest in the EU—combined with highly competitive labor costs for business optimization.</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">Public Infrastructure</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">Access affordable world-class healthcare and education for your family. Benefit from free primary and secondary schooling, followed by affordable entry to Hungary’s world-renowned universities.</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">Simplified Inclusion</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">Include your spouse, children, and parents in one application. Secure residency for the whole family with Hungary’s streamlined, inclusive process.</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy text-[11px] lg:text-xs uppercase tracking-widest mb-3 border-l-2 border-gold pl-3 whitespace-nowrap">Capital Flexibility</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">Investment funds can be withdrawn at any time for maximum liquidity. (Note: Golden Visa is maintained for a 5-year minimum holding period).</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/2">
-                        <div class="grid grid-cols-2 gap-4">
-                            <img src="img/budapest.jpg" class="rounded-sm shadow-xl aspect-[4/5] object-cover" alt="Budapest View" onerror="this.src='https://images.unsplash.com/photo-1516738905335-af586d5ca2bb?q=80&w=1000&auto=format&fit=crop'">
-                            <img src="img/euflag.jpg" class="rounded-sm shadow-xl aspect-[4/5] object-cover mt-8" alt="Schengen Travel" onerror="this.src='https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=1000&auto=format&fit=crop'">
-                            <img src="img/budapest2.png" class="rounded-sm shadow-xl aspect-[4/5] object-cover -mt-8" alt="Premium Lifestyle" onerror="this.src='https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1000&auto=format&fit=crop'">
-                            <img src="img/budapest4.jpg" class="rounded-sm shadow-xl aspect-[4/5] object-cover" alt="Business Opportunity" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop'">
-                        </div>
-                    </div>
+        <!-- Bespoke European Pathways -->
+        <section id="eu-citizenship" class="py-24 bg-navy text-white border-t border-gold/30 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1485081669829-bacb8c7bb1f3?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/90 to-navy/40 z-0"></div>
+            <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 border border-gold/30 mb-6">
+                    <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                 </div>
-            </div>
-        </section>
-
-        <!-- Investment Pathways -->
-        <section id="program" class="py-24 bg-gray-50 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">The Guest Investor Program</h2>
-                    <p class="text-4xl serif">Qualified Investment Pathways</p>
+                <h2 class="text-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4">Beyond Standard Residency</h2>
+                <p class="text-4xl serif mb-6">Accelerated European Naturalization</p>
+                <p class="text-sm text-gray-300 font-light leading-relaxed mb-8 max-w-3xl mx-auto">
+                    While standard European Residence by Investment (RBI) programs offer a structured 5 to 10 year timeline to naturalized citizenship, highly tailored investment architectures exist for those seeking to expedite this process. For clients capable of meeting exceptional capital and economic contribution thresholds, our senior advisory team designs legally entrenched, accelerated pathways to full Schengen citizenship.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-[11px] text-gray-400 mb-10">
+                    <span class="flex items-center uppercase tracking-widest font-semibold"><span class="text-gold mr-2">▪</span> Expedited Timelines</span>
+                    <span class="flex items-center uppercase tracking-widest font-semibold"><span class="text-gold mr-2">▪</span> Advanced Legal Advisory</span>
+                    <span class="flex items-center uppercase tracking-widest font-semibold"><span class="text-gold mr-2">▪</span> Exceptional Capital Thresholds</span>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto mb-16">
-                    <!-- Option 1: Most Popular (Navy) -->
-                    <div class="bg-navy p-12 card-shadow text-white relative border-b-4 border-gold flex flex-col justify-between transform transition-transform hover:scale-[1.02]">
-                        <div class="absolute top-4 left-1/2 -translate-x-1/2 bg-gold text-navy text-[10px] font-bold uppercase tracking-widest px-6 py-1 shadow-lg z-10">Most Popular</div>
-                        
-                        <div class="mt-4">
-                            <h3 class="text-2xl font-bold mb-4 border-b border-gold/30 pb-4 text-center">Real Estate Fund</h3>
-                            <div class="text-5xl serif text-gold mb-8 text-center">€250,000 <span class="text-sm font-sans text-gray-400 uppercase tracking-widest">*Min.</span></div>
-                            <ul class="text-sm space-y-4 text-gray-300 mb-12">
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Real Estate Backed Portfolio</li>
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> No Minimum Stay Required</li>
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Full Family Inclusion</li>
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Path to 5th Strongest Passport </li>
-                            </ul>
-                        </div>
-                        <a href="#contact" class="btn-gold block text-center py-4 text-xs uppercase tracking-widest font-bold">Inquire for Fund Details</a>
-                    </div>
-                    
-                    <!-- Option 2: Public Donation (White) -->
-                    <div class="bg-white p-12 card-shadow border-b-4 border-navy flex flex-col justify-between transform transition-transform hover:scale-[1.02]">
-                        <div>
-                            <h3 class="text-2xl font-bold mb-4 border-b border-gray-100 pb-4 text-center">Public Donation</h3>
-                            <div class="text-5xl serif text-navy mb-8 text-center">€1,000,000 <span class="text-sm font-sans text-gray-400 uppercase tracking-widest">*Fixed</span></div>
-                            <ul class="text-sm space-y-4 text-gray-600 mb-12">
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Asset Management Free</li>
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Charitable Social Contribution</li>
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Expedited Application Processing</li>
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gold rounded-full mr-3"></span> Maximum Asset Privacy</li>
-                            </ul>
-                        </div>
-                        <a href="#contact" class="border-2 border-navy block text-center py-4 text-xs uppercase tracking-widest font-bold hover:bg-navy hover:text-white transition-all">Inquire for Donation</a>
-                    </div>
-                </div>
-
-                <!-- Disclaimer Section -->
-                <div class="max-w-5xl mx-auto border-l-2 border-gold/40 pl-8 space-y-6">
-                    <div>
-                        <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-navy mb-2">Minimum Investment Requirement:</h5>
-                        <p class="text-xs text-gray-500 leading-relaxed font-light">
-                            The Hungarian Guest Investor Program requires a minimum capital investment of €250,000 (Real Estate Fund) or €1,000,000 (Higher-tier options), paid directly to the qualifying investment entity.
-                        </p>
-                    </div>
-                    <div>
-                        <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-navy mb-2">Professional Advisory Fees:</h5>
-                        <p class="text-xs text-gray-500 leading-relaxed font-light">
-                            *On top of the investment, we charge a professional advisory fee for our end-to-end management of your application. Our consulting fees are customized based on the complexity of your case, the number of dependents, and specific legal requirements. These are determined during your initial strategy session and outlined in a formal engagement letter.
-                        </p>
-                    </div>
-                </div>
+                <a href="#contact" class="inline-block bg-transparent border border-gold text-gold hover:bg-gold hover:text-navy px-10 py-4 text-xs uppercase tracking-widest font-bold transition-all duration-300">Discuss Expedited Options</a>
             </div>
         </section>
 
         <!-- Pillars -->
-        <section id="pillars" class="py-24 bg-white border-t border-gray-100">
+        <section id="pillars" class="py-24 bg-white text-navy border-t border-gray-100">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">The Legacy Foundation</h2>
-                    <p class="text-4xl serif">Our Core Pillars</p>
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Our Global Expertise</h2>
+                    <p class="text-4xl serif">The Legacy Foundation</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="group border-l border-gray-200 pl-6 py-4">
-                        <h3 class="text-lg font-bold mb-4">Absolute Discretion</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light">We handle high-net-worth migration with a level of confidentiality that matches the private banking sector.</p>
+                    <div class="group border-l border-gray-200 pl-6 py-4 hover:border-gold transition-colors">
+                        <h3 class="text-lg font-bold mb-4 text-navy group-hover:text-gold transition-colors">Absolute Discretion</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light">We handle high net worth migration with a level of confidentiality that matches the private banking sector.</p>
                     </div>
-                    <div class="group border-l border-gray-200 pl-6 py-4">
-                        <h3 class="text-lg font-bold mb-4">Strategic Precision</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light">Navigating complex EU residency requirements through specialized procedural expertise.</p>
+                    <div class="group border-l border-gray-200 pl-6 py-4 hover:border-gold transition-colors">
+                        <h3 class="text-lg font-bold mb-4 text-navy group-hover:text-gold transition-colors">Strategic Precision</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light">Navigating complex international residency requirements through specialized procedural expertise.</p>
                     </div>
-                    <div class="group border-l border-gray-200 pl-6 py-4">
-                        <h3 class="text-lg font-bold mb-4">Capital Security</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light">Our asset selection process prioritizes capital preservation and long-term stability within the Hungarian market.</p>
+                    <div class="group border-l border-gray-200 pl-6 py-4 hover:border-gold transition-colors">
+                        <h3 class="text-lg font-bold mb-4 text-navy group-hover:text-gold transition-colors">Capital Security</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light">Our partner selection process prioritizes capital preservation and absolute legal compliance.</p>
                     </div>
-                    <div class="group border-l border-gray-200 pl-6 py-4">
-                        <h3 class="text-lg font-bold mb-4">Local Footprint</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light">Our collaboration with local Hungarian banks and authorities fuel our expertise.</p>
+                    <div class="group border-l border-gray-200 pl-6 py-4 hover:border-gold transition-colors">
+                        <h3 class="text-lg font-bold mb-4 text-navy group-hover:text-gold transition-colors">Local Footprints</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light">We leverage a tier one network of localized legal experts in every jurisdiction we service.</p>
                     </div>
                 </div>
             </div>
@@ -385,16 +1020,16 @@
                     <!-- Profile 1: Richard Dóry -->
                     <a href="#contact" class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-8 card-shadow rounded-sm transition-all hover:ring-1 hover:ring-gold/30 hover:-translate-y-1 block group">
                         <div class="w-48 h-64 flex-shrink-0 bg-gray-200 overflow-hidden rounded-sm">
-                            <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('img/richard2.png'), url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop');"></div>
+                            <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('img/richard.jpg'), url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop');"></div>
                         </div>
                         <div>
                             <h3 class="text-2xl serif text-navy mb-1">Richard Dóry</h3>
-                            <p class="text-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Head of Government Relations & Partnerships</p>
+                            <p class="text-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Managing Partner & Head of Global Mobility</p>
                             <p class="text-sm text-gray-500 leading-relaxed font-light mb-4">
-                                Richard is a Hungarian investment specialist leveraging his vast network and regulatory expertise to guide clients through complex local landscapes.
+                                Richard leverages his vast network and regulatory expertise to guide clients through complex international investment landscapes, from the EU to the Caribbean.
                             </p>
                             <div class="flex space-x-4">
-                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">EU Compliance</span>
+                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">CBI & RBI Expert</span>
                                 <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Strategic Planning</span>
                             </div>
                             <div class="mt-4 text-[10px] uppercase tracking-widest font-bold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Request Briefing &rarr;</div>
@@ -410,11 +1045,11 @@
                             <h3 class="text-2xl serif text-navy mb-1">Dennis Svensson</h3>
                             <p class="text-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Head of Client Relations</p>
                             <p class="text-sm text-gray-500 leading-relaxed font-light mb-4">
-                                Dennis is an experienced international investment specialist and senior consultant delivering tailored, client-focused strategies for global growth.
+                                Dennis is an experienced international investment specialist delivering tailored, client-focused strategies for global growth and multijurisdictional wealth protection.
                             </p>
                             <div class="flex space-x-4">
                                 <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Family Office</span>
-                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Global Mobility</span>
+                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Wealth Protection</span>
                             </div>
                             <div class="mt-4 text-[10px] uppercase tracking-widest font-bold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Request Briefing &rarr;</div>
                         </div>
@@ -428,8 +1063,8 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-20">
                     <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Execution Roadmap</h2>
-                    <p class="text-4xl serif mb-4">The Path to Permanent Residency</p>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest font-light">Estimated duration per individual phase</p>
+                    <p class="text-4xl serif mb-4">The Universal Pathway to Global Status</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest font-light">A streamlined process across all our jurisdictions</p>
                 </div>
                 <div class="timeline-container relative px-4">
                     <div class="timeline-line"></div>
@@ -437,157 +1072,33 @@
                         <!-- Step 1 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">01</div>
-                            <div class="bg-gold/10 text-gold text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 whitespace-nowrap">Step 1: 1-3 Days</div>
-                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider">Consultation</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Initial vetting and personalized strategy development.</p>
+                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">Consultation</h4>
+                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Initial vetting and personalized strategy development to identify your ideal Plan B.</p>
                         </div>
                         <!-- Step 2 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">02</div>
-                            <div class="bg-gold/10 text-gold text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 whitespace-nowrap">Step 2: 2-5 Days</div>
-                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider">Selection</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Identifying and selecting the optimal investment vehicle.</p>
+                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">File Preparation</h4>
+                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Collecting documents, completing initial due diligence, and compiling the legal file.</p>
                         </div>
                         <!-- Step 3 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">03</div>
-                            <div class="bg-gold/10 text-gold text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 whitespace-nowrap">Step 3: 3-7 Days</div>
-                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider">Transfer</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Secure execution of capital deployment into chosen fund.</p>
+                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">Submission</h4>
+                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Submitting the application to the respective government authority.</p>
                         </div>
                         <!-- Step 4 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">04</div>
-                            <div class="bg-gold/10 text-gold text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 whitespace-nowrap">Step 4: 14-30 Days</div>
-                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider">Application</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Submitting residency file to the Hungarian authorities.</p>
+                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">Approval & Investment</h4>
+                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Receiving government approval and fulfilling the designated capital investment.</p>
                         </div>
                         <!-- Step 5 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">05</div>
-                            <div class="bg-gold/10 text-gold text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 whitespace-nowrap">Step 5: 60-90 Days</div>
-                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider">Residence</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Receiving your 10-year Guest Investor permit.</p>
+                            <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">Status Issued</h4>
+                            <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Receiving your new Passports or Residence Permits.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Global Partnership Network Section -->
-        <section id="partnerships" class="py-24 bg-navy text-white overflow-hidden border-b border-white/5">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col lg:flex-row gap-16 items-center mb-16">
-                    <div class="lg:w-2/5">
-                        <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Pan-European Reach</h2>
-                        <p class="text-4xl serif mb-6">Global Mobility via Vetted Alliances</p>
-                        <p class="text-gray-300 font-light leading-relaxed mb-8">
-                            While Hungary is our specialized hub, our influence extends across the continent. Through a vast network of <strong>tier-one global legal partners</strong>, we facilitate seamless residency and "Golden Visa" applications in the most sought-after European jurisdictions.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-3 text-gold">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                                <span class="text-xs uppercase tracking-widest font-bold">Unified Global Advisory</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <!-- Portugal -->
-                        <div class="bg-white/5 border border-white/10 hover:border-gold/50 transition-all group overflow-hidden flex flex-col">
-                            <img src="img/portugal.png">
-                            <div class="p-6">
-                                <h4 class="text-gold text-[10px] uppercase font-bold tracking-widest mb-2">Portugal</h4>
-                                <p class="text-lg serif mb-2">Golden Visa Program</p>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light">Renowned for its flexible stay requirements and path to citizenship after 5 years.</p>
-                            </div>
-                        </div>
-                        <!-- Greece -->
-                        <div class="bg-white/5 border border-white/10 hover:border-gold/50 transition-all group overflow-hidden flex flex-col">
-                            <img src="img/greece.png">
-                            <div class="p-6">
-                                <h4 class="text-gold text-[10px] uppercase font-bold tracking-widest mb-2">Greece</h4>
-                                <p class="text-lg serif mb-2">Golden Visa Program</p>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light">Direct property-based investment providing immediate permanent EU residency.</p>
-                            </div>
-                        </div>
-                        <!-- Malta -->
-                        <div class="bg-white/5 border border-white/10 hover:border-gold/50 transition-all group overflow-hidden flex flex-col">
-                            <img src="img/malta.png">
-                            <div class="p-6">
-                                <h4 class="text-gold text-[10px] uppercase font-bold tracking-widest mb-2">Malta</h4>
-                                <p class="text-lg serif mb-2">Golden Visa Program</p>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light">Direct investment pathways into one of the most stable economies in the Eurozone.</p>
-                            </div>
-                        </div>
-                        <!-- Bulgaria -->
-                        <div class="bg-white/5 border border-white/10 hover:border-gold/50 transition-all group overflow-hidden flex flex-col">
-                            <img src="img/bulgaria.png">
-                            <div class="p-6">
-                                <h4 class="text-gold text-[10px] uppercase font-bold tracking-widest mb-2">Bulgaria</h4>
-                                <p class="text-lg serif mb-2">Golden Visa Program</p>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light">A cost-effective entry point for businesses looking to expand into the EU single market.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 </section>
-
-        <!-- Downloadable Resources -->
-        <section id="resources" class="py-24 bg-white border-t border-gray-100">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Resource Library</h2>
-                    <p class="text-4xl serif">Strategic Intelligence</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <!-- Resource 1: Comparison Guide (New) -->
-                    <div class="bg-gray-50 p-8 card-shadow rounded-sm flex flex-col justify-between border-t-2 border-gold relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 bg-gold text-white text-[8px] font-bold uppercase py-6 px-12 rotate-45 group-hover:bg-navy transition-colors">Exclusive</div>
-                        <div>
-                            <div class="flex items-center space-x-3 mb-6">
-                                <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                                <h3 class="text-lg font-bold text-navy">Global Mobility Matrix</h3>
-                            </div>
-                            <p class="text-sm text-gray-500 leading-relaxed font-light mb-8">
-                                A side-by-side technical comparison of 2025 Golden Visa pathways across Hungary, Portugal, Greece, Malta, and Bulgaria. 
-                            </p>
-                        </div>
-                        <a href="img/Global_Pathway_Comparison.pdf" download="Global_Golden_Visa_Comparison_2025.pdf" class="flex items-center justify-center space-x-2 bg-navy text-white py-3 text-xs uppercase tracking-widest font-bold hover:bg-gold transition-all">
-                            <span>Get Comparison Guide</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                        </a>
-                    </div>
-
-                    <!-- Resource 2: Testimonials -->
-                    <div class="bg-white p-8 card-shadow rounded-sm flex flex-col justify-between border-t-2 border-gray-200">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-6">
-                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                                <h3 class="text-lg font-bold text-navy">Client Perspectives</h3>
-                            </div>
-                            <p class="text-sm text-gray-500 leading-relaxed font-light mb-8">
-                                Real stories from high-net-worth families who successfully established their European base with our advisory.
-                            </p>
-                        </div>
-                        <a href="img/Testimonials.pdf" download class="flex items-center justify-center space-x-2 border border-navy text-navy py-3 text-xs uppercase tracking-widest font-bold hover:bg-navy hover:text-white transition-colors">
-                            <span>Download PDF</span>
-                        </a>
-                    </div>
-
-                    <!-- Resource 3: Roadmap -->
-                    <div class="bg-white p-8 card-shadow rounded-sm flex flex-col justify-between border-t-2 border-gray-200">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-6">
-                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                <h3 class="text-lg font-bold text-navy">Strategic Roadmap</h3>
-                            </div>
-                            <p class="text-sm text-gray-500 leading-relaxed font-light mb-8">
-                                A detailed breakdown of the 6-month procedural timeline from initial capital deployment to final residency approval.
-                            </p>
-                        </div>
-                        <a href="img/Timeline.pdf" download class="flex items-center justify-center space-x-2 border border-navy text-navy py-3 text-xs uppercase tracking-widest font-bold hover:bg-navy hover:text-white transition-colors">
-                            <span>Download Roadmap</span>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -603,29 +1114,42 @@
                 <div class="space-y-4">
                     <details class="group bg-white border border-gray-200 rounded-sm">
                         <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
-                            Who is eligible for the Hungarian Guest Investor Program?
+                            What is the difference between CBI and RBI?
                             <span class="text-gold group-open:rotate-180 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                             </span>
                         </summary>
-                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
-                            The program is open to non-EU/EEA nationals who can prove the source of their investment funds and have a clean criminal record.
+                        <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
+                            <p class="mb-4">While both Citizenship by Investment (CBI) and Residency by Investment (RBI) offer structured, legal pathways to enhance your global mobility and secure your wealth, they serve different strategic goals, offer distinct legal rights, and operate on vastly different timelines.</p>
+                            
+                            <h4 class="font-bold text-navy mb-2">Citizenship by Investment (CBI): The Direct Pathway to a Second Passport</h4>
+                            <ul class="list-disc ml-5 mb-4 space-y-2">
+                                <li><strong>What it is:</strong> CBI is a streamlined process that grants you full nationality and a second passport directly in exchange for a qualifying economic contribution to a host country. Common investment routes include nonrefundable state contributions, real estate purchases, or national development fund investments.</li>
+                                <li><strong>The Benefits:</strong> You receive the exact same rights as any other citizen of that nation. This includes the right to live and work indefinitely, vote in national elections (in certain jurisdictions), hold public office, and seamlessly pass your citizenship down to future generations.</li>
+                                <li><strong>Timeline and Cost:</strong> CBI programs are designed for speed and efficiency, entirely bypassing traditional naturalization requirements. Citizenship is often granted within 3 to 18 months, with minimum investments typically starting from USD 100,000.</li>
+                            </ul>
+
+                            <h4 class="font-bold text-navy mb-2">Residency by Investment (RBI): The "Golden Visa" Lifestyle Pathway</h4>
+                            <ul class="list-disc ml-5 mb-4 space-y-2">
+                                <li><strong>What it is:</strong> Often referred to as a "Golden Visa," RBI provides a residence permit that grants you and your family the legal right to live, work, and study in the host country.</li>
+                                <li><strong>The Benefits:</strong> RBI is ideal for individuals seeking a physical lifestyle change, enhanced structural tax efficiency through relocation, or strategic access to regional markets (such as the European Union's Schengen Area). While it provides an immediate safe haven and access to premium healthcare and education, it does not immediately confer full citizenship rights, such as holding a passport or voting.</li>
+                                <li><strong>Timeline and Cost:</strong> RBI programs generally offer lower initial investment thresholds, with some starting from USD 25,000. While you do not receive a passport immediately, most RBI programs offer a clear pathway to naturalized citizenship. This usually requires holding the legal residency for 5 to 10 years and meeting specific physical presence or language criteria.</li>
+                            </ul>
+                            
+                            <p class="bg-gray-50 p-4 border-l-2 border-gold font-medium"><strong>Summary:</strong> If your priority is immediate, unrestricted global mobility and securing a permanent generational legacy without the need to relocate, CBI is the definitive choice. However, if your goal is to physically relocate your family, establish tax residency in a favorable jurisdiction, or build a gradual pathway to citizenship over several years, an RBI program provides the perfect foundation.</p>
                         </div>
                     </details>
 
                     <details class="group bg-white border border-gray-200 rounded-sm">
                         <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
-                            Can this program lead to Hungarian citizenship?
+                            Are these programs legal and officially recognized?
                             <span class="text-gold group-open:rotate-180 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                             </span>
                         </summary>
-                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
-                            Yes. After the initial 10-year residency, you can apply for naturalization following 8 years of legal status. A major advantage for global investors is the flexible physical presence rule, requiring you to spend only 50% of your time (average of 183 days per year) in Hungary to qualify for a passport, provided you pass the standard language and civics exams.
+                        <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
+                            Absolutely. Investment migration in 2026 has evolved into a highly structured, institutionalized sector of international law. We strictly facilitate government approved, legislated pathways that are firmly embedded in a host nation’s constitution or immigration framework. Unlike discretionary migration routes, these Residence and Citizenship by Investment (RBI/CBI) programs are explicitly designed by sovereign states to attract foreign direct investment. This guarantees that your acquired rights—whether a second passport or a European residence permit—are legally undisputed, offering absolute regulatory compliance and unbreachable security for your assets.
                         </div>
-                         <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
-                        Note that while we maintain a high success rate through rigorous pre-screening, the final decision on any "Guest Investor Visa" or residency permit rests solely with the Hungarian government. Our fees are for professional services rendered and do not constitute a "purchase" of a visa.
-                    </div>
                     </details>
 
                     <details class="group bg-white border border-gray-200 rounded-sm">
@@ -635,49 +1159,20 @@
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                             </span>
                         </summary>
-                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
-                            <p class="mb-3">Yes, the program is designed for multi-generational security. You may include:</p>
-                            <ul class="space-y-2 list-disc ml-5">
-                                <li><span class="font-semibold text-navy">Spouse:</span> Registered partner.</li>
-                                <li><span class="font-semibold text-navy">Children:</span> Up to <span class="text-gold font-bold">5 children</span>. They must be <span class="text-gold font-bold">under the age of 30</span> at the time of application.</li>
-                                <li><span class="font-semibold text-navy">Parents & Grandparents:</span> You can also include the parents and even the grandparents of the main applicant within the same residency application.</li>
-                            </ul>
+                        <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
+                            Yes. Modern wealth strategy is fundamentally about generational resilience, and the most robust programs are explicitly designed for comprehensive, multigenerational inclusion. Depending on the specific jurisdiction, a single strategic application can typically encompass your spouse, dependent children, and frequently your dependent parents or grandparents. This ensures that your entire family secures an immediate safe haven, uninterrupted access to premium global healthcare and education, and a permanent legacy of unrestricted mobility that can be seamlessly inherited by your descendants.
                         </div>
                     </details>
 
                     <details class="group bg-white border border-gray-200 rounded-sm">
                         <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
-                            How long is the Guest Investor residency valid?
+                            Do I need to relocate to obtain the visa/passport?
                             <span class="text-gold group-open:rotate-180 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                             </span>
                         </summary>
-                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
-                            The Guest Investor permit is granted for an initial period of 10 years and can be renewed for an additional 10 years.
-                        </div>
-                    </details>
-
-                    <details class="group bg-white border border-gray-200 rounded-sm">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
-                            Is the investment refundable?
-                            <span class="text-gold group-open:rotate-180 transition-transform">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                            </span>
-                        </summary>
-                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
-                            The Real Estate Fund pathway (€250,000) offers maximum exit flexibility; as the owner of the investment, you retain the right to sell or transfer your position at any time based on market conditions. While maintaining the investment is required to support your residency status, you are never locked out of your capital. In contrast, the Public Donation pathway (€1,000,000) is a non-refundable social contribution. All management fees are non-refundable.
-                        </div>
-                    </details>
-
-                    <details class="group bg-white border border-gray-200 rounded-sm">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
-                            Is there a minimum stay requirement?
-                            <span class="text-gold group-open:rotate-180 transition-transform">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                            </span>
-                        </summary>
-                        <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed font-light">
-                            No. One of the primary advantages of this program is that there is no physical residence requirement to maintain the 10-year permit.
+                        <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
+                            In the vast majority of cases, no. A strategic "Plan B" is engineered to provide geographic optionality without disrupting your current global operations or lifestyle. Top tier Caribbean Citizenship by Investment programs typically require zero physical presence, granting you a passport directly. Similarly, highly sought after European Residency by Investment programs offer extreme flexibility; for example, Hungary mandates absolutely no minimum physical stay to maintain its 10 year residence permit, while Portugal requires an average of just seven days per year. This allows you to legally institutionalize a highly secure fallback position while maintaining total control over where you actually choose to live.
                         </div>
                     </details>
                 </div>
@@ -692,7 +1187,7 @@
                         <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Confidential Inquiry</h2>
                         <p class="text-5xl serif mb-8 leading-tight">Arrange Your Private Briefing</p>
                         <p class="text-gray-400 font-light leading-relaxed mb-10 max-w-md">
-                            Please provide your preliminary details below. Our senior advisors will review your eligibility and contact you for a secure, multi-generational wealth planning session.
+                            Please provide your preliminary details below. Our senior advisors will review your eligibility and contact you for a secure, multijurisdictional wealth planning session.
                         </p>
                         <div class="space-y-4 mb-8">
                             <div class="flex items-center space-x-4 border-l border-gold/30 pl-4">
@@ -712,13 +1207,13 @@
                         <!-- Office Locations -->
                         <div class="space-y-6">
                             <div class="border-t border-white/10 pt-6">
-                                <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">Hungary Office Location:</h5>
+                                <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">Budapest Office:</h5>
                                 <p class="text-xs text-gray-300 leading-relaxed font-light">
                                     1136 Budapest, Pannónia utca 19. 1. emelet 4
                                 </p>
                             </div>
                             <div class="border-t border-white/10 pt-6">
-                                <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">South Africa Office Location:</h5>
+                                <h5 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">South Africa Office:</h5>
                                 <p class="text-xs text-gray-300 leading-relaxed font-light">
                                     333 University-rd Mankweng, 0727
                                 </p>
@@ -726,14 +1221,14 @@
                         </div>
                     </div>
                     <div class="bg-white p-8 md:p-12 rounded-sm card-shadow text-black">
-                        <!-- Strict Pre-screening Warning -->
+                        <!-- Strict Prescreening Warning -->
                         <div class="mb-8 border-2 border-red-600 p-4 bg-red-50">
                             <h4 class="text-red-700 font-bold uppercase tracking-widest text-[11px] mb-2 flex items-center">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
                                 Eligibility Restriction
                             </h4>
                             <p class="text-[11px] text-red-800 leading-relaxed font-bold italic">
-                                This form is for CAPITAL INVESTMENT RESIDENCY only (€250,000 minimum). We do NOT process work permits, job sponsorships, or study visas. Inquiries of this nature will be automatically discarded.
+                                This form is for CAPITAL INVESTMENT MIGRATION only (Minimum starting at $84,000 USD). We do NOT process work permits, job sponsorships, or study visas. Inquiries of this nature will be automatically discarded.
                             </p>
                         </div>
 
@@ -773,21 +1268,28 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Investment Pathway Selection</label>
+                                    <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Primary Interest</label>
                                     <select name="pathway" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm bg-transparent transition-colors font-bold text-navy" required>
-                                        <option value="" disabled selected>Choose investment type</option>
-                                        <option value="Real Estate Fund">Real Estate Fund (€250,000+)</option>
-                                        <option value="Public Donation">Public Donation (€1,000,000)</option>
+                                        <option value="" disabled selected>Choose investment area</option>
+                                        <option value="CBI - Caribbean/Global">Citizenship By Investment (Caribbean/Vanuatu)</option>
+                                        <option value="RBI - Europe">European Residency (Hungary, Greece, Malta etc.)</option>
+                                        <option value="RBI - LatAm/Bahamas">Americas Residency (Bahamas, Paraguay, Uruguay)</option>
+                                        <option value="Undecided">Undecided - Need Advisory</option>
                                         <option value="INELIGIBLE: WORK/STUDY">NOT AN INVESTOR (Work/Study/Job Seeking)</option>
                                     </select>
                                 </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Target Program / Country</label>
+                                <input type="text" name="target_program" placeholder="e.g. Hungary, Saint Kitts, Greece, or Undecided" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm transition-colors">
                             </div>
 
                             <div class="space-y-4 py-4 border-y border-gray-100">
                                 <label class="flex items-start space-x-3 cursor-pointer group">
                                     <input type="checkbox" name="confirm_funds" class="mt-1 h-4 w-4 rounded border-gray-300 text-navy focus:ring-navy" required>
                                     <span class="text-[11px] text-gray-600 group-hover:text-navy transition-colors font-medium">
-                                        I confirm I possess the minimum <strong>€250,000</strong> in liquid capital required for this program.
+                                        I confirm I possess the minimum <strong>$100,000 USD</strong> in liquid capital required to initiate an investment program.
                                     </span>
                                 </label>
                                 <label class="flex items-start space-x-3 cursor-pointer group">
@@ -796,22 +1298,28 @@
                                         I acknowledge that Legacy Wealth Visa does <strong>NOT</strong> provide work permits or job placement services.
                                     </span>
                                 </label>
+                                <label class="flex items-start space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="privacy_consent" class="mt-1 h-4 w-4 rounded border-gray-300 text-navy focus:ring-navy" required>
+                                    <span class="text-[11px] text-gray-600 group-hover:text-navy transition-colors font-medium">
+                                        I consent to the processing of my personal data in accordance with the Privacy Policy, including the necessary sharing of my details with authorized third party partners for preliminary vetting.
+                                    </span>
+                                </label>
                             </div>
 
                             <div>
                                 <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Inquiry Specifics</label>
-                                <textarea name="message" rows="3" placeholder="Please state your investment goals and family inclusion requirements." class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm resize-none transition-colors"></textarea>
+                                <textarea name="message" rows="3" placeholder="Please state your investment goals, preferred regions, and family inclusion requirements." class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm resize-none transition-colors"></textarea>
                             </div>
 
                             <!-- Transparency Disclaimer -->
                             <div class="bg-gray-50 border-l-2 border-gold p-4 mb-2">
                                 <p class="text-[10px] leading-relaxed text-gray-600">
-                                    <span class="font-bold text-navy uppercase tracking-wider">Transparency Commitment:</span> We do not charge hidden success fees. All professional advisory costs will be outlined in a formal engagement letter following your consultation.
+                                    <span class="font-bold text-navy uppercase tracking-wider">Transparency Commitment:</span> No hidden success fees. All advisory costs are outlined formally before engagement.
                                 </p>
                             </div>
 
                             <!-- Formspree Subject Setting -->
-                            <input type="hidden" name="_subject" value="Qualified Golden Visa Inquiry">
+                            <input type="hidden" name="_subject" value="Qualified Global CBI/RBI Inquiry">
 
                             <button type="submit" id="submitBtn" class="w-full btn-gold py-4 uppercase text-xs tracking-[0.2em] font-bold mt-2">Secure Connection</button>
                         </form>
@@ -823,16 +1331,197 @@
         <footer class="py-12 bg-white border-t border-gray-100">
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <p class="text-[10px] uppercase tracking-widest text-navy font-bold mb-4">
-                    Legacy Wealth Visa is a private consulting firm and is not a government agency, embassy, or official visa-issuing body. We provide independent strategic advisory and documentation assistance for a fee. All government application fees are separate and are paid directly to the respective authorities. Final decisions on residency and visas are at the sole discretion of the Hungarian government. 
+                    Legacy Wealth Visa is a private consulting firm and is not a government agency, embassy, or official visa issuing body. We provide independent strategic advisory and documentation assistance for a fee. All government application fees are separate and are paid directly to the respective authorities. Final decisions on residency and visas are at the sole discretion of the respective governments. 
                 </p>
-                <p class="text-[10px] uppercase tracking-widest text-navy font-bold mb-4">
-                    Regulatory Compliance: We only support legitimate and officially approved pathways for residency. All advisory services are conducted in strict adherence to Hungarian and EU immigration statutes.
+                <p class="text-[10px] uppercase tracking-widest text-navy font-bold mb-6">
+                    Regulatory Compliance: We only support legitimate and officially approved pathways for residency and citizenship. All advisory services are conducted in strict adherence to international immigration statutes.
                 </p>
-                <p class="text-[10px] uppercase tracking-widest text-gray-400">
-                    &copy; 2025 Legacy Wealth & Visa Advisory Group.
+                <div class="flex items-center justify-center space-x-6 mb-6">
+                    <a href="#" id="openPrivacyBtn" class="text-[10px] uppercase tracking-widest text-gold font-bold hover:text-navy transition-colors border-b border-transparent hover:border-navy pb-1">Privacy & Data Security Protocol</a>
+                </div>
+                
+                <!-- Google Ads Disclosures Moved to Footer -->
+                <div class="mt-6 pt-6 border-t border-gray-100 text-left text-[10px] text-gray-400 space-y-3 max-w-4xl mx-auto">
+                    <p><strong>Financial Services & Advertising Disclosure:</strong> All professional advisory fees, government contribution minimums, and due diligence costs are disclosed transparently and upfront prior to engagement. There are no hidden success fees.</p>
+                    <p><strong>Accreditations:</strong> Legacy Wealth Visa acts as an authorized consultant. Official government accreditations for relevant Citizenship by Investment Units (CIUs) and authorized processing partners are available upon request.</p>
+                </div>
+
+                <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-8">
+                    &copy; 2026 Legacy Wealth & Visa Advisory Group.
                 </p>
             </div>
         </footer>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="fixed inset-0 z-[110] bg-navy/95 backdrop-blur-sm hidden items-center justify-center p-4 md:p-6 opacity-0 transition-opacity duration-300">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl flex flex-col relative scale-95 transition-transform duration-300" id="privacy-modal-content">
+            <button id="closePrivacyBtn" class="absolute top-6 right-6 text-gray-400 hover:text-navy transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="p-8 md:p-12">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-navy/5 border border-navy/10 mb-6">
+                    <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <h2 class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-2">Classified Framework</h2>
+                <h3 class="text-3xl serif text-navy mb-8">Comprehensive Website Privacy Policy</h3>
+                
+                <div class="space-y-8 text-sm text-gray-600 font-light leading-relaxed">
+                    <p class="font-medium text-navy bg-gray-50 p-4 border-l-2 border-navy">
+                        <strong>Effective Date:</strong> April 23, 2026<br>
+                        <strong>Applicability:</strong> Global Operations, inclusive of the European Economic Area (EEA), the United Kingdom, the United States, and the Dubai International Financial Centre (DIFC).
+                    </p>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">1. Introduction and Legal Applicability</h4>
+                        <p>This Privacy Policy defines the operational frameworks, protocols, and legal architectures utilized by the Advisory Firm ("The Firm") to collect, process, secure, and transmit personal data. The Firm is a specialized global advisory practice facilitating Residence and Citizenship by Investment (CBI/RBI) programs. Due to the highly regulated nature of the global investment migration sector, The Firm acts as a Data Controller and, in specific jurisdictions, a Data Processor, handling highly sensitive personal, financial, and biographical information on behalf of its clients.</p>
+                        <p class="mt-3">The Firm is unconditionally committed to maintaining the confidentiality and security of all data subjects. This policy is constructed to ensure strict, multijurisdictional compliance with the European Union’s General Data Protection Regulation (GDPR), the United Kingdom GDPR, the Dubai International Financial Centre (DIFC) Data Protection Law No. 5 of 2020, the California Consumer Privacy Act (CCPA), and all applicable global Anti Money Laundering (AML) and Counter Terrorism Financing (CFT) statutes.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">2. Scope and Categories of Processed Information</h4>
+                        <p class="mb-4">To effectively deliver investment migration advisory services and to comply with the uncompromising statutory requirements of sovereign immigration units, The Firm must collect and process extensive categories of personal data. The processing of this data is not merely an administrative preference; it is a strict legal prerequisite for the commencement of any advisory engagement.</p>
+                        
+                        <div class="space-y-4 ml-4">
+                            <div>
+                                <strong class="text-navy">A. Website Telemetry, Advertising, and Technical Data</strong>
+                                <p>When a data subject accesses The Firm’s digital infrastructure, technical data is collected automatically to ensure website functionality, network security, and the detection of malicious activity. This includes Internet Protocol (IP) addresses, browser type and version, operating system configurations, geographical location markers, and interaction telemetry via secure cookies.</p>
+                                <p class="mt-2">Furthermore, we employ third party advertising services, including Google Ads remarketing and similar audience features, to advertise our services online. These services utilize cookies and device identifiers to serve personalized advertisements based on a user's past visits to our platform. Users maintain the absolute right to opt out of such personalized advertising and tracking by adjusting their browser cookie settings or visiting the relevant third party ad preference pages.</p>
+                            </div>
+                            <div>
+                                <strong class="text-navy">B. Standard Identity and Contact Data</strong>
+                                <p>Initial inquiries necessitate the collection of basic identifiers, including full legal names, primary residential addresses, email addresses, primary and secondary telephone numbers, and current nationalities held.</p>
+                            </div>
+                            <div>
+                                <strong class="text-navy">C. Enhanced Due Diligence and Background Data</strong>
+                                <p class="mb-2">Upon the formalization of a business relationship, The Firm collects documentation required by global Citizenship and Residency by Investment Units (CIUs). This extensive collection includes, but is not limited to:</p>
+                                <ul class="list-disc ml-5 space-y-1">
+                                    <li>Certified and apostilled copies of biometric passports, national identity cards, and driving licenses.</li>
+                                    <li>Original birth certificates, marriage certificates, and legal divorce decrees.</li>
+                                    <li>Comprehensive police clearance certificates from all jurisdictions of residence spanning the previous ten years.</li>
+                                    <li>Military service records, where applicable by the national law of the applicant's country of origin.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-navy">D. Special Category and Highly Sensitive Data</strong>
+                                <p>In accordance with GDPR Article 9 and DIFC equivalents, The Firm processes special categories of personal data exclusively when mandated by the destination country's sovereign immigration legislation. This frequently includes comprehensive medical health certificates, blood test results (specifically regarding communicable diseases such as HIV or Tuberculosis), and biometric data (including high resolution facial photographs and digital fingerprints) utilized uniquely for state identity verification and passport issuance protocols.</p>
+                            </div>
+                            <div>
+                                <strong class="text-navy">E. Financial and Source of Wealth Data</strong>
+                                <p>To comply with domestic and international AML regulations, The Firm executes rigorous financial vetting. The data subject must supply extensive proof of net worth, including multi year tax returns, audited corporate financial statements, personal bank statements, property valuation reports, and detailed narratives verifying the legal accumulation of wealth and the specific source of funds designated for the investment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">3. Purpose of Processing and the Due Diligence Mandate</h4>
+                        <p class="mb-4">The Firm processes personal data based on distinct, legally established grounds: the performance of a binding contract, the fulfillment of nonnegotiable legal obligations, and the pursuit of legitimate interests regarding fraud prevention, anti bribery compliance, and regulatory adherence.</p>
+                        
+                        <strong class="text-navy block mb-2">The Due Diligence Clause</strong>
+                        <p class="mb-3">The global investment migration industry is subject to profound international scrutiny to prevent the facilitation of financial crimes, bribery, and sanctions evasion. Therefore, the data subject explicitly acknowledges that The Firm uses the collected personal data to execute comprehensive, mandatory "Know Your Client" (KYC) and Enhanced Due Diligence (EDD) protocols.</p>
+                        <p>The Firm processes this information to verify the data subject’s identity, authenticate the legitimacy of their financial assets, and ensure that the data subject does not appear on any global sanctions lists (including OFAC, UN, and EU lists), Interpol databases, or directories of Politically Exposed Persons (PEPs). The processing of data for these specific purposes is a nonnegotiable legal requirement under international AML directives. The failure, inability, or refusal of the data subject to provide accurate, verifiable data will result in the immediate termination of the advisory relationship and potential reporting to relevant financial intelligence units.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">4. Third Party Disclosures and Sovereign Transmissions</h4>
+                        <p class="mb-4">The Firm maintains a strict, unyielding policy against the monetization of personal data. The Firm never sells, trades, or rents personal identification information to outside consumer marketing entities or unauthorized third parties under any circumstances. Disclosure of personal data is executed strictly on a compartmentalized "need to know" basis and is restricted exclusively to the following authorized entities:</p>
+                        
+                        <div class="space-y-4 ml-4">
+                            <div>
+                                <strong class="text-navy">A. Sovereign Government Entities and CIUs</strong>
+                                <p>The primary objective of The Firm's services is the procurement of alternative residence or citizenship. Consequently, the data subject’s comprehensive application dossier must be securely transmitted to the relevant foreign government bodies, ministries of justice, and specific Citizenship by Investment Units (e.g., the Saint Kitts and Nevis CIU, the Antigua and Barbuda CIU). These sovereign entities process the data to adjudicate the immigration application and conduct their own state level intelligence and security vetting.</p>
+                            </div>
+                            <div>
+                                <strong class="text-navy">B. Authorized Risk Intelligence and Due Diligence Agencies</strong>
+                                <p>To fulfill independent AML obligations and verify the veracity of the provided data, The Firm securely shares specific identifying data with accredited, third party due diligence and risk intelligence firms. These specialized processors conduct open source intelligence gathering, localized physical background checks, and automated risk scoring. These entities operate under legally binding Data Processing Agreements (DPAs) and Non Disclosure Agreements, acting exclusively under the documented instructions of The Firm.</p>
+                            </div>
+                            <div>
+                                <strong class="text-navy">C. International Financial Institutions and Escrow Agents</strong>
+                                <p>To facilitate the lawful transfer of investment capital and mandatory government fees, The Firm is obligated to share necessary KYC documentation with corresponding banks, international financial institutions, and authorized escrow agents to satisfy their internal compliance, anti money laundering, and clearing protocols.</p>
+                            </div>
+                            <div>
+                                <strong class="text-navy">D. Regulatory and Law Enforcement Authorities</strong>
+                                <p>The Firm will unconditionally disclose personal data to law enforcement agencies, financial regulators, or tax authorities if mandated by a lawful subpoena, court order, or binding legal obligation. This explicitly includes data sharing necessary to comply with the OECD Common Reporting Standard (CRS) to combat global tax evasion, ensure international tax transparency, and comply with Mandatory Disclosure Rules regarding offshore structures.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">5. International Cross Border Data Transfers</h4>
+                        <p class="mb-3">Due to the inherently transnational nature of the investment migration sector, the processing of a data subject’s file inevitably requires the transfer of personal data across international borders. The Firm frequently transfers data from the European Economic Area (EEA), the United Kingdom, or the DIFC to jurisdictions located in the Caribbean, the Americas, and the Asia-Pacific regions.</p>
+                        <p class="mb-3">Many destination jurisdictions hosting CBI/RBI programs have not been granted an "Adequacy Decision" by the European Commission or the DIFC Commissioner of Data Protection. To ensure that the data subject’s privacy rights remain rigorously protected during these cross border transfers, The Firm employs comprehensive legal and technical safeguards:</p>
+                        <ul class="list-disc ml-5 space-y-2">
+                            <li><strong>Standard Contractual Clauses (SCCs):</strong> The Firm utilizes and executes the modernized, modular Standard Contractual Clauses approved by the European Commission, and the equivalent Abbreviated Article 27 SCCs mandated by the DIFC, when transferring data to third party processors in non adequate jurisdictions.</li>
+                            <li><strong>Supplementary Technical Measures:</strong> In strict alignment with international jurisprudential standards (including the mandates of the Schrems II ruling), The Firm applies supplementary technical measures, including end to end encryption and restricted decryption key management, to shield data from unauthorized state surveillance during transit.</li>
+                            <li><strong>Government Transfers:</strong> Transfers directly to sovereign CIUs are executed on the legal basis of being strictly necessary for the conclusion or performance of a contract concluded in the interest of the data subject, and for important reasons of public interest recognized in international law.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">6. Data Security and Confidentiality Protocols</h4>
+                        <p class="mb-3">The Firm implements enterprise grade technical and organizational measures to protect personal data against accidental loss, unauthorized access, unlawful alteration, or malicious disclosure.</p>
+                        <ul class="list-disc ml-5 space-y-2">
+                            <li><strong>128 Bit Encryption Protocols:</strong> All digital communications, document uploads, and web forms utilize a minimum of 128 Bit Transport Layer Security (TLS) encryption, ensuring that information is scrambled and secured during transmission. Data at rest is secured using AES 256 cryptographic standards.</li>
+                            <li><strong>Role Based Access Controls (RBAC):</strong> Access to the applicant's raw data, financial proofs, and application dossiers is strictly governed by RBAC. Only highly trained legal, compliance, and designated processing personnel possess the cryptographic credentials required to view sensitive client files.</li>
+                            <li><strong>Internal Oversight:</strong> All employees and authorized subcontractors are bound by perpetual confidentiality agreements and undergo mandatory, continuous training on global data privacy laws, AML safeguarding obligations, and anti bribery regulations.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">7. Data Retention Periods and Compliance Overrides</h4>
+                        <p class="mb-3">The retention of personal data by The Firm is dictated by a careful, legally mandated balancing of individual privacy rights and statutory global financial regulations. The Firm retains personal data only for as long as it is necessary to fulfill the purposes for which it was collected, or as mandated by overriding legal obligations.</p>
+                        <p class="mb-3">Because The Firm operates as an obliged entity under AML/CFT legislation, it is legally compelled to retain comprehensive client files—including identity documents, source of funds proofs, and communication logs—even after the successful completion of an immigration application, the rejection of an application, or the termination of a business relationship.</p>
+                        <p>To satisfy the requirements of global financial regulators (including the EU 5AMLD, FinCEN regulations, and OFAC compliance requirements), The Firm mandates a standard data retention period of up to <strong>7 years</strong> following the conclusion of the client relationship. Upon the expiration of this statutory retention period, provided no ongoing legal claims exist, all physical files are securely shredded, and all digital records are permanently purged from The Firm’s servers using verified cryptographic erasure techniques.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">8. Rights of the Data Subject</h4>
+                        <p class="mb-3">Under the GDPR, the DIFC Data Protection Law, and associated global privacy frameworks, the data subject possesses specific, enforceable rights regarding their personal data:</p>
+                        <ul class="list-disc ml-5 space-y-2 mb-4">
+                            <li><strong>The Right to Access:</strong> The right to request copies of the personal data held by The Firm, alongside comprehensive information on processing purposes and third party recipients.</li>
+                            <li><strong>The Right to Rectification:</strong> The right to request the correction of inaccurate data or the completion of incomplete data.</li>
+                            <li><strong>The Right to Data Portability:</strong> The right to receive personal data in a structured, commonly used, and machine readable format.</li>
+                            <li><strong>The Right to Object and Restrict Processing:</strong> The right to object to the processing of personal data for direct marketing purposes, and to restrict processing under specific, defined legal disputes.</li>
+                        </ul>
+                        
+                        <strong class="text-navy block mb-2">Caveat to the Right to Erasure (The "Right to be Forgotten")</strong>
+                        <p class="mb-2">While the data subject generally retains the right to request the deletion of their personal data, The Firm explicitly and transparently notes that this right is not absolute. Under Article 17(3) of the GDPR and equivalent international statutes, The Firm reserves the legal right to unequivocally deny a request for erasure if the continued retention of the data is necessary:</p>
+                        <ul class="list-disc ml-5 space-y-1 mb-3">
+                            <li>For compliance with a legal or regulatory obligation (specifically, the aforementioned 7 year AML/KYC/CFT retention mandates).</li>
+                            <li>For the establishment, exercise, or defense of legal claims.</li>
+                            <li>For overriding reasons of public interest relating to the prevention, detection, and investigation of financial crime.</li>
+                        </ul>
+                        <p>If an erasure request is legally denied due to these overriding obligations, the data subject will be formally notified of the statutory reasoning, and the retained data will be heavily restricted, ensuring it is used solely for compliance and audit purposes and never for commercial operations.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">9. Processing of Data Relating to Minors and Dependents</h4>
+                        <p>Investment migration applications intrinsically involve the processing of data for entire family units, including minor children and dependents. The processing of data relating to individuals under the age of 18 (or the applicable age of majority in the data subject's jurisdiction) requires enhanced, localized legal protections.</p>
+                        <p class="mt-3">In compliance with the United States Children's Online Privacy Protection Act (COPPA), California's AB 1043, GDPR Article 8, and equivalent global laws protecting children's data, The Firm never knowingly collects personal data directly from minors without authorization. All biographical, health, and identity data pertaining to a minor must be submitted directly by the parent or legal guardian. By supplying data pertaining to a minor for the purposes of a citizenship or residency application, the parent or legal guardian provides explicit, verifiable consent for The Firm to process, secure, and transmit this data strictly for the facilitation of the immigration dossier. If The Firm becomes aware that personal data regarding a minor has been collected without verifiable parental consent, that data will be immediately expunged from the network.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">10. Financial Services, Advertising, and Lead Gen. Disclosures</h4>
+                        <p class="mb-3">To ensure full compliance with international advertising standards, including Google Ads requirements for the promotion of complex financial products and advisory services, The Firm transparently establishes the following:</p>
+                        <ul class="list-disc ml-5 space-y-2">
+                            <li><strong>Physical Business Location:</strong> The primary physical address and corporate headquarters of The Firm offering these advisory services is located at: <em>1136 Budapest, Pannónia utca 19. 1. emelet 4.</em></li>
+                            <li><strong>Comprehensive Fee Transparency:</strong> The Firm commits to the clear, upfront disclosure of all costs. All associated government contribution minimums, due diligence fees, passport issuance costs, and The Firm's independent professional advisory fees are exhaustively detailed to the client and mutually agreed upon via a signed retainer prior to the commencement of any billing or services.</li>
+                            <li><strong>Third Party Accreditations:</strong> The Firm acts as an officially authorized representative for sovereign governments. Hyperlinks and proofs verifying our official accreditation status with the relevant Citizenship by Investment Units (CIUs) are proudly displayed across our digital platforms and provided within our introductory client documentation to guarantee operational legitimacy.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-navy mb-3 border-l-2 border-gold pl-3">11. Multijurisdictional Compliance and Contact Info</h4>
+                        <p class="mb-3">This policy is designed to be fully interoperable with the most stringent data protection frameworks globally, specifically bridging the compliance requirements of the EU GDPR, the UK Data Protection Act, the CCPA, and the DIFC Data Protection Law No. 5 of 2020.</p>
+                        <p>Data subjects holding questions regarding this policy, wishing to submit a formal Data Subject Access Request (DSAR), or intending to exercise their statutory rights, are directed to contact The Firm’s designated Data Protection Officer (DPO) and Legal Compliance Team via the secure contact methods provided on the platform. Furthermore, data subjects retain the fundamental right to lodge a formal complaint with the relevant supervisory authority in their jurisdiction of residence (e.g., the Information Commissioner's Office in the UK, or the DIFC Commissioner of Data Protection) should they believe the processing of their data infringes upon applicable law.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-100 text-center">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">End of Protocol Directive</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Thank You View (Professional Submission Page) -->
@@ -857,8 +1546,87 @@
         </div>
     </div>
 
+    <!-- GDPR Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-navy text-white z-[120] shadow-2xl border-t border-gold/30 p-6 flex-col md:flex-row items-center justify-between gap-4" style="display: none;">
+        <div class="max-w-4xl">
+            <h4 class="text-gold text-[11px] uppercase tracking-widest font-bold mb-2">Cookie & Privacy Consent</h4>
+            <p class="text-xs text-gray-300 leading-relaxed font-light">
+                We utilize essential and analytics cookies to enhance your browsing experience and measure the effectiveness of our advertising campaigns. By selecting "Accept", you grant explicit consent for our use of tracking technologies in accordance with GDPR regulations and our Privacy Protocol.
+            </p>
+        </div>
+        <div class="flex space-x-4 mt-4 md:mt-0 flex-shrink-0">
+            <button id="decline-cookies" class="border border-white/30 hover:bg-white/10 px-6 py-2 text-xs uppercase tracking-widest font-bold transition-colors">Decline</button>
+            <button id="accept-cookies" class="bg-gold text-white px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-[#b08d4a] transition-colors">Accept</button>
+        </div>
+    </div>
+
  <!-- Form Tracking & Submission Logic -->
     <script>
+        // Privacy Modal Logic
+        const privacyModal = document.getElementById('privacy-modal');
+        const privacyModalContent = document.getElementById('privacy-modal-content');
+        const openPrivacyBtn = document.getElementById('openPrivacyBtn');
+        const closePrivacyBtn = document.getElementById('closePrivacyBtn');
+
+        function openModal(e) {
+            e.preventDefault();
+            privacyModal.style.display = 'flex';
+            // slight delay for animation to trigger
+            setTimeout(() => {
+                privacyModal.classList.remove('opacity-0');
+                privacyModalContent.classList.remove('scale-95');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            privacyModal.classList.add('opacity-0');
+            privacyModalContent.classList.add('scale-95');
+            setTimeout(() => {
+                privacyModal.style.display = 'none';
+            }, 300); // match transition duration
+            document.body.style.overflow = 'auto';
+        }
+
+        openPrivacyBtn.addEventListener('click', openModal);
+        closePrivacyBtn.addEventListener('click', closeModal);
+        privacyModal.addEventListener('click', (e) => {
+            if (e.target === privacyModal) closeModal();
+        });
+
+        // GDPR Cookie Consent & Google Tag Injection
+        function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17931847109';
+            script.async = true;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag; // Make globally accessible
+            gtag('js', new Date());
+            gtag('config', 'AW-17931847109', { 'allow_enhanced_conversions': true });
+        }
+
+        // Check local storage for consent on page load
+        if (localStorage.getItem('cookie_consent') === 'granted') {
+            loadGoogleAnalytics();
+        } else if (!localStorage.getItem('cookie_consent')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookie_consent', 'granted');
+            document.getElementById('cookie-banner').style.display = 'none';
+            loadGoogleAnalytics();
+        });
+
+        document.getElementById('decline-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookie_consent', 'denied');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+
+        // Form Logic
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Stop immediate navigation
             
@@ -869,10 +1637,12 @@
             submitBtn.innerText = "SENDING...";
             submitBtn.disabled = true;
 
-            // 1. Trigger Google Ads Conversion with provided Label
-            gtag('event', 'conversion', {
-                'send_to': 'AW-17931847109/7dRSCKTUkfUbEMWLyeZC'
-            });
+            // 1. Trigger Google Ads Conversion IF gtag is defined (consent granted)
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17931847109/7dRSCKTUkfUbEMWLyeZC'
+                });
+            }
 
             // 2. Submit to Formspree using fetch (AJAX)
             const formData = new FormData(form);
@@ -904,7 +1674,3 @@
     </script>
 </body>
 </html>
-
-
-
-
