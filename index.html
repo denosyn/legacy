@@ -38,6 +38,10 @@
             transform: translateY(-1px);
         }
         
+        @keyframes slow-zoom {
+            0% { transform: scale(1) translate(-50%, -50%); }
+            100% { transform: scale(1.1) translate(-45%, -45%); }
+        }
         .hero-video-container {
             position: absolute;
             top: 0;
@@ -59,6 +63,7 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
             opacity: 0.5;
+            animation: slow-zoom 20s ease-in-out infinite alternate;
         }
         .hero-overlay {
             position: absolute;
@@ -105,7 +110,6 @@
         }
         #thank-you-view { display: none; }
 
-        /* Timeline Connector Line */
         .timeline-container {
             position: relative;
         }
@@ -131,7 +135,6 @@
             border-color: var(--gold);
         }
         
-        /* Star Rating CSS */
         .star { color: #E5E7EB; }
         .star.filled { color: var(--gold); }
     </style>
@@ -140,7 +143,6 @@
 
     <div id="main-content">
 
-        <!-- Navigation -->
         <nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 py-4">
             <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <a href="#" class="flex flex-col group transition-opacity hover:opacity-80">
@@ -152,7 +154,7 @@
                     <a href="#rbi-programs" class="nav-link">RBI Programs</a>
                     <a href="#why-plan-b" class="nav-link">Why a Plan B?</a>
                     <a href="#eu-citizenship" class="nav-link">EU Citizenship</a>
-                    <a href="#team" class="nav-link">Advisors</a>
+                    <a href="#team" class="nav-link">Advisor</a>
                     <a href="#contact" class="nav-link text-gold">Consultation</a>
                 </div>
                 <button class="md:hidden text-navy">
@@ -163,13 +165,10 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
         <header id="top" class="relative h-screen flex items-center overflow-hidden bg-navy">
-            <div class="absolute inset-0 w-full h-full overflow-hidden z-0">
-                <!-- Video Background -->
-                <video autoplay loop muted playsinline class="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50">
-                    <source src="https://cdn.coverr.co/videos/coverr-walking-along-the-beach-at-sunset-5374/1080p.mp4" type="video/mp4">
-                </video>
+            <div class="hero-video-container">
+                <!-- Using a high-quality travel/passports background image -->
+                <img src="https://images.unsplash.com/photo-1544644181-1484b3f8c8b4?q=80&w=2000&auto=format&fit=crop" alt="Global Passports and Travel">
             </div>
             
             <!-- Custom CSS Grid overlay representing structure, coordinates, and global reach -->
@@ -194,7 +193,6 @@
             </div>
         </header>
 
-        <!-- CBI Programs -->
         <section id="cbi-programs" class="py-24 bg-gray-50 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -212,7 +210,6 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Saint Kitts & Nevis -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
                             <img src="img/saintkitts.jpg" alt="Saint Kitts & Nevis" class="w-full h-full object-cover object-[center_80%] group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=800&auto=format&fit=crop'">
@@ -257,7 +254,6 @@
                         </div>
                     </div>
 
-                    <!-- Grenada -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
                             <img src="img/grenada.jpg" alt="Grenada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1580979450379-3c35b84c8a81?q=80&w=800&auto=format&fit=crop'">
@@ -301,7 +297,6 @@
                         </div>
                     </div>
 
-                    <!-- Saint Lucia -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
                             <img src="img/saintlucia.jpg" alt="Saint Lucia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1583804825983-500e57577541?q=80&w=800&auto=format&fit=crop'">
@@ -346,7 +341,6 @@
                         </div>
                     </div>
 
-                    <!-- Antigua & Barbuda -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
                             <img src="img/antigua.jpg" alt="Antigua & Barbuda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1574347209709-a1b7e4dd38b6?q=80&w=800&auto=format&fit=crop'">
@@ -483,7 +477,6 @@
             </div>
         </section>
 
-        <!-- RBI Programs -->
         <section id="rbi-programs" class="py-24 bg-white overflow-hidden border-t border-gray-100">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -943,7 +936,6 @@
             </div>
         </section>
 
-        <!-- Profile Section / The Significance of a Plan B -->
         <section id="why-plan-b" class="py-24 bg-white border-b border-gray-100 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col lg:flex-row gap-16">
@@ -1004,7 +996,6 @@
             </div>
         </section>
 
-        <!-- Bespoke European Pathways -->
         <section id="eu-citizenship" class="py-24 bg-navy text-white border-t border-gold/30 relative overflow-hidden">
             <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1485081669829-bacb8c7bb1f3?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/90 to-navy/40 z-0"></div>
@@ -1026,7 +1017,6 @@
             </div>
         </section>
 
-        <!-- Pillars -->
         <section id="pillars" class="py-24 bg-white text-navy border-t border-gray-100">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -1054,16 +1044,16 @@
             </div>
         </section>
 
-        <!-- Team Section -->
         <section id="team" class="py-24 bg-gray-50 border-t border-gray-100">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-20">
                     <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Executive Leadership</h2>
-                    <p class="text-4xl serif">Distinguished Advisors</p>
+                    <p class="text-4xl serif">Distinguished Advisor</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
-                    <!-- Profile 1: Richard Dóry -->
-                    <a href="#contact" class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-8 card-shadow rounded-sm transition-all hover:ring-1 hover:ring-gold/30 hover:-translate-y-1 block group">
+                <!-- Centered Single Profile Container -->
+                <div class="flex justify-center max-w-3xl mx-auto">
+                    <!-- Profile: Richard Dóry -->
+                    <a href="#contact" class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-8 card-shadow rounded-sm transition-all hover:ring-1 hover:ring-gold/30 hover:-translate-y-1 block group w-full">
                         <div class="w-48 h-64 flex-shrink-0 bg-gray-200 overflow-hidden rounded-sm">
                             <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('img/richard.png'), url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop');"></div>
                         </div>
@@ -1080,30 +1070,10 @@
                             <div class="mt-4 text-[10px] uppercase tracking-widest font-bold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Request Briefing &rarr;</div>
                         </div>
                     </a>
-                    
-                    <!-- Profile 2: Dennis Svensson -->
-                    <a href="#contact" class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-8 card-shadow rounded-sm transition-all hover:ring-1 hover:ring-gold/30 hover:-translate-y-1 block group">
-                        <div class="w-48 h-64 flex-shrink-0 bg-gray-200 overflow-hidden rounded-sm">
-                            <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('img/dennis.jpg'), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop');"></div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl serif text-navy mb-1">Dennis Svensson</h3>
-                            <p class="text-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Head of Client Relations</p>
-                            <p class="text-sm text-gray-500 leading-relaxed font-light mb-4">
-                                Dennis is an experienced international investment specialist delivering tailored, client-focused strategies for global growth and multijurisdictional wealth protection.
-                            </p>
-                            <div class="flex space-x-4">
-                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Family Office</span>
-                                <span class="text-[10px] border-b border-gold text-navy font-bold py-1">Wealth Protection</span>
-                            </div>
-                            <div class="mt-4 text-[10px] uppercase tracking-widest font-bold text-gold opacity-0 group-hover:opacity-100 transition-opacity">Request Briefing &rarr;</div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Process -->
         <section id="process" class="py-24 bg-white border-t border-gray-100">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-20">
@@ -1149,7 +1119,6 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
         <section id="faq" class="py-24 bg-white border-t border-gray-100">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -1224,7 +1193,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-24 bg-navy text-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-20 items-start">
@@ -1232,7 +1200,7 @@
                         <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Confidential Inquiry</h2>
                         <p class="text-5xl serif mb-8 leading-tight">Arrange Your Private Briefing</p>
                         <p class="text-gray-400 font-light leading-relaxed mb-10 max-w-md">
-                            Please provide your preliminary details below. Our senior advisors will review your eligibility and contact you for a secure, multijurisdictional wealth planning session.
+                            Please provide your preliminary details below. Our senior advisor will review your eligibility and contact you for a secure, multijurisdictional wealth planning session.
                         </p>
                         <div class="space-y-4 mb-8">
                             <div class="flex items-center space-x-4 border-l border-gold/30 pl-4">
@@ -1373,7 +1341,6 @@
             </div>
         </section>
 
-        <!-- Consolidated Dark Footer with Embedded Privacy Policy -->
         <footer style="padding: 60px 20px 40px; background-color: #0A1128; color: #a1a1a1; font-family: 'Inter', sans-serif; text-align: center; font-size: 13px;">
           <div style="max-width: 800px; margin: 0 auto;">
             
@@ -1467,7 +1434,7 @@
         </div>
     </div>
 
- <!-- Form Tracking & Submission Logic -->
+    <!-- Form Tracking & Submission Logic -->
     <script>
         // GDPR Cookie Consent & Google Tag Injection
         function loadGoogleAnalytics() {
