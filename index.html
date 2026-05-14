@@ -46,10 +46,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: translateY(-1px);
         }
         
-        @keyframes slow-zoom {
-            0% { transform: scale(1) translate(-50%, -50%); }
-            100% { transform: scale(1.1) translate(-45%, -45%); }
-        }
         .hero-video-container {
             position: absolute;
             top: 0;
@@ -141,12 +137,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-color: var(--gold);
         }
-        
-        .star { color: #E5E7EB; }
-        .star.filled { color: var(--gold); }
     </style>
-    <!-- Event snippet for Submit lead form NEW conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <!-- Event snippet for Submit lead form NEW conversion page -->
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
@@ -195,14 +187,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <header id="top" class="relative h-screen flex items-center overflow-hidden bg-navy">
             <div class="hero-video-container">
-                <!-- Háttérvideó beállítása -->
                 <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1544644181-1484b3f8c8b4?q=80&w=2000&auto=format&fit=crop">
-                    <source src="legacybackground.mp4" type="video/mp4">
-                    A böngésződ nem támogatja a HTML5 videókat.
+                    <source src="legacy20background.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
                 </video>
             </div>
             
-            <!-- Custom CSS Grid overlay representing structure, coordinates, and global reach -->
             <div class="absolute inset-0 z-0 opacity-40" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik00MCA0MFYwSDAiIHN0cm9rZT0icmdiYSgxOTcsIDE2MCwgODksIDAuMjUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=');"></div>
             
             <div class="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/70 to-navy z-0"></div>
@@ -232,15 +222,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="text-gray-500 max-w-2xl mx-auto font-light">
                         The 2026 landscape features consolidated pricing. These structured pathways offer fast processing times and extensive visa free travel, granting irrevocable citizenship for investors and their families.
                     </p>
-                    <div class="inline-block bg-white border border-gray-200 shadow-sm rounded-sm px-5 py-3 mt-6">
-                        <p class="text-[10px] text-navy uppercase tracking-widest font-bold flex items-center justify-center">
-                            <span class="text-gold mr-2 text-base">★</span> Note: Star ratings indicate global popularity & market demand, NOT intrinsic program quality.
-                        </p>
-                    </div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
+                    <!-- Saint Kitts -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
                             <img src="img/saintkitts.jpg" alt="Saint Kitts & Nevis" class="w-full h-full object-cover object-[center_80%] group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=800&auto=format&fit=crop'">
@@ -251,12 +236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Saint Kitts & Nevis</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Saint Kitts & Nevis</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -285,6 +265,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
 
+                    <!-- Grenada -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
                             <img src="img/grenada.jpg" alt="Grenada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1580979450379-3c35b84c8a81?q=80&w=800&auto=format&fit=crop'">
@@ -294,12 +275,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Grenada</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Grenada</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -328,6 +304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
 
+                    <!-- Saint Lucia -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
                             <img src="img/saintlucia.jpg" alt="Saint Lucia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1583804825983-500e57577541?q=80&w=800&auto=format&fit=crop'">
@@ -338,12 +315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Saint Lucia</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Saint Lucia</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -372,6 +344,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
 
+                    <!-- Antigua & Barbuda -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
                             <img src="img/antigua.jpg" alt="Antigua & Barbuda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1574347209709-a1b7e4dd38b6?q=80&w=800&auto=format&fit=crop'">
@@ -382,12 +355,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Antigua & Barbuda</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Antigua & Barbuda</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -426,12 +394,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Dominica</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Dominica</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -470,12 +433,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Vanuatu</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Vanuatu</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -503,7 +461,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -516,15 +473,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="text-gray-500 max-w-2xl mx-auto font-light">
                         Secure a safe haven, exceptional corporate tax regimes, and high living standards. These fast track residency programs allow investors to establish a strategic base, with many leading to citizenship without physical disruption.
                     </p>
-                    <div class="inline-block bg-gray-50 border border-gray-200 shadow-sm rounded-sm px-5 py-3 mt-6">
-                        <p class="text-[10px] text-navy uppercase tracking-widest font-bold flex items-center justify-center">
-                            <span class="text-gold mr-2 text-base">★</span> Note: Star ratings indicate global popularity & market demand, NOT intrinsic program quality.
-                        </p>
-                    </div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
                     <!-- Greece -->
                     <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
                         <div class="relative h-48 overflow-hidden bg-gray-200">
@@ -535,12 +486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Greece</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Greece</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -579,12 +525,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Hungary</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Hungary</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -623,12 +564,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Portugal</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 5/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Portugal</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -668,12 +604,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Cyprus</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Cyprus</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -712,12 +643,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Malta</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Malta</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -756,12 +682,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">The Bahamas</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">The Bahamas</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -800,12 +721,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Uruguay</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Uruguay</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -843,12 +759,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Paraguay</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Paraguay</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -886,12 +797,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Latvia</h3>
-                            </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 4/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                            </div>
+                            <h3 class="text-xl serif text-navy font-bold">Latvia</h3>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3 mb-6">
@@ -919,51 +825,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Bulgaria -->
-                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
-                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                <!-- Featured Bulgaria Section -->
+                <div class="mt-16 max-w-3xl mx-auto">
+                    <div class="bg-white border-2 border-gold rounded-sm overflow-hidden program-card flex flex-col md:flex-row group relative shadow-xl">
+                        <!-- Special Badge -->
+                        <div class="absolute top-0 left-0 w-full bg-gold text-white text-center py-1.5 text-[10px] uppercase tracking-[0.2em] font-bold z-20">
+                            Exclusive: Immediate EU Permanent Residency
+                        </div>
+                        <div class="relative h-64 md:h-auto md:w-2/5 overflow-hidden bg-gray-200 mt-7 md:mt-0">
                             <img src="img/bulgaria.jpg" alt="Bulgaria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1513069020900-a162c4db0762?q=80&w=800&auto=format&fit=crop'">
                             <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
                                 <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">AIFs / ETFs</span>
                             </div>
                         </div>
-                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl serif text-navy font-bold">Bulgaria</h3>
+                        <div class="flex-grow flex flex-col justify-between p-6 md:p-8 pt-10 md:pt-12">
+                            <div class="border-b border-gray-100 pb-4 mb-6">
+                                <h3 class="text-2xl serif text-navy font-bold">Bulgaria</h3>
+                                <p class="text-xs text-gold uppercase tracking-widest font-bold mt-2">Direct PR in 3-6 Months</p>
                             </div>
-                            <div class="flex text-sm mb-1" title="Popularity: 3/5">
-                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span><span class="star">★</span>
-                            </div>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between">
-                            <div class="space-y-3 mb-6">
-                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-50 pb-3">
                                     <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
-                                    <span class="text-lg font-bold text-navy">~€525,000</span>
+                                    <span class="text-xl font-bold text-navy">~€525,000</span>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
-                                    <span class="text-xs font-semibold text-gray-700">€512,000</span>
+                                    <span class="text-sm font-semibold text-gray-700">€512,000</span>
                                 </div>
-                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                <div class="flex justify-between items-center border-b border-gray-50 pb-3">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
-                                    <span class="text-xs font-semibold text-gray-700">~€13,000</span>
+                                    <span class="text-sm font-semibold text-gray-700">~€13,000</span>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">3 to 6 Months</span>
+                                    <span class="text-sm font-bold text-navy">3 to 6 Months</span>
                                 </div>
                             </div>
-                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
-                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants immediate PR in under 6 months; the eligible AIFs are legally allowed to hold real estate internally.</p>
+                            <div class="bg-gold/10 p-5 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-2">Strategic USP</span>
+                                <p class="text-xs text-navy font-medium leading-relaxed">Unlike standard EU Golden Visas that issue temporary permits, Bulgaria grants absolute Permanent Residency (PR) upfront. Furthermore, eligible Alternative Investment Funds (AIFs) are legally allowed to hold real estate.</p>
                             </div>
-                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                            <a href="#contact" class="text-[11px] uppercase tracking-widest font-bold text-navy text-center block w-full border-2 border-navy py-4 hover:bg-navy hover:text-white transition-colors">Inquire About Bulgaria &rarr;</a>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </section>
 
@@ -1081,9 +989,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Executive Leadership</h2>
                     <p class="text-4xl serif">Distinguished Advisor</p>
                 </div>
-                <!-- Centered Single Profile Container -->
                 <div class="flex justify-center max-w-3xl mx-auto">
-                    <!-- Profile: Richard Dóry -->
                     <a href="#contact" class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-8 card-shadow rounded-sm transition-all hover:ring-1 hover:ring-gold/30 hover:-translate-y-1 block group w-full">
                         <div class="w-48 h-64 flex-shrink-0 bg-gray-200 overflow-hidden rounded-sm">
                             <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('img/richard.png'), url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop');"></div>
@@ -1115,31 +1021,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="timeline-container relative px-4">
                     <div class="timeline-line"></div>
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
-                        <!-- Step 1 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">01</div>
                             <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">Consultation</h4>
                             <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Initial vetting and personalized strategy development to identify your ideal Plan B.</p>
                         </div>
-                        <!-- Step 2 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">02</div>
                             <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">File Preparation</h4>
                             <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Collecting documents, completing initial due diligence, and compiling the legal file.</p>
                         </div>
-                        <!-- Step 3 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">03</div>
                             <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">Submission</h4>
                             <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Submitting the application to the respective government authority.</p>
                         </div>
-                        <!-- Step 4 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">04</div>
                             <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">Approval & Investment</h4>
                             <p class="text-[11px] text-gray-500 leading-relaxed font-light max-w-[160px]">Receiving government approval and fulfilling the designated capital investment.</p>
                         </div>
-                        <!-- Step 5 -->
                         <div class="text-center flex flex-col items-center">
                             <div class="text-4xl font-light text-gray-400 mb-4 serif bg-white w-20 h-20 flex items-center justify-center rounded-full border border-gray-100 shadow-sm relative z-10">05</div>
                             <h4 class="font-bold mb-2 text-navy text-xs uppercase tracking-wider mt-4">Status Issued</h4>
@@ -1166,21 +1067,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </summary>
                         <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
                             <p class="mb-4">While both Citizenship by Investment (CBI) and Residency by Investment (RBI) offer structured, legal pathways to enhance your global mobility and secure your wealth, they serve different strategic goals, offer distinct legal rights, and operate on vastly different timelines.</p>
-                            
                             <h4 class="font-bold text-navy mb-2">Citizenship by Investment (CBI): The Direct Pathway to a Second Passport</h4>
                             <ul class="list-disc ml-5 mb-4 space-y-2">
                                 <li><strong>What it is:</strong> CBI is a streamlined process that grants you full nationality and a second passport directly in exchange for a qualifying economic contribution to a host country. Common investment routes include nonrefundable state contributions, real estate purchases, or national development fund investments.</li>
                                 <li><strong>The Benefits:</strong> You receive the exact same rights as any other citizen of that nation. This includes the right to live and work indefinitely, vote in national elections (in certain jurisdictions), hold public office, and seamlessly pass your citizenship down to future generations.</li>
                                 <li><strong>Timeline and Cost:</strong> CBI programs are designed for speed and efficiency, entirely bypassing traditional naturalization requirements. Citizenship is often granted within 3 to 18 months, with minimum investments typically starting from USD 100,000.</li>
                             </ul>
-
                             <h4 class="font-bold text-navy mb-2">Residency by Investment (RBI): The "Golden Visa" Lifestyle Pathway</h4>
                             <ul class="list-disc ml-5 mb-4 space-y-2">
                                 <li><strong>What it is:</strong> Often referred to as a "Golden Visa," RBI provides a residence permit that grants you and your family the legal right to live, work, and study in the host country.</li>
                                 <li><strong>The Benefits:</strong> RBI is ideal for individuals seeking a physical lifestyle change, enhanced structural tax efficiency through relocation, or strategic access to regional markets (such as the European Union's Schengen Area). While it provides an immediate safe haven and access to premium healthcare and education, it does not immediately confer full citizenship rights, such as holding a passport or voting.</li>
                                 <li><strong>Timeline and Cost:</strong> RBI programs generally offer lower initial investment thresholds, with some starting from USD 25,000. While you do not receive a passport immediately, most RBI programs offer a clear pathway to naturalized citizenship. This usually requires holding the legal residency for 5 to 10 years and meeting specific physical presence or language criteria.</li>
                             </ul>
-                            
                             <p class="bg-gray-50 p-4 border-l-2 border-gold font-medium"><strong>Summary:</strong> If your priority is immediate, unrestricted global mobility and securing a permanent generational legacy without the need to relocate, CBI is the definitive choice. However, if your goal is to physically relocate your family, establish tax residency in a favorable jurisdiction, or build a gradual pathway to citizenship over several years, an RBI program provides the perfect foundation.</p>
                         </div>
                     </details>
