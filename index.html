@@ -60,7 +60,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             z-index: -1;
             background-color: var(--navy);
         }
-        .hero-video-container img {
+        .hero-video-container video {
             min-width: 100%;
             min-height: 100%;
             width: auto;
@@ -71,7 +71,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: translate(-50%, -50%);
             object-fit: cover;
             opacity: 0.5;
-            animation: slow-zoom 20s ease-in-out infinite alternate;
         }
         .hero-overlay {
             position: absolute;
@@ -196,8 +195,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <header id="top" class="relative h-screen flex items-center overflow-hidden bg-navy">
             <div class="hero-video-container">
-                <!-- Using a high-quality travel/passports background image -->
-                <img src="https://images.unsplash.com/photo-1544644181-1484b3f8c8b4?q=80&w=2000&auto=format&fit=crop" alt="Global Passports and Travel">
+                <!-- Háttérvideó beállítása -->
+                <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1544644181-1484b3f8c8b4?q=80&w=2000&auto=format&fit=crop">
+                    <source src="legacyvideo.mp4" type="video/mp4">
+                    A böngésződ nem támogatja a HTML5 videókat.
+                </video>
             </div>
             
             <!-- Custom CSS Grid overlay representing structure, coordinates, and global reach -->
