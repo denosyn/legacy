@@ -155,19 +155,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </nav>
 
-        <header id="top" class="relative h-screen flex items-center overflow-hidden bg-navy">
+        <header id="top" class="relative h-screen flex items-center overflow-hidden bg-[#0A1128]">
             <!-- 1. Réteg: A videó -->
             <video class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop muted playsinline>
                 <source src="legacybackground.mp4" type="video/mp4">
             </video>
             
-            <!-- 2. Réteg: Sötétítő színátmenetek és a bal oldali sáv (z-10) -->
-            <!-- Bal oldali áttetsző Navy sáv, amely jobbra halványodik -->
-            <div class="absolute inset-y-0 left-0 w-full md:w-[65%] lg:w-[55%] bg-gradient-to-r from-navy/95 via-navy/80 to-transparent z-10"></div>
+            <!-- 2. Réteg: TISZTA SÖTÉTKÉK (NAVY) SÁV BAL OLDALON, HOMÁLYOSÍTÁS NÉLKÜL (z-10) -->
+            <!-- Ez a sáv fix kék színekkel dolgozik, így garantáltan betölt. Bal oldalt erős Navy, majd kissé áttetszővé válik. -->
+            <div class="absolute inset-y-0 left-0 w-full md:w-[70%] lg:w-[60%] bg-gradient-to-r from-[#0A1128] via-[#0A1128]/85 to-transparent z-10"></div>
+            
             <!-- Alsó átmenet a következő szekcióhoz (hogy a fejléc alá szépen simuljon) -->
-            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0A1128] to-transparent z-10 pointer-events-none"></div>
 
-            <!-- 3. Réteg: A szöveges tartalom (z-20) -->
+            <!-- 3. Réteg: A szöveges tartalom szigorúan a bal oldalra igazítva (z-20) -->
             <div class="relative z-20 max-w-7xl mx-auto px-6 w-full text-white flex justify-start">
                 <div class="max-w-2xl py-12">
                     <p class="text-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">Structural Tax Efficiency & Legacy Planning</p>
