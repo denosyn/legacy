@@ -161,15 +161,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <source src="legacybackground.mp4" type="video/mp4">
             </video>
             
-            <!-- 2. Réteg: A sötétítő színátmenet (z-10) -->
-            <div class="absolute inset-0 bg-gradient-to-b from-navy/20 via-navy/30 to-navy/80 z-10"></div>
+            <!-- 2. Réteg: A sötétítő színátmenetek (z-10) -->
+            <!-- Bottom fade for transition to the next section -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy/20 to-navy/90 z-10"></div>
+            <!-- Left fade for elegant text readability without boxy edges -->
+            <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/50 to-transparent z-10 md:w-3/4"></div>
 
             <!-- 3. Réteg: A szöveges tartalom (z-20) -->
             <div class="relative z-20 max-w-7xl mx-auto px-6 w-full text-white">
-                <div class="max-w-3xl relative">
-                    <!-- Dark backdrop behind text only -->
-                    <div class="absolute -inset-x-8 md:-inset-x-12 -inset-y-12 bg-gradient-to-r from-navy/95 via-navy/80 to-transparent rounded-2xl backdrop-blur-sm -z-10"></div>
-                    
+                <div class="max-w-3xl">
                     <p class="text-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">Structural Tax Efficiency & Legacy Planning</p>
                     <h1 class="text-5xl md:text-7xl mb-6 leading-tight serif">Secure Your Global Freedom.</h1>
                     <p class="text-xl md:text-2xl text-gray-300 mb-10 font-light leading-relaxed">
