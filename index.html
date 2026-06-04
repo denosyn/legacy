@@ -186,6 +186,374 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </header>
 
+        <section id="program-finder" class="py-24 bg-white border-b border-gray-100 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Bespoke Program Selection</h2>
+                    <p class="text-4xl serif mb-6">The Program Finder</p>
+                    <p class="text-gray-500 max-w-2xl mx-auto font-light">
+                        Six confidential questions. Our matching engine measures your objectives against seventeen vetted sovereign programs and presents the three pathways most aligned with your profile.
+                    </p>
+                </div>
+
+                <!-- Wizard Panel -->
+                <div id="pf-wizard" class="max-w-3xl mx-auto bg-white border border-gray-200 rounded-sm card-shadow">
+                    <div class="px-8 md:px-12 pt-8">
+                        <div class="flex justify-between items-center mb-3">
+                            <span id="pf-step-label" class="text-[10px] uppercase tracking-widest font-bold text-gold">Question 1 of 6</span>
+                            <button id="pf-restart" type="button" class="text-[10px] uppercase tracking-widest font-bold text-gray-400 hover:text-navy transition-colors invisible">Start Over</button>
+                        </div>
+                        <div class="w-full h-0.5 bg-gray-100">
+                            <div id="pf-progress" class="h-0.5 bg-gold transition-all duration-300" style="width: 16.7%"></div>
+                        </div>
+                    </div>
+                    <div class="p-8 md:p-12">
+                        <h3 id="pf-question" class="text-2xl serif text-navy font-bold mb-2"></h3>
+                        <p id="pf-hint" class="text-xs text-gray-400 font-light mb-8"></p>
+                        <div id="pf-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10"></div>
+                        <div class="flex justify-between items-center">
+                            <button id="pf-back" type="button" class="text-[10px] uppercase tracking-widest font-bold text-gray-400 hover:text-navy transition-colors invisible">&larr; Back</button>
+                            <button id="pf-next" type="button" class="btn-gold px-10 py-3 rounded-sm uppercase text-[10px] tracking-widest font-bold disabled:opacity-40 disabled:cursor-not-allowed" disabled>Continue &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div id="pf-results" class="hidden">
+                    <div class="text-center mb-12">
+                        <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-gold mb-3">Analysis Complete</p>
+                        <p class="text-3xl serif text-navy mb-3">Your Strategic Shortlist</p>
+                        <p id="pf-results-note" class="text-xs text-gray-400 font-light max-w-xl mx-auto">
+                            Indicative matching based on your stated profile. Full suitability, family structuring, and current government terms are confirmed during your private briefing.
+                        </p>
+                    </div>
+                    <div id="pf-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                    <div class="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <button id="pf-refine" type="button" class="border border-navy text-navy px-8 py-3 rounded-sm uppercase text-[10px] tracking-widest font-bold hover:bg-navy hover:text-white transition-colors">Refine My Answers</button>
+                        <a href="#contact" id="pf-undecided" class="btn-gold px-8 py-3 rounded-sm uppercase text-[10px] tracking-widest font-bold inline-block">Prefer Guided Selection? Request Advisory</a>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            (function () {
+                // PF-LOGIC-START
+                var PF_PROGRAMS = [
+                    { id: 'stkitts', name: 'Saint Kitts & Nevis', img: 'img/saintkitts.jpg', fb: 'https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate', 'Public Benefit'], total: '~$261,000', base: '$250,000', fees: '~$11,000', timeline: '4 to 6 Months', usp: 'The oldest, gold-standard CBI. Real-estate route reduced to $325k. Biometric enrollment now mandatory; 30-day presence rule proposed but not yet in force.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 2, notes: ['Proposed 30-day presence rule pending'], flags: {} },
+                    { id: 'grenada', name: 'Grenada', img: 'img/grenada.jpg', fb: 'https://images.unsplash.com/photo-1580979450379-3c35b84c8a81?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$245,000', base: '$235,000', fees: '~$10,000', timeline: '7 to 8 Months', usp: 'Retains USA E2 treaty access and visa-free China. New 30-day presence rule (5 days main applicant yr 1, 25 days family across yrs 2&ndash;5) effective 2026.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 8, presence: 'minimal', citYears: 0, fam: 3, notes: ['USA E2 treaty access'], flags: { e2: true } },
+                    { id: 'stlucia', name: 'Saint Lucia', img: 'img/saintlucia.jpg', fb: 'https://images.unsplash.com/photo-1583804825983-500e57577541?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Gov. Bonds', 'Real Estate'], total: '~$250,000', base: '$240,000 / $300k', fees: '~$10,000', timeline: '6 to 10 Months', usp: 'The $300k government bond guarantees full principal return after 5 yrs; 90 day grace period to invest post approval.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 10, presence: 'zero', citYears: 0, fam: 2, notes: ['Bond route returns capital after 5 yrs'], flags: {} },
+                    { id: 'antigua', name: 'Antigua & Barbuda', img: 'img/antigua.jpg', fb: 'https://images.unsplash.com/photo-1574347209709-a1b7e4dd38b6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Univ. Fund', 'Real Estate'], total: '~$251,000', base: '$230,000', fees: '~$21,000', timeline: '3 to 6 Months', usp: 'UWI Fund ($260k) most cost-effective globally for families of 6+. Mandatory interview added in 2026. <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 3, notes: ['US partial visa restriction (new applicants)'], flags: { usRestriction: true } },
+                    { id: 'dominica', name: 'Dominica', img: 'img/dominica.jpg', fb: 'https://images.unsplash.com/photo-1549466710-534fc181cda6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$211,000', base: '$200,000', fees: '~$11,000', timeline: '6+ Months', usp: 'Deep eco-development integration; flexible inclusion (unmarried daughters under 25, students to 30). <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 9, presence: 'zero', citYears: 0, fam: 3, notes: ['US partial visa restriction (new applicants)'], flags: { usRestriction: true } },
+                    { id: 'vanuatu', name: 'Vanuatu', img: 'img/vanuatu.jpg', fb: 'https://images.unsplash.com/photo-1550742137-b4d619ed1d03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$136,000', base: '$130,000', fees: '~$6,000', timeline: '30 to 90 Days', usp: 'Fastest processing globally via a fully remote process; zero income, corporate, or wealth tax. <em>Note: no longer visa-free to the EU/Schengen Area.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 1, tlMax: 3, presence: 'zero', citYears: 0, fam: 2, notes: ['No EU/Schengen visa-free access'], flags: { noSchengen: true, taxHaven: true } },
+                    { id: 'greece', name: 'Greece', img: 'img/greece.jpg', fb: 'https://images.unsplash.com/photo-1503152394-c571994fd383?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Startup Route'], total: '~€270,000+', base: 'From €250,000*', fees: '~€20,000', timeline: '3 to 4 Months', usp: '<strong>*CRITICAL:</strong> The €250,000 threshold strictly requires a commercial to residential conversion. Standard real estate: €400,000 to €800,000 by zone. <strong>New 2026 route:</strong> €250,000 in an Elevate Greece startup (Law 5162/2024).', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 7, citPresence: 'substantial', fam: 3, notes: ['€250k entry requires commercial conversion', 'Citizenship requires genuine residence (183+ days/yr)'], flags: {} },
+                    { id: 'hungary', name: 'Hungary', img: 'img/hungary.jpg', fb: 'https://images.unsplash.com/photo-1516738905335-af586d5ca2bb?q=80&w=800&auto=format&fit=crop', pills: ['REIF Fund', 'Public Trust'], total: '~€320,000', base: '€250,000', fees: '~€70,000', timeline: '3 to 6 Months', usp: 'Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. Direct €500k property route closed Jan 1, 2025 &mdash; only the fund (€250k) and €1M trust donation routes remain.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'zero', citYears: 8, citPresence: 'substantial', fam: 2, notes: ['No minimum stay for the permit', 'Citizenship requires ~8 yrs actual residence'], flags: {} },
+                    { id: 'portugal', name: 'Portugal', img: 'img/portugal.jpg', fb: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop', pills: ['VC/PE Funds', 'Cultural Heritage'], total: '~€542,000', base: '€500,000', fees: '~€42,000', timeline: '~12 to 24 Months (easing)', usp: 'Requires only ~7 days per year of physical presence; pathway to EU citizenship after <strong>10 years (7 for EU/CPLP nationals)</strong> under the new nationality law.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 24, presence: 'minimal', citYears: 10, citPresence: 'minimal', fam: 2, notes: ['Citizenship after 10 yrs (7 EU/CPLP)', 'Only ~7 days/yr presence counts toward it'], flags: {} },
+                    { id: 'cyprus', name: 'Cyprus', img: 'img/cyprus.jpg', fb: 'https://images.unsplash.com/photo-1523910375841-a1e4ba29f5f0?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Funds', 'Shares'], total: '~€320,000+', base: '€300,000', fees: '~€20,000+', timeline: '2 to 6 Months', usp: 'Residency is granted for life; features an excellent non domicile tax regime (requires proof of €50k/yr offshore income).', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 8, citPresence: 'substantial', fam: 3, notes: ['Not in the Schengen Area'], flags: { notSchengen: true, taxFriendly: true } },
+                    { id: 'malta', name: 'Malta', img: 'img/malta.jpg', fb: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=800&auto=format&fit=crop', pills: ['Property Purchase', 'Property Lease'], total: '~€170,000 (Sunk)', base: 'Lease from €14k/yr', fees: '~€99,000', timeline: '6 to 8 Months', usp: 'Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. <em>Note: MPRP grants permanent residence only &mdash; not a path to citizenship.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 8, presence: 'zero', citYears: null, citPresence: 'substantial', fam: 3, notes: ['Permanent residence only &mdash; no citizenship path'], flags: { prOnly: true } },
+                    { id: 'bulgaria', name: 'Bulgaria', img: 'img/bulgaria.jpg', fb: 'https://images.unsplash.com/photo-1513069020900-a162c4db0762?q=80&w=800&auto=format&fit=crop', pills: ['AIFs / ETFs'], total: '~€525,000', base: '€512,000', fees: '~€13,000', timeline: '3 to 6 Months', usp: 'Unlike standard EU Golden Visas, Bulgaria grants absolute Permanent Residency upfront via regulated AIFs. <strong>Now full Schengen (Jan 2025) and Eurozone (Jan 2026).</strong>', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 5, citPresence: 'minimal', fam: 2, notes: ['Immediate EU PR', 'Full Schengen & Eurozone', 'Citizenship track after 5 yrs PR &mdash; no stay requirement'], flags: { euPR: true, fullSchengen: true } },
+                    { id: 'latvia', name: 'Latvia', img: 'img/latvia.jpg', fb: 'https://images.unsplash.com/photo-1542485060-70fbf1e2dce4?q=80&w=800&auto=format&fit=crop', pills: ['Company Share'], total: '~€60,000+', base: '€50,000', fees: '~€10,000', timeline: '1 to 4 Months', usp: 'Lowest entry threshold in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the qualifying company must genuinely operate and pay &ge;€40,000/yr in tax &mdash; best suited to active business investors. €5,000 renewal fee.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 1, tlMax: 4, presence: 'minimal', citYears: 10, citPresence: 'substantial', fam: 1, notes: ['Active business required (&ge;€40k/yr tax)'], flags: { activeBiz: true } },
+                    { id: 'italy', name: 'Italy', img: 'img/italy.jpg', fb: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop', pills: ['Startup', 'Gov. Bonds', 'Donation'], total: '~€275,000', base: 'From €250,000', fees: '~€25,000', timeline: '3 to 4 Months', usp: 'Pre-approval (Nulla Osta) before you invest capital; no minimum stay. Four routes: €250k innovative startup (a structured qualifying investment), €500k Italian company, €2M govt bonds, or €1M philanthropic donation. PR after 5 years.', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 10, citPresence: 'substantial', fam: 2, notes: ['Nulla Osta pre-approval', 'No minimum stay for the permit', 'Citizenship requires genuine residence'], flags: {} },
+                    { id: 'bahamas', name: 'The Bahamas', img: 'img/bahamas.jpg', fb: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Gov. Bonds'], total: '~$1,021,000', base: '$1,000,000', fees: '~$21,000', timeline: '8 to 18 Months', usp: 'Lifetime sanctuary from income & wealth taxes. Submitting a $1.5M+ property investment triggers automatic priority processing (3 to 6m).', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'zero', citYears: null, fam: 2, notes: ['$1.5M+ triggers fast-track processing'], flags: { taxHaven: true, prOnly: true } },
+                    { id: 'uruguay', name: 'Uruguay', img: 'img/uruguay.jpg', fb: 'https://images.unsplash.com/photo-1598284566378-005dc9b04f7a?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Innovation Fund'], total: 'Varies', base: '~$2M (Tax Res.)', fees: 'Varies', timeline: '6 to 18 Months', usp: 'Grants an unparalleled 11 year absolute tax holiday on foreign sourced income for qualifying tax residents.', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'required', citYears: 4, fam: 2, notes: ['Tax residency requires physical presence'], flags: { taxFriendly: true } },
+                    { id: 'paraguay', name: 'Paraguay', img: 'img/paraguay.jpg', fb: 'https://images.unsplash.com/photo-1589139599187-54b67d53bb21?q=80&w=800&auto=format&fit=crop', pills: ['Business Investment'], total: '~$84,000', base: '$70,000', fees: '~$14,000', timeline: '45 to 90 Days', usp: 'Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 10% flat local). <em>Note: the $70k SUACE route requires a local company and 5 jobs. The April 2026 Investor Pass adds passive tiers (~$150k / ~$200k) with no job requirement.</em>', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 1, tlMax: 3, presence: 'minimal', citYears: 3, fam: 2, notes: ['SUACE: active business', 'Passive tiers from ~$150k'], flags: { activeBiz: true, taxFriendly: true } }
+                ];
+
+                function pfScore(p, prof) {
+                    var s = 0;
+                    var f = p.flags || {};
+                    // 1. Goal
+                    if (prof.goal === 'cbi_now') { s += (p.type === 'cbi') ? 30 : (f.euPR ? 8 : 0); }
+                    if (prof.goal === 'eu_base') {
+                        if (p.type === 'eu') { s += f.notSchengen ? 22 : 30; }
+                        else if (p.type === 'cbi') { s += f.noSchengen ? 0 : 8; }
+                    }
+                    if (prof.goal === 'eu_cit') {
+                        if (p.type === 'eu') {
+                            var remoteOk = (p.citPresence !== 'substantial') || (prof.presence === 'open');
+                            if (p.citYears === null) { s += 4; }
+                            else if (remoteOk) { s += Math.max(12, 32 - (p.citYears - 5) * 2); }
+                            else { s += 6; }
+                        }
+                        else if (p.type === 'cbi') { s += 5; }
+                    }
+                    if (prof.goal === 'tax') { s += f.taxHaven ? 30 : (f.taxFriendly ? 24 : 5); }
+                    if (prof.goal === 'americas') { s += (p.type === 'am') ? 30 : (f.e2 ? 12 : 0); }
+                    // 2. Budget (1-4)
+                    if (p.bucket <= prof.budget) { s += 15 + (p.bucket === prof.budget ? 5 : 0); }
+                    else if (p.bucket === prof.budget + 1) { s -= 25; }
+                    else { s -= 100; }
+                    // 3. Family
+                    if (prof.family === 'family') { s += (p.fam >= 2) ? 6 : 3; }
+                    if (prof.family === 'extended') { s += (p.fam === 3) ? 10 : ((p.fam === 2) ? 5 : 2); }
+                    // 4. Timeline
+                    if (prof.timeline === 6) { s += (p.tlMax <= 6) ? 15 : ((p.tlMax <= 9) ? 8 : ((p.tlMax <= 12) ? 2 : -12)); }
+                    if (prof.timeline === 12) { s += (p.tlMax <= 12) ? 12 : ((p.tlMax <= 18) ? 5 : -6); }
+                    if (prof.timeline === 24) { s += (p.tlMax <= 24) ? 10 : 4; }
+                    if (prof.timeline === 99) { s += 4; }
+                    // 5. Presence
+                    if (prof.presence === 'zero') { s += (p.presence === 'zero') ? 12 : ((p.presence === 'minimal') ? 4 : -15); }
+                    if (prof.presence === 'visits') { s += (p.presence === 'required') ? -6 : ((p.presence === 'minimal') ? 10 : 8); }
+                    if (prof.presence === 'open') { s += (p.presence === 'required') ? 10 : 5; }
+                    // 6. Special requirements
+                    if (prof.special.indexOf('us') > -1) {
+                        if (f.e2) { s += 18; }
+                        if (f.usRestriction) { s -= 25; }
+                        if (p.type === 'eu') { s += 2; }
+                    }
+                    if (prof.special.indexOf('schengen') > -1) {
+                        if (f.noSchengen) { s -= 40; }
+                        else if (f.notSchengen) { s -= 12; }
+                        else if (p.type === 'eu') { s += f.fullSchengen ? 12 : 8; }
+                        else if (p.type === 'cbi') { s += 4; }
+                    }
+                    if (prof.special.indexOf('passive') > -1 && f.activeBiz) {
+                        s += (p.id === 'paraguay' && prof.budget >= 2) ? -8 : -30;
+                    }
+                    return s;
+                }
+
+                function pfGoalMatch(p, prof) {
+                    var f = p.flags || {};
+                    if (prof.goal === 'cbi_now') { return p.type === 'cbi'; }
+                    if (prof.goal === 'eu_base') { return p.type === 'eu'; }
+                    if (prof.goal === 'eu_cit') { return p.type === 'eu' && p.citYears !== null && ((p.citPresence !== 'substantial') || (prof.presence === 'open')); }
+                    if (prof.goal === 'tax') { return !!(f.taxHaven || f.taxFriendly); }
+                    if (prof.goal === 'americas') { return p.type === 'am'; }
+                    return true;
+                }
+
+                function pfMismatches(p, prof) {
+                    var f = p.flags || {};
+                    var out = [];
+                    if (!pfGoalMatch(p, prof)) {
+                        if (prof.goal === 'cbi_now') { out.push('Residency program &mdash; does not grant a direct passport.'); }
+                        else if (prof.goal === 'eu_base') { out.push((p.type === 'cbi') ? 'Passport program &mdash; not a European residence base.' : 'Not a European residence base.'); }
+                        else if (prof.goal === 'eu_cit') { out.push((p.citYears === null) ? 'No pathway to citizenship.' : ((p.type !== 'eu') ? 'Not an EU citizenship pathway.' : 'Citizenship here requires genuine relocation &mdash; beyond your stated presence.')); }
+                        else if (prof.goal === 'tax') { out.push('No material tax advantage.'); }
+                        else if (prof.goal === 'americas') { out.push('Not an Americas program.'); }
+                    }
+                    if (p.bucket > prof.budget) { out.push('Above your stated budget.'); }
+                    if (prof.timeline === 6 && p.tlMax > 12) { out.push('Materially slower than your stated timeline.'); }
+                    if (prof.timeline === 12 && p.tlMax > 18) { out.push('Slower than your stated timeline.'); }
+                    if (prof.presence === 'zero' && p.presence === 'required') { out.push('Requires physical presence.'); }
+                    if (prof.special.indexOf('passive') > -1 && f.activeBiz) { out.push('Requires an actively operating business.'); }
+                    if (prof.special.indexOf('us') > -1 && f.usRestriction) { out.push('US partial visa restriction applies to new applicants.'); }
+                    if (prof.special.indexOf('schengen') > -1 && (f.noSchengen || f.notSchengen)) { out.push('No Schengen access today.'); }
+                    return out;
+                }
+
+                function pfRank(prof) {
+                    return PF_PROGRAMS
+                        .map(function (p) { return { p: p, score: pfScore(p, prof) }; })
+                        .sort(function (a, b) { return b.score - a.score; })
+                        .slice(0, 3);
+                }
+                // PF-LOGIC-END
+                if (typeof window !== 'undefined') { window.__pfPrograms = PF_PROGRAMS; window.__pfScore = pfScore; window.__pfRank = pfRank; window.__pfGoalMatch = pfGoalMatch; window.__pfMismatches = pfMismatches; }
+                if (typeof document === 'undefined' || !document.getElementById('pf-wizard')) { return; }
+
+                var PF_QUESTIONS = [
+                    { key: 'goal', multi: false, q: 'What is your primary strategic objective?', hint: 'Select the outcome that matters most to you.', opts: [
+                        { v: 'cbi_now', t: 'A second passport, directly', d: 'Immediate citizenship by investment' },
+                        { v: 'eu_base', t: 'A European residence base', d: 'Schengen-area footing and optionality' },
+                        { v: 'eu_cit', t: 'A pathway to EU citizenship', d: 'Long-term naturalization strategy' },
+                        { v: 'tax', t: 'Tax optimization & protection', d: 'Favorable or zero-tax jurisdictions' },
+                        { v: 'americas', t: 'An Americas foothold', d: 'Western-hemisphere residency' } ] },
+                    { key: 'budget', multi: false, q: 'What total capital allocation do you envisage?', hint: 'All-in, including government fees.', opts: [
+                        { v: 1, t: 'Under $150,000', tEur: 'Under €150,000', d: '' },
+                        { v: 2, t: '$150,000 &ndash; $300,000', tEur: '€150,000 &ndash; €300,000', d: '' },
+                        { v: 3, t: '$300,000 &ndash; $600,000', tEur: '€300,000 &ndash; €600,000', d: '' },
+                        { v: 4, t: 'Above $600,000', tEur: 'Above €600,000', d: '' } ] },
+                    { key: 'family', multi: false, q: 'Who will be included in the application?', hint: '', opts: [
+                        { v: 'solo', t: 'Myself only', d: '' },
+                        { v: 'family', t: 'Spouse & children', d: '' },
+                        { v: 'extended', t: 'Extended family', d: 'Parents, adult children, or siblings' } ] },
+                    { key: 'timeline', multi: false, q: 'When must your status be secured?', hint: '', opts: [
+                        { v: 6, t: 'Within 6 months', d: '' },
+                        { v: 12, t: 'Within a year', d: '' },
+                        { v: 24, t: 'Within two years', d: '' },
+                        { v: 99, t: 'No fixed deadline', d: '' } ] },
+                    { key: 'presence', multi: false, q: 'How much physical presence can you commit?', hint: 'Time actually spent in the host country.', opts: [
+                        { v: 'zero', t: 'None &mdash; fully remote', d: '' },
+                        { v: 'visits', t: 'Brief visits only', d: 'A few days per year' },
+                        { v: 'open', t: 'Open to spending time', d: 'Including possible relocation' } ] },
+                    { key: 'special', multi: true, q: 'Any non-negotiable requirements?', hint: 'Select all that apply, or continue without a selection.', opts: [
+                        { v: 'us', t: 'Unrestricted US travel / E2 access', d: 'US business & treaty mobility' },
+                        { v: 'schengen', t: 'Schengen mobility is essential', d: 'EU border-free travel' },
+                        { v: 'passive', t: 'Strictly passive investment', d: 'No active business management' },
+                        { v: 'none', t: 'None of these', d: '' } ] }
+                ];
+
+                var pfStep = 0;
+                var pfAnswers = { goal: null, budget: null, family: null, timeline: null, presence: null, special: [] };
+                var RANK_BADGES = [
+                    { label: 'Primary Recommendation', cls: 'bg-gold text-white' },
+                    { label: 'Strong Alternative', cls: 'bg-navy text-white' },
+                    { label: 'Considered Option', cls: 'bg-gray-200 text-navy' }
+                ];
+
+                var elWizard = document.getElementById('pf-wizard');
+                var elResults = document.getElementById('pf-results');
+                var elQ = document.getElementById('pf-question');
+                var elHint = document.getElementById('pf-hint');
+                var elOpts = document.getElementById('pf-options');
+                var elNext = document.getElementById('pf-next');
+                var elBack = document.getElementById('pf-back');
+                var elLabel = document.getElementById('pf-step-label');
+                var elProg = document.getElementById('pf-progress');
+                var elRestart = document.getElementById('pf-restart');
+
+                function pfHasAnswer(qd) {
+                    if (qd.multi) { return true; }
+                    return pfAnswers[qd.key] !== null;
+                }
+
+                function pfRender() {
+                    var qd = PF_QUESTIONS[pfStep];
+                    elLabel.textContent = 'Question ' + (pfStep + 1) + ' of ' + PF_QUESTIONS.length;
+                    elProg.style.width = (((pfStep + 1) / PF_QUESTIONS.length) * 100).toFixed(1) + '%';
+                    elQ.innerHTML = qd.q;
+                    elHint.innerHTML = qd.hint || '';
+                    elHint.style.display = qd.hint ? '' : 'none';
+                    elOpts.innerHTML = '';
+                    qd.opts.forEach(function (o) {
+                        var selected = qd.multi ? (pfAnswers.special.indexOf(o.v) > -1) : (pfAnswers[qd.key] === o.v);
+                        var b = document.createElement('button');
+                        b.type = 'button';
+                        b.className = 'text-left border px-5 py-4 rounded-sm transition-colors ' + (selected ? 'border-gold bg-gold/10' : 'border-gray-200 hover:border-gold bg-white');
+                        var lbl = (qd.key === 'budget' && o.tEur && (pfAnswers.goal === 'eu_base' || pfAnswers.goal === 'eu_cit')) ? o.tEur : o.t;
+                        b.innerHTML = '<span class="block text-sm font-semibold text-navy">' + lbl + '</span>' + (o.d ? '<span class="block text-[11px] text-gray-400 font-light mt-1">' + o.d + '</span>' : '');
+                        b.addEventListener('click', function () {
+                            if (qd.multi) {
+                                if (o.v === 'none') { pfAnswers.special = (pfAnswers.special.indexOf('none') > -1) ? [] : ['none']; }
+                                else {
+                                    var i = pfAnswers.special.indexOf(o.v);
+                                    if (i > -1) { pfAnswers.special.splice(i, 1); } else { pfAnswers.special.push(o.v); }
+                                    var n = pfAnswers.special.indexOf('none');
+                                    if (n > -1) { pfAnswers.special.splice(n, 1); }
+                                }
+                            } else {
+                                pfAnswers[qd.key] = o.v;
+                            }
+                            pfRender();
+                        });
+                        elOpts.appendChild(b);
+                    });
+                    elNext.disabled = !pfHasAnswer(qd);
+                    elNext.innerHTML = (pfStep === PF_QUESTIONS.length - 1) ? 'Reveal My Matches &rarr;' : 'Continue &rarr;';
+                    elBack.classList.toggle('invisible', pfStep === 0);
+                    elRestart.classList.toggle('invisible', pfStep === 0);
+                }
+
+                function pfNoteChips(p) {
+                    if (!p.notes || !p.notes.length) { return ''; }
+                    return '<p class="text-[9px] text-gray-400 uppercase tracking-widest font-semibold mt-1.5 leading-relaxed">' + p.notes.join(' &nbsp;&bull;&nbsp; ') + '</p>';
+                }
+
+                function pfResultCard(entry, rank, prof) {
+                    var p = entry.p;
+                    var badge = RANK_BADGES[rank];
+                    var mm = pfMismatches(p, prof);
+                    var mmHtml = mm.length ? '<div class="bg-red-50 border-l-2 border-red-600 p-3 mb-4 rounded-r-sm"><span class="text-[9px] uppercase tracking-widest font-bold text-red-700 block mb-1">Important &mdash; Criteria Mismatch</span><p class="text-[10px] text-red-800 font-medium leading-relaxed">' + mm.join(' ') + '</p></div>' : '';
+                    var pills = p.pills.map(function (t) {
+                        return '<span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">' + t + '</span>';
+                    }).join('');
+                    return '' +
+                    '<div class="bg-white border ' + (rank === 0 ? 'border-2 border-gold shadow-md' : 'border-gray-200') + ' rounded-sm overflow-hidden program-card flex flex-col group">' +
+                        '<div class="w-full ' + badge.cls + ' text-center py-1.5 text-[9px] uppercase tracking-widest font-bold">' + badge.label + '</div>' +
+                        '<div class="relative h-48 overflow-hidden bg-gray-200">' +
+                            '<img src="' + p.img + '" alt="' + p.name + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null;this.src=\'' + p.fb + '\'">' +
+                            '<div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">' + pills + '</div>' +
+                        '</div>' +
+                        '<div class="p-6 border-b border-gray-100 bg-gray-50/50">' +
+                            '<h3 class="text-xl serif text-navy font-bold">' + p.name + '</h3>' + pfNoteChips(p) +
+                        '</div>' +
+                        '<div class="p-6 flex-grow flex flex-col justify-between">' + mmHtml +
+                            '<div class="space-y-3 mb-6">' +
+                                '<div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span><span class="text-lg font-bold text-navy">' + p.total + '</span></div>' +
+                                '<div class="flex justify-between items-center"><span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span><span class="text-xs font-semibold text-gray-700">' + p.base + '</span></div>' +
+                                '<div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span><span class="text-xs font-semibold text-gray-700">' + p.fees + '</span></div>' +
+                                '<div class="flex justify-between items-center pt-1"><span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span><span class="text-xs font-bold text-navy">' + p.timeline + '</span></div>' +
+                            '</div>' +
+                            '<div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">' +
+                                '<span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>' +
+                                '<p class="text-[11px] text-navy font-medium leading-relaxed">' + p.usp + '</p>' +
+                            '</div>' +
+                            '<button type="button" data-pf-select="' + p.id + '" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Select & Inquire &rarr;</button>' +
+                        '</div>' +
+                    '</div>';
+                }
+
+                function pfShowResults() {
+                    var prof = {
+                        goal: pfAnswers.goal, budget: pfAnswers.budget, family: pfAnswers.family,
+                        timeline: pfAnswers.timeline, presence: pfAnswers.presence,
+                        special: pfAnswers.special.filter(function (v) { return v !== 'none'; })
+                    };
+                    var top = pfRank(prof);
+                    var grid = document.getElementById('pf-results-grid');
+                    grid.innerHTML = top.map(function (e, i) { return pfResultCard(e, i, prof); }).join('');
+                    var note = document.getElementById('pf-results-note');
+                    var lead = (top[0].score < 20) ? 'Your criteria are highly restrictive; the closest available alignments are shown below. A guided advisory session is recommended. ' : '';
+                    var matched = top.filter(function (e) { return pfGoalMatch(e.p, prof); }).map(function (e) { return e.p.name; });
+                    if (matched.length === 0) {
+                        lead += 'No listed program fully meets your primary objective on your stated criteria &mdash; the closest strategic alternatives are shown, with every divergence flagged in red. ';
+                    } else if (matched.length < top.length) {
+                        lead += 'Only ' + matched.join(' and ') + ' fully ' + (matched.length === 1 ? 'meets' : 'meet') + ' your primary objective &mdash; the remaining options are adjacent strategies, with divergences flagged in red. ';
+                    }
+                    note.innerHTML = lead +
+                        'Indicative matching based on your stated profile. Full suitability, family structuring, and current government terms are confirmed during your private briefing.';
+                    grid.querySelectorAll('[data-pf-select]').forEach(function (btn) {
+                        btn.addEventListener('click', function () {
+                            var prog = PF_PROGRAMS.filter(function (x) { return x.id === btn.getAttribute('data-pf-select'); })[0];
+                            pfHandoff(prog.pathway, prog.name);
+                        });
+                    });
+                    elWizard.classList.add('hidden');
+                    elResults.classList.remove('hidden');
+                    document.getElementById('program-finder').scrollIntoView({ behavior: 'smooth' });
+                }
+
+                function pfHandoff(pathway, programName) {
+                    if (typeof window.__lwvRevealForm === 'function') { window.__lwvRevealForm(); }
+                    var form = document.getElementById('leadForm');
+                    if (form) {
+                        var sel = form.querySelector('select[name="pathway"]');
+                        var tgt = form.querySelector('input[name="target_program"]');
+                        if (sel) { sel.value = pathway; sel.dispatchEvent(new Event('change', { bubbles: true })); }
+                        if (tgt) { tgt.value = programName; }
+                    }
+                    var contact = document.getElementById('contact');
+                    if (contact) { contact.scrollIntoView({ behavior: 'smooth' }); }
+                }
+
+                function pfReset() {
+                    pfStep = 0;
+                    pfAnswers = { goal: null, budget: null, family: null, timeline: null, presence: null, special: [] };
+                    elResults.classList.add('hidden');
+                    elWizard.classList.remove('hidden');
+                    pfRender();
+                }
+
+                elNext.addEventListener('click', function () {
+                    if (pfStep < PF_QUESTIONS.length - 1) { pfStep += 1; pfRender(); }
+                    else { pfShowResults(); }
+                });
+                elBack.addEventListener('click', function () { if (pfStep > 0) { pfStep -= 1; pfRender(); } });
+                elRestart.addEventListener('click', pfReset);
+                document.getElementById('pf-refine').addEventListener('click', function () {
+                    pfReset();
+                    document.getElementById('program-finder').scrollIntoView({ behavior: 'smooth' });
+                });
+                document.getElementById('pf-undecided').addEventListener('click', function () {
+                    pfHandoff('Undecided', 'Undecided');
+                });
+
+                pfRender();
+            })();
+            </script>
+        </section>
+
         <section id="cbi-programs" class="py-24 bg-gray-50 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -226,12 +594,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">6 to 9 Months</span>
+                                    <span class="text-xs font-bold text-navy">4 to 6 Months</span>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">The oldest, gold standard CBI. The flat SISC pricing perfectly covers up to a family of four.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The oldest, gold-standard CBI. Real-estate route reduced to $325k. Biometric enrollment now mandatory; 30-day presence rule proposed but not yet in force.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -270,7 +638,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants access to the USA E2 treaty and visa free access to China; allows inclusion of unmarried siblings over 18.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Retains USA E2 treaty access and visa-free China. New 30-day presence rule (5 days main applicant yr 1, 25 days family across yrs 2&ndash;5) effective 2026.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -350,7 +718,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">The UWI Fund ($260k) is the most cost effective globally for families of 6+; mandates a 5 day physical residency.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">UWI Fund ($260k) most cost-effective globally for families of 6+. Mandatory interview added in 2026. <em>Note: physical-residency requirement being increased; since Jan 2026 the US applies partial visa restrictions to new passport applicants (visas issued before 31 Dec 2025 are honoured).</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -389,7 +757,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Deep eco development integration; highly flexible inclusion rules allowing unmarried daughters under 25 & students up to 30.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Deep eco-development integration; flexible inclusion (unmarried daughters under 25, students to 30). New biometric e-passports and mandatory virtual interviews for applicants 16+. <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants (existing US visas honoured).</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -428,7 +796,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">The fastest processing globally via a completely remote process. Functions as a pure tax haven (zero income, corporate, or wealth tax).</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Fastest processing globally via a fully remote process; zero income, corporate, or wealth tax. <em>Note: no longer visa-free to the EU/Schengen Area &mdash; visa-free access remains to ~90+ countries across Asia & Oceania (incl. Hong Kong, Singapore).</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -481,7 +849,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed"><strong>*CRITICAL:</strong> The €250,000 threshold strictly requires a commercial to residential conversion. Standard real estate investments now require €400,000 to €800,000.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed"><strong>*CRITICAL:</strong> The €250,000 threshold strictly requires a commercial to residential conversion. Standard real estate: €400,000 to €800,000 by zone. <strong>New 2026 route:</strong> €250,000 in an Elevate Greece startup (Law 5162/2024).</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -520,7 +888,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants a 10 year upfront residence permit and features a low risk "approve first, invest later" model.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. Direct €500k property route closed Jan 1, 2025 &mdash; only the fund (€250k) and €1M trust donation routes remain.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -554,12 +922,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">24+ Months</span>
+                                    <span class="text-xs font-bold text-navy">~12 to 24 Months (easing)</span>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Requires only an average of 7 days per year of physical presence to qualify for EU citizenship after 5 years.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Requires only ~7 days per year of physical presence; pathway to EU citizenship after <strong>10 years (7 for EU/CPLP nationals)</strong> under the new nationality law.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -600,45 +968,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                 <p class="text-[11px] text-navy font-medium leading-relaxed">Residency is granted for life; features an excellent non domicile tax regime (requires proof of €50k/yr offshore income).</p>
-                            </div>
-                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
-                        </div>
-                    </div>
-
-                    <!-- Malta -->
-                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
-                        <div class="relative h-48 overflow-hidden bg-gray-200">
-                            <img src="img/malta.jpg" alt="Malta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=800&auto=format&fit=crop'">
-                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
-                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Property Purchase</span>
-                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Property Lease</span>
-                            </div>
-                        </div>
-                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <h3 class="text-xl serif text-navy font-bold">Malta</h3>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between">
-                            <div class="space-y-3 mb-6">
-                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
-                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
-                                    <span class="text-lg font-bold text-navy">~€170,000 (Sunk)</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
-                                    <span class="text-xs font-semibold text-gray-700">Lease from €14k/yr</span>
-                                </div>
-                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
-                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
-                                    <span class="text-xs font-semibold text-gray-700">~€100,000</span>
-                                </div>
-                                <div class="flex justify-between items-center pt-1">
-                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">6 to 8 Months</span>
-                                </div>
-                            </div>
-                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
-                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Flat €37k state contribution whether buying/renting; grants immediate 1 year temp residence upon application.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -754,7 +1083,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Secures immediate 10 year permanent residency. Features a highly efficient strict territorial tax system (zero tax on foreign income).</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 10% flat local). <em>Note: the $70k SUACE route requires a local company and 5 jobs for Paraguayans. The April 2026 Investor Pass (Res. 0283/2026) adds passive tiers (~$150k tourism / ~$200k real estate or financial) with no job requirement.</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -792,7 +1121,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">The most cost-effective European residency program globally. Grants immediate 5-year residency via a low-threshold €50,000 company share investment.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Lowest entry threshold in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the qualifying company must genuinely operate and pay &ge;€40,000/yr in tax &mdash; best suited to active business investors. €5,000 renewal fee.</em></p>
+                            </div>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Italy -->
+                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="img/italy.jpg" alt="Italy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Startup</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Gov. Bonds</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Donation</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                            <h3 class="text-xl serif text-navy font-bold">Italy</h3>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                    <span class="text-lg font-bold text-navy">~€275,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                    <span class="text-xs font-semibold text-gray-700">From €250,000</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                    <span class="text-xs font-semibold text-gray-700">~€25,000</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-1">
+                                    <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                    <span class="text-xs font-bold text-navy">3 to 4 Months</span>
+                                </div>
+                            </div>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Pre-approval (Nulla Osta) before you invest capital; no minimum stay. Four routes: €250k innovative startup (a structured qualifying investment), €500k Italian company, €2M govt bonds, or €1M philanthropic donation. PR after 5 years.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -800,9 +1169,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 </div>
 
-                <!-- Featured Bulgaria Section (Centered, exact size as other cards) -->
-                <div class="mt-12 flex justify-center w-full">
-                    <div class="w-full max-w-[380px]">
+                <!-- Featured Tier 1 Pair: Immediate EU Permanent Residency (Malta + Bulgaria, centered, exact size as other cards) -->
+                <div class="mt-12 flex flex-col md:flex-row justify-center items-stretch gap-8 w-full">
+                    <div class="w-full max-w-[380px] mx-auto md:mx-0">
+                        <div class="bg-white border-2 border-gold rounded-sm overflow-hidden program-card flex flex-col group shadow-md h-full relative">
+                            <!-- Special Badge -->
+                            <div class="w-full bg-gold text-white text-center py-1.5 text-[8px] md:text-[9px] uppercase tracking-widest font-bold z-20">
+                                Exclusive: Immediate EU Permanent Residency
+                            </div>
+                            <div class="relative h-48 overflow-hidden bg-gray-200">
+                                <img src="img/malta.jpg" alt="Malta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=800&auto=format&fit=crop'">
+                                <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                                    <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Property Purchase</span>
+                                    <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Property Lease</span>
+                                </div>
+                            </div>
+                            <div class="p-6 border-b border-gray-100 bg-gray-50/50">
+                                <h3 class="text-xl serif text-navy font-bold">Malta</h3>
+                                <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">Direct PR in 6-8 Months</p>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col justify-between">
+                                <div class="space-y-3 mb-6">
+                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                        <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
+                                        <span class="text-lg font-bold text-navy">~€170,000 (Sunk)</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
+                                        <span class="text-xs font-semibold text-gray-700">Lease from €14k/yr</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                        <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span>
+                                        <span class="text-xs font-semibold text-gray-700">~€99,000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center pt-1">
+                                        <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
+                                        <span class="text-xs font-bold text-navy">6 to 8 Months</span>
+                                    </div>
+                                </div>
+                                <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
+                                    <p class="text-[11px] text-navy font-medium leading-relaxed">Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. Immediate 1 year temp residence on application. <em>Note: MPRP grants permanent residence only &mdash; not a path to citizenship.</em></p>
+                                </div>
+                                <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire About Malta &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-[380px] mx-auto md:mx-0">
                         <div class="bg-white border-2 border-gold rounded-sm overflow-hidden program-card flex flex-col group shadow-md h-full relative">
                             <!-- Special Badge -->
                             <div class="w-full bg-gold text-white text-center py-1.5 text-[8px] md:text-[9px] uppercase tracking-widest font-bold z-20">
@@ -839,7 +1252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                     <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
-                                    <p class="text-[11px] text-navy font-medium leading-relaxed">Unlike standard EU Golden Visas that issue temporary permits, Bulgaria grants absolute Permanent Residency upfront. AIFs can also legally hold real estate.</p>
+                                    <p class="text-[11px] text-navy font-medium leading-relaxed">Unlike standard EU Golden Visas, Bulgaria grants absolute Permanent Residency upfront via regulated AIFs. <strong>Now full Schengen (Jan 2025) and Eurozone (Jan 2026).</strong></p>
                                 </div>
                                 <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire About Bulgaria &rarr;</a>
                             </div>
@@ -848,6 +1261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </section>
+
 
         <section id="why-plan-b" class="py-24 bg-white border-b border-gray-100 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
@@ -919,7 +1333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h2 class="text-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4">Beyond Standard Residency</h2>
                 <p class="text-4xl serif mb-6">Accelerated European Naturalization</p>
                 <p class="text-sm text-gray-300 font-light leading-relaxed mb-8 max-w-3xl mx-auto">
-                    While standard European Residence by Investment (RBI) programs offer a structured 5 to 10 year timeline to naturalized citizenship, highly tailored investment architectures exist for those seeking to expedite this process. For clients capable of meeting exceptional capital and economic contribution thresholds, our senior advisory team designs legally entrenched, accelerated pathways to full Schengen citizenship.
+                    While standard European Residence by Investment (RBI) programs offer a structured 8 to 10+ year timeline to naturalized citizenship (and some, such as the Malta MPRP, grant permanent residence only), highly tailored investment architectures exist for those seeking to expedite this process. For clients capable of meeting exceptional capital and economic contribution thresholds, our senior advisory team designs legally entrenched, accelerated pathways to full Schengen citizenship.
                 </p>
                 <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-[11px] text-gray-400 mb-10">
                     <span class="flex items-center uppercase tracking-widest font-semibold"><span class="text-gold mr-2">▪</span> Expedited Timelines</span>
@@ -1051,7 +1465,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <ul class="list-disc ml-5 mb-4 space-y-2">
                                 <li><strong>What it is:</strong> Often referred to as a "Golden Visa," RBI provides a residence permit that grants you and your family the legal right to live, work, and study in the host country.</li>
                                 <li><strong>The Benefits:</strong> RBI is ideal for individuals seeking a physical lifestyle change, enhanced structural tax efficiency through relocation, or strategic access to regional markets (such as the European Union's Schengen Area). While it provides an immediate safe haven and access to premium healthcare and education, it does not immediately confer full citizenship rights, such as holding a passport or voting.</li>
-                                <li><strong>Timeline and Cost:</strong> RBI programs generally offer lower initial investment thresholds, with some starting from USD 25,000. While you do not receive a passport immediately, most RBI programs offer a clear pathway to naturalized citizenship. This usually requires holding the legal residency for 5 to 10 years and meeting specific physical presence or language criteria.</li>
+                                <li><strong>Timeline and Cost:</strong> RBI programs generally offer lower initial investment thresholds, with some starting from USD 25,000. While you do not receive a passport immediately, most RBI programs offer a clear pathway to naturalized citizenship. This usually requires holding the legal residency for 8 to 10+ years and meeting specific physical presence or language criteria. Note that certain programs, such as the Malta MPRP, grant permanent residence only and do not constitute a pathway to citizenship.</li>
                             </ul>
                             <p class="bg-gray-50 p-4 border-l-2 border-gold font-medium"><strong>Summary:</strong> If your priority is immediate, unrestricted global mobility and securing a permanent generational legacy without the need to relocate, CBI is the definitive choice. However, if your goal is to physically relocate your family, establish tax residency in a favorable jurisdiction, or build a gradual pathway to citizenship over several years, an RBI program provides the perfect foundation.</p>
                         </div>
@@ -1137,6 +1551,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                     <div class="bg-white p-8 md:p-12 rounded-sm card-shadow text-black">
+                        <!-- Intent Gate: routes work/study seekers away before the form is shown -->
+                        <div id="intent-gate" class="mb-2">
+                            <h4 class="text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Before You Proceed</h4>
+                            <p class="text-xs text-gray-500 font-light mb-4">This determines whether our advisory can assist you.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <button id="gate-invest" type="button" class="border-2 border-navy text-navy px-5 py-4 text-left rounded-sm hover:bg-navy hover:text-white transition-colors group">
+                                    <span class="block text-[11px] font-bold uppercase tracking-widest mb-1">Investment Migration</span>
+                                    <span class="block text-[10px] text-gray-500 group-hover:text-gray-200 transition-colors">I hold $100,000+ in liquid capital for a residency or citizenship investment</span>
+                                </button>
+                                <button id="gate-work" type="button" class="border border-gray-300 text-gray-500 px-5 py-4 text-left rounded-sm hover:border-red-600 hover:text-red-700 transition-colors">
+                                    <span class="block text-[11px] font-bold uppercase tracking-widest mb-1">Work / Study / Job Seeking</span>
+                                    <span class="block text-[10px]">I am seeking employment, sponsorship, or a student visa</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="gate-rejection" class="hidden my-8 border-2 border-red-600 p-6 bg-red-50">
+                            <h4 class="text-red-700 font-bold uppercase tracking-widest text-[11px] mb-2">We Are Unable to Assist You</h4>
+                            <p class="text-[11px] text-red-800 leading-relaxed">Legacy Wealth Visa exclusively structures capital investment migration, with programs starting at $84,000 USD. We do not process work permits, job sponsorships, or study visas &mdash; such inquiries are not reviewed or answered. Kindly direct employment and study matters to the relevant embassy or a licensed immigration agency.</p>
+                        </div>
+                        <div id="form-body" class="hidden">
                         <!-- Strict Prescreening Warning -->
                         <div class="mb-8 border-2 border-red-600 p-4 bg-red-50">
                             <h4 class="text-red-700 font-bold uppercase tracking-widest text-[11px] mb-2 flex items-center">
@@ -1239,6 +1673,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                             <button type="submit" id="submitBtn" class="w-full btn-gold py-4 uppercase text-xs tracking-[0.2em] font-bold mt-2">Secure Connection</button>
                         </form>
+                        </div> <!-- /form-body -->
                     </div>
                 </div>
             </div>
@@ -1371,6 +1806,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.getElementById('cookie-banner').style.display = 'none';
         });
 
+        // Intent Gate Logic
+        function lwvRevealForm() {
+            document.getElementById('intent-gate').classList.add('hidden');
+            document.getElementById('gate-rejection').classList.add('hidden');
+            document.getElementById('form-body').classList.remove('hidden');
+        }
+        window.__lwvRevealForm = lwvRevealForm;
+        document.getElementById('gate-invest').addEventListener('click', lwvRevealForm);
+        document.getElementById('gate-work').addEventListener('click', () => {
+            document.getElementById('form-body').classList.add('hidden');
+            document.getElementById('gate-rejection').classList.remove('hidden');
+        });
+
         // Form Logic
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Stop immediate navigation
@@ -1378,7 +1826,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const form = e.target;
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerText;
-            
+
+            // Hard block: work/study selections are never submitted
+            const pathwaySel = form.querySelector('select[name="pathway"]');
+            if (pathwaySel && pathwaySel.value === 'INELIGIBLE: WORK/STUDY') {
+                const rej = document.getElementById('gate-rejection');
+                rej.classList.remove('hidden');
+                rej.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                submitBtn.innerText = "INELIGIBLE — NOT SUBMITTED";
+                setTimeout(() => { submitBtn.innerText = originalText; }, 4000);
+                return;
+            }
+
             submitBtn.innerText = "SENDING...";
             submitBtn.disabled = true;
 
