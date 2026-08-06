@@ -106,6 +106,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-color: var(--gold);
         }
+
+        /* Capital band slider (lead form) */
+        .lwv-range {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 32px;
+            background: transparent;
+            cursor: pointer;
+        }
+        .lwv-range:focus { outline: none; }
+        .lwv-range::-webkit-slider-runnable-track {
+            height: 3px;
+            border-radius: 2px;
+            background: linear-gradient(to right, var(--gold) var(--fill, 58%), #e5e7eb var(--fill, 58%));
+        }
+        .lwv-range::-moz-range-track { height: 3px; border-radius: 2px; background: #e5e7eb; }
+        .lwv-range::-moz-range-progress { height: 3px; border-radius: 2px; background: var(--gold); }
+        .lwv-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 1px var(--gold), 0 2px 6px rgba(0,0,0,0.15);
+            margin-top: -8.5px;
+        }
+        .lwv-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 1px var(--gold), 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .lwv-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px rgba(197,160,89,0.45); }
     </style>
     
     <!-- Event snippet for Submit lead form NEW conversion page -->
@@ -142,6 +180,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="hidden md:flex space-x-8 text-[11px] font-bold uppercase tracking-widest items-center">
                     <a href="#cbi-programs" class="nav-link">CBI Programs</a>
                     <a href="#rbi-programs" class="nav-link">RBI Programs</a>
+                    <a href="#how-we-are-paid" class="nav-link">How We're Paid</a>
                     <a href="#why-plan-b" class="nav-link">Why a Plan B?</a>
                     <a href="#eu-citizenship" class="nav-link">EU Citizenship</a>
                     <a href="#team" class="nav-link">Advisor</a>
@@ -174,7 +213,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="text-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">Structural Tax Efficiency & Legacy Planning</p>
                     <h1 class="text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight serif">Secure Your Global Freedom.</h1>
                     <p class="text-lg md:text-xl text-gray-200 mb-10 font-light leading-relaxed">
-                        We facilitate the acquisition of secondary citizenship and residency through a highly curated selection of the world's most robust investment programs.
+                        We facilitate the acquisition of secondary citizenship and residency through a highly curated selection of the world's most robust investment programs &mdash; and on most of them, your capital is an investment you get back, not a fee you lose.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#contact" class="btn-gold px-8 py-4 text-center rounded-sm font-semibold uppercase tracking-widest text-sm">Request a Consultation</a>
@@ -239,23 +278,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             (function () {
                 // PF-LOGIC-START
                 var PF_PROGRAMS = [
-                    { id: 'stkitts', name: 'Saint Kitts & Nevis', img: 'img/saintkitts.jpg', fb: 'https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate', 'Public Benefit'], total: '~$261,000', base: '$250,000', fees: '~$11,000', timeline: '4 to 6 Months', usp: 'The oldest, gold-standard CBI. Real-estate route reduced to $325k. Biometric enrollment now mandatory; 30-day presence rule proposed but not yet in force.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 2, notes: ['Proposed 30-day presence rule pending'], flags: {} },
-                    { id: 'grenada', name: 'Grenada', img: 'img/grenada.jpg', fb: 'https://images.unsplash.com/photo-1580979450379-3c35b84c8a81?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$245,000', base: '$235,000', fees: '~$10,000', timeline: '7 to 8 Months', usp: 'Retains USA E2 treaty access and visa-free China. New 30-day presence rule (5 days main applicant yr 1, 25 days family across yrs 2&ndash;5) effective 2026.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 8, presence: 'minimal', citYears: 0, fam: 3, notes: ['USA E2 treaty access'], flags: { e2: true } },
-                    { id: 'stlucia', name: 'Saint Lucia', img: 'img/saintlucia.jpg', fb: 'https://images.unsplash.com/photo-1583804825983-500e57577541?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Gov. Bonds', 'Real Estate'], total: '~$250,000', base: '$240,000 / $300k', fees: '~$10,000', timeline: '6 to 10 Months', usp: 'The $300k government bond guarantees full principal return after 5 yrs; 90 day grace period to invest post approval.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 10, presence: 'zero', citYears: 0, fam: 2, notes: ['Bond route returns capital after 5 yrs'], flags: {} },
-                    { id: 'antigua', name: 'Antigua & Barbuda', img: 'img/antigua.jpg', fb: 'https://images.unsplash.com/photo-1574347209709-a1b7e4dd38b6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Univ. Fund', 'Real Estate'], total: '~$251,000', base: '$230,000', fees: '~$21,000', timeline: '3 to 6 Months', usp: 'UWI Fund ($260k) most cost-effective globally for families of 6+. Mandatory interview added in 2026. <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 3, notes: ['US partial visa restriction (new applicants)'], flags: { usRestriction: true } },
-                    { id: 'dominica', name: 'Dominica', img: 'img/dominica.jpg', fb: 'https://images.unsplash.com/photo-1549466710-534fc181cda6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$211,000', base: '$200,000', fees: '~$11,000', timeline: '6+ Months', usp: 'Deep eco-development integration; flexible inclusion (unmarried daughters under 25, students to 30). <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 9, presence: 'zero', citYears: 0, fam: 3, notes: ['US partial visa restriction (new applicants)'], flags: { usRestriction: true } },
-                    { id: 'vanuatu', name: 'Vanuatu', img: 'img/vanuatu.jpg', fb: 'https://images.unsplash.com/photo-1550742137-b4d619ed1d03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$136,000', base: '$130,000', fees: '~$6,000', timeline: '30 to 90 Days', usp: 'Fastest processing globally via a fully remote process; zero income, corporate, or wealth tax. <em>Note: no longer visa-free to the EU/Schengen Area.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 1, tlMax: 3, presence: 'zero', citYears: 0, fam: 2, notes: ['No EU/Schengen visa-free access'], flags: { noSchengen: true, taxHaven: true } },
-                    { id: 'greece', name: 'Greece', img: 'img/greece.jpg', fb: 'https://images.unsplash.com/photo-1503152394-c571994fd383?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Startup Route'], total: '~€270,000+', base: 'From €250,000*', fees: '~€20,000', timeline: '3 to 4 Months', usp: '<strong>*CRITICAL:</strong> The €250,000 threshold strictly requires a commercial to residential conversion. Standard real estate: €400,000 to €800,000 by zone. <strong>New 2026 route:</strong> €250,000 in an Elevate Greece startup (Law 5162/2024).', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 7, citPresence: 'substantial', fam: 3, notes: ['€250k entry requires commercial conversion', 'Citizenship requires genuine residence (183+ days/yr)'], flags: {} },
-                    { id: 'hungary', name: 'Hungary', img: 'img/hungary.jpg', fb: 'https://images.unsplash.com/photo-1516738905335-af586d5ca2bb?q=80&w=800&auto=format&fit=crop', pills: ['REIF Fund', 'Public Trust'], total: '~€320,000', base: '€250,000', fees: '~€70,000', timeline: '3 to 6 Months', usp: 'Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. Direct €500k property route closed Jan 1, 2025 &mdash; only the fund (€250k) and €1M trust donation routes remain.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'zero', citYears: 8, citPresence: 'substantial', fam: 2, notes: ['No minimum stay for the permit', 'Citizenship requires ~8 yrs actual residence'], flags: {} },
-                    { id: 'portugal', name: 'Portugal', img: 'img/portugal.jpg', fb: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop', pills: ['VC/PE Funds', 'Cultural Heritage'], total: '~€542,000', base: '€500,000', fees: '~€42,000', timeline: '~12 to 24 Months (easing)', usp: 'Requires only ~7 days per year of physical presence; pathway to EU citizenship after <strong>10 years (7 for EU/CPLP nationals)</strong> under the new nationality law.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 24, presence: 'minimal', citYears: 10, citPresence: 'minimal', fam: 2, notes: ['Citizenship after 10 yrs (7 EU/CPLP)', 'Only ~7 days/yr presence counts toward it'], flags: {} },
-                    { id: 'cyprus', name: 'Cyprus', img: 'img/cyprus.jpg', fb: 'https://images.unsplash.com/photo-1523910375841-a1e4ba29f5f0?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Funds', 'Shares'], total: '~€320,000+', base: '€300,000', fees: '~€20,000+', timeline: '2 to 6 Months', usp: 'Residency is granted for life; features an excellent non domicile tax regime (requires proof of €50k/yr offshore income).', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 8, citPresence: 'substantial', fam: 3, notes: ['Not in the Schengen Area'], flags: { notSchengen: true, taxFriendly: true } },
-                    { id: 'malta', name: 'Malta', img: 'img/malta.jpg', fb: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=800&auto=format&fit=crop', pills: ['Property Purchase', 'Property Lease'], total: '~€170,000 (Sunk)', base: 'Lease from €14k/yr', fees: '~€99,000', timeline: '6 to 8 Months', usp: 'Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. <em>Note: MPRP grants permanent residence only &mdash; not a path to citizenship.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 8, presence: 'zero', citYears: null, citPresence: 'substantial', fam: 3, notes: ['Permanent residence only &mdash; no citizenship path'], flags: { prOnly: true } },
-                    { id: 'bulgaria', name: 'Bulgaria', img: 'img/bulgaria.jpg', fb: 'https://images.unsplash.com/photo-1513069020900-a162c4db0762?q=80&w=800&auto=format&fit=crop', pills: ['AIFs / ETFs'], total: '~€525,000', base: '€512,000', fees: '~€13,000', timeline: '3 to 6 Months', usp: 'Unlike standard EU Golden Visas, Bulgaria grants absolute Permanent Residency upfront via regulated AIFs. <strong>Now full Schengen (Jan 2025) and Eurozone (Jan 2026).</strong>', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 5, citPresence: 'minimal', fam: 2, notes: ['Immediate EU PR', 'Full Schengen & Eurozone', 'Citizenship track after 5 yrs PR &mdash; no stay requirement'], flags: { euPR: true, fullSchengen: true } },
-                    { id: 'latvia', name: 'Latvia', img: 'img/latvia.jpg', fb: 'https://images.unsplash.com/photo-1542485060-70fbf1e2dce4?q=80&w=800&auto=format&fit=crop', pills: ['Company Share'], total: '~€60,000+', base: '€50,000', fees: '~€10,000', timeline: '1 to 4 Months', usp: 'Lowest entry threshold in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the qualifying company must genuinely operate and pay &ge;€40,000/yr in tax &mdash; best suited to active business investors. €5,000 renewal fee.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 1, tlMax: 4, presence: 'minimal', citYears: 10, citPresence: 'substantial', fam: 1, notes: ['Active business required (&ge;€40k/yr tax)'], flags: { activeBiz: true } },
-                    { id: 'italy', name: 'Italy', img: 'img/italy.jpg', fb: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop', pills: ['Startup', 'Gov. Bonds', 'Donation'], total: '~€275,000', base: 'From €250,000', fees: '~€25,000', timeline: '3 to 4 Months', usp: 'Pre-approval (Nulla Osta) before you invest capital; no minimum stay. Four routes: €250k innovative startup (a structured qualifying investment), €500k Italian company, €2M govt bonds, or €1M philanthropic donation. PR after 5 years.', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 10, citPresence: 'substantial', fam: 2, notes: ['Nulla Osta pre-approval', 'No minimum stay for the permit', 'Citizenship requires genuine residence'], flags: {} },
-                    { id: 'bahamas', name: 'The Bahamas', img: 'img/bahamas.jpg', fb: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Gov. Bonds'], total: '~$1,021,000', base: '$1,000,000', fees: '~$21,000', timeline: '8 to 18 Months', usp: 'Lifetime sanctuary from income & wealth taxes. Submitting a $1.5M+ property investment triggers automatic priority processing (3 to 6m).', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'zero', citYears: null, fam: 2, notes: ['$1.5M+ triggers fast-track processing'], flags: { taxHaven: true, prOnly: true } },
-                    { id: 'uruguay', name: 'Uruguay', img: 'img/uruguay.jpg', fb: 'https://images.unsplash.com/photo-1598284566378-005dc9b04f7a?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Innovation Fund'], total: 'Varies', base: '~$2M (Tax Res.)', fees: 'Varies', timeline: '6 to 18 Months', usp: 'Grants an unparalleled 11 year absolute tax holiday on foreign sourced income for qualifying tax residents.', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'required', citYears: 4, fam: 2, notes: ['Tax residency requires physical presence'], flags: { taxFriendly: true } },
-                    { id: 'paraguay', name: 'Paraguay', img: 'img/paraguay.jpg', fb: 'https://images.unsplash.com/photo-1589139599187-54b67d53bb21?q=80&w=800&auto=format&fit=crop', pills: ['Business Investment'], total: '~$84,000', base: '$70,000', fees: '~$14,000', timeline: '45 to 90 Days', usp: 'Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 10% flat local). <em>Note: the $70k SUACE route requires a local company and 5 jobs. The April 2026 Investor Pass adds passive tiers (~$150k / ~$200k) with no job requirement.</em>', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 1, tlMax: 3, presence: 'minimal', citYears: 3, fam: 2, notes: ['SUACE: active business', 'Passive tiers from ~$150k'], flags: { activeBiz: true, taxFriendly: true } }
+                    { id: 'stkitts', entryEur: 242000, capType: 'mixed', name: 'Saint Kitts & Nevis', img: 'img/saintkitts.jpg', fb: 'https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate', 'Public Benefit'], total: '~$261,000', base: '$250,000', fees: '~$11,000', timeline: '4 to 6 Months', usp: 'The oldest, gold-standard CBI. Real-estate route reduced to $325k. Biometric enrollment now mandatory; 30-day presence rule proposed but not yet in force.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 2, notes: ['Proposed 30-day presence rule pending'], flags: {} },
+                    { id: 'grenada', entryEur: 227000, capType: 'mixed', name: 'Grenada', img: 'img/grenada.jpg', fb: 'https://images.unsplash.com/photo-1580979450379-3c35b84c8a81?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$245,000', base: '$235,000', fees: '~$10,000', timeline: '7 to 8 Months', usp: 'Retains USA E2 treaty access and visa-free China. New 30-day presence rule (5 days main applicant yr 1, 25 days family across yrs 2&ndash;5) effective 2026.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 8, presence: 'minimal', citYears: 0, fam: 3, notes: ['USA E2 treaty access'], flags: { e2: true } },
+                    { id: 'stlucia', entryEur: 231000, capType: 'recover', name: 'Saint Lucia', img: 'img/saintlucia.jpg', fb: 'https://images.unsplash.com/photo-1583804825983-500e57577541?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Gov. Bonds', 'Real Estate'], total: '~$250,000', base: '$240,000 / $300k', fees: '~$10,000', timeline: '6 to 10 Months', usp: 'The $300k government bond guarantees full principal return after 5 yrs; 90 day grace period to invest post approval.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 10, presence: 'zero', citYears: 0, fam: 2, notes: ['Bond route returns capital after 5 yrs'], flags: {} },
+                    { id: 'antigua', entryEur: 232000, capType: 'mixed', name: 'Antigua & Barbuda', img: 'img/antigua.jpg', fb: 'https://images.unsplash.com/photo-1574347209709-a1b7e4dd38b6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Univ. Fund', 'Real Estate'], total: '~$251,000', base: '$230,000', fees: '~$21,000', timeline: '3 to 6 Months', usp: 'UWI Fund ($260k) most cost-effective globally for families of 6+. Mandatory interview added in 2026. <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 3, notes: ['US partial visa restriction (new applicants)'], flags: { usRestriction: true } },
+                    { id: 'dominica', entryEur: 195000, capType: 'mixed', name: 'Dominica', img: 'img/dominica.jpg', fb: 'https://images.unsplash.com/photo-1549466710-534fc181cda6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$211,000', base: '$200,000', fees: '~$11,000', timeline: '6+ Months', usp: 'Deep eco-development integration; flexible inclusion (unmarried daughters under 25, students to 30). <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 9, presence: 'zero', citYears: 0, fam: 3, notes: ['US partial visa restriction (new applicants)'], flags: { usRestriction: true } },
+                    { id: 'vanuatu', entryEur: 126000, capType: 'contrib', name: 'Vanuatu', img: 'img/vanuatu.jpg', fb: 'https://images.unsplash.com/photo-1550742137-b4d619ed1d03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$136,000', base: '$130,000', fees: '~$6,000', timeline: '30 to 90 Days', usp: 'Fastest processing globally via a fully remote process; zero income, corporate, or wealth tax. <em>Note: no longer visa-free to the EU/Schengen Area.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 1, tlMax: 3, presence: 'zero', citYears: 0, fam: 2, notes: ['No EU/Schengen visa-free access'], flags: { noSchengen: true, taxHaven: true } },
+                    { id: 'greece', entryEur: 270000, capType: 'recover', name: 'Greece', img: 'img/greece.jpg', fb: 'https://images.unsplash.com/photo-1503152394-c571994fd383?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Startup Route'], total: '~€270,000+', base: 'From €250,000*', fees: '~€20,000', timeline: '3 to 4 Months', usp: '<strong>*CRITICAL:</strong> The €250,000 threshold strictly requires a commercial to residential conversion. Standard real estate: €400,000 to €800,000 by zone. <strong>New 2026 route:</strong> €250,000 in an Elevate Greece startup (Law 5162/2024).', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 7, citPresence: 'substantial', fam: 3, notes: ['€250k entry requires commercial conversion', 'Citizenship requires genuine residence (183+ days/yr)'], flags: {} },
+                    { id: 'hungary', entryEur: 320000, capType: 'recover', name: 'Hungary', img: 'img/hungary.jpg', fb: 'https://images.unsplash.com/photo-1516738905335-af586d5ca2bb?q=80&w=800&auto=format&fit=crop', pills: ['REIF Fund', 'Public Trust'], total: '~€320,000', base: '€250,000', fees: '~€70,000', timeline: '3 to 6 Months', usp: 'Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. Direct €500k property route closed Jan 1, 2025 &mdash; only the fund (€250k) and €1M trust donation routes remain.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'zero', citYears: 8, citPresence: 'substantial', fam: 2, notes: ['No minimum stay for the permit', 'Citizenship requires ~8 yrs actual residence'], flags: {} },
+                    { id: 'portugal', entryEur: 542000, capType: 'recover', name: 'Portugal', img: 'img/portugal.jpg', fb: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop', pills: ['VC/PE Funds', 'Cultural Heritage'], total: '~€542,000', base: '€500,000', fees: '~€42,000', timeline: '~12 to 24 Months (easing)', usp: 'Requires only ~7 days per year of physical presence; pathway to EU citizenship after <strong>10 years (7 for EU/CPLP nationals)</strong> under the new nationality law.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 24, presence: 'minimal', citYears: 10, citPresence: 'minimal', fam: 2, notes: ['Citizenship after 10 yrs (7 EU/CPLP)', 'Only ~7 days/yr presence counts toward it'], flags: {} },
+                    { id: 'cyprus', entryEur: 320000, capType: 'recover', name: 'Cyprus', img: 'img/cyprus.jpg', fb: 'https://images.unsplash.com/photo-1523910375841-a1e4ba29f5f0?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Funds', 'Shares'], total: '~€320,000+', base: '€300,000', fees: '~€20,000+', timeline: '2 to 6 Months', usp: 'Residency is granted for life; features an excellent non domicile tax regime (requires proof of €50k/yr offshore income).', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 8, citPresence: 'substantial', fam: 3, notes: ['Not in the Schengen Area'], flags: { notSchengen: true, taxFriendly: true } },
+                    { id: 'malta', entryEur: 170000, capType: 'contrib', name: 'Malta', img: 'img/malta.jpg', fb: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=800&auto=format&fit=crop', pills: ['Property Purchase', 'Property Lease'], total: '~€170,000 (Sunk)', base: 'Lease from €14k/yr', fees: '~€99,000', timeline: '6 to 8 Months', usp: 'Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. <em>Note: MPRP grants permanent residence only &mdash; not a path to citizenship.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 8, presence: 'zero', citYears: null, citPresence: 'substantial', fam: 3, notes: ['Permanent residence only &mdash; no citizenship path'], flags: { prOnly: true } },
+                    { id: 'bulgaria', entryEur: 525000, capType: 'recover', name: 'Bulgaria', img: 'img/bulgaria.jpg', fb: 'https://images.unsplash.com/photo-1513069020900-a162c4db0762?q=80&w=800&auto=format&fit=crop', pills: ['AIFs / ETFs'], total: '~€525,000', base: '€512,000', fees: '~€13,000', timeline: '3 to 6 Months', usp: 'Unlike standard EU Golden Visas, Bulgaria grants absolute Permanent Residency upfront via regulated AIFs. <strong>Now full Schengen (Jan 2025) and Eurozone (Jan 2026).</strong>', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 5, citPresence: 'minimal', fam: 2, notes: ['Immediate EU PR', 'Full Schengen & Eurozone', 'Citizenship track after 5 yrs PR &mdash; no stay requirement'], flags: { euPR: true, fullSchengen: true } },
+                    { id: 'latvia', entryEur: 60000, capType: 'risk', name: 'Latvia', img: 'img/latvia.jpg', fb: 'https://images.unsplash.com/photo-1542485060-70fbf1e2dce4?q=80&w=800&auto=format&fit=crop', pills: ['Company Share'], total: '~€60,000+', base: '€50,000', fees: '~€10,000', timeline: '1 to 4 Months', usp: 'Lowest entry threshold in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the qualifying company must genuinely operate and pay &ge;€40,000/yr in tax &mdash; best suited to active business investors. €5,000 renewal fee.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 1, tlMax: 4, presence: 'minimal', citYears: 10, citPresence: 'substantial', fam: 1, notes: ['Active business required (&ge;€40k/yr tax)'], flags: { activeBiz: true } },
+                    { id: 'italy', entryEur: 275000, capType: 'mixed', name: 'Italy', img: 'img/italy.jpg', fb: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop', pills: ['Startup', 'Gov. Bonds', 'Donation'], total: '~€275,000', base: 'From €250,000', fees: '~€25,000', timeline: '3 to 4 Months', usp: 'Pre-approval (Nulla Osta) before you invest capital; no minimum stay. Four routes: €250k innovative startup (a structured qualifying investment), €500k Italian company, €2M govt bonds, or €1M philanthropic donation. PR after 5 years.', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 10, citPresence: 'substantial', fam: 2, notes: ['Nulla Osta pre-approval', 'No minimum stay for the permit', 'Citizenship requires genuine residence'], flags: {} },
+                    { id: 'bahamas', entryEur: 944000, capType: 'recover', name: 'The Bahamas', img: 'img/bahamas.jpg', fb: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Gov. Bonds'], total: '~$1,021,000', base: '$1,000,000', fees: '~$21,000', timeline: '8 to 18 Months', usp: 'Lifetime sanctuary from income & wealth taxes. Submitting a $1.5M+ property investment triggers automatic priority processing (3 to 6m).', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'zero', citYears: null, fam: 2, notes: ['$1.5M+ triggers fast-track processing'], flags: { taxHaven: true, prOnly: true } },
+                    { id: 'uruguay', entryEur: 1850000, capType: 'recover', name: 'Uruguay', img: 'img/uruguay.jpg', fb: 'https://images.unsplash.com/photo-1598284566378-005dc9b04f7a?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Innovation Fund'], total: 'Varies', base: '~$2M (Tax Res.)', fees: 'Varies', timeline: '6 to 18 Months', usp: 'Grants an unparalleled 11 year absolute tax holiday on foreign sourced income for qualifying tax residents.', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'required', citYears: 4, fam: 2, notes: ['Tax residency requires physical presence'], flags: { taxFriendly: true } },
+                    { id: 'paraguay', entryEur: 78000, capType: 'risk', name: 'Paraguay', img: 'img/paraguay.jpg', fb: 'https://images.unsplash.com/photo-1589139599187-54b67d53bb21?q=80&w=800&auto=format&fit=crop', pills: ['Business Investment'], total: '~$84,000', base: '$70,000', fees: '~$14,000', timeline: '45 to 90 Days', usp: 'Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 10% flat local). <em>Note: the $70k SUACE route requires a local company and 5 jobs. The April 2026 Investor Pass adds passive tiers (~$150k / ~$200k) with no job requirement.</em>', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 1, tlMax: 3, presence: 'minimal', citYears: 3, fam: 2, notes: ['SUACE: active business', 'Passive tiers from ~$150k'], flags: { activeBiz: true, taxFriendly: true } }
                 ];
 
                 function pfScore(p, prof) {
@@ -386,6 +425,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 var pfStep = 0;
                 var pfAnswers = { goal: null, budget: null, family: null, timeline: null, presence: null, special: [] };
+                var CAP_BADGES = {
+                    recover: { label: 'Recoverable', cls: 'bg-emerald-50 text-emerald-700 border border-emerald-200' },
+                    mixed:   { label: 'Route Dependent', cls: 'bg-[#C5A059]/10 text-[#8a6d35] border border-[#C5A059]/40' },
+                    risk:    { label: 'Business Risk', cls: 'bg-amber-50 text-amber-700 border border-amber-200' },
+                    contrib: { label: 'Non-Recoverable', cls: 'bg-gray-100 text-gray-500 border border-gray-200' }
+                };
                 var RANK_BADGES = [
                     { label: 'Primary Recommendation', cls: 'bg-gold text-white' },
                     { label: 'Strong Alternative', cls: 'bg-navy text-white' },
@@ -474,6 +519,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 '<div class="flex justify-between items-center"><span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span><span class="text-xs font-semibold text-gray-700">' + p.base + '</span></div>' +
                                 '<div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] uppercase tracking-widest text-gray-500">Est. State Fees</span><span class="text-xs font-semibold text-gray-700">' + p.fees + '</span></div>' +
                                 '<div class="flex justify-between items-center pt-1"><span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span><span class="text-xs font-bold text-navy">' + p.timeline + '</span></div>' +
+                                '<div class="flex justify-between items-center pt-1 border-t border-gray-100"><span class="text-[10px] uppercase tracking-widest text-gray-400">Capital</span><span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm ' + (CAP_BADGES[p.capType] || CAP_BADGES.mixed).cls + '">' + (CAP_BADGES[p.capType] || CAP_BADGES.mixed).label + '</span></div>' +
                             '</div>' +
                             '<div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">' +
                                 '<span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>' +
@@ -560,8 +606,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Direct Passport Acquisition</h2>
                     <p class="text-4xl serif mb-6">Citizenship by Investment (CBI)</p>
                     <p class="text-gray-500 max-w-2xl mx-auto font-light">
-                        The 2026 landscape features consolidated pricing. These structured pathways offer fast processing times and extensive visa free travel, granting irrevocable citizenship for investors and their families.
+                        The 2026 landscape features consolidated pricing. These structured pathways offer fast processing times and extensive visa free travel, granting irrevocable citizenship for investors and their families. Note that on CBI the cheapest route is usually the donation &mdash; and the donation is the one route that does not come back.
                     </p>
+                </div>
+
+                <!-- Capital Treatment Legend -->
+                <div id="capital-treatment" class="max-w-5xl mx-auto bg-white border border-gray-200 rounded-sm card-shadow p-8 md:p-10 mb-16">
+                    <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-gold mb-3">Read This First</p>
+                    <h3 class="text-2xl md:text-3xl serif text-navy font-bold mb-4">Most of this money is not a fee. It is an investment you get back.</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed mb-8 max-w-3xl">The most common misunderstanding in this industry is that the headline figure disappears. On the majority of these programs it does not &mdash; it buys you a fund unit, a title deed or a bond, and it returns to you at the end of the holding period. Every card below states exactly which part of your money comes back, which part is at risk, and which part is genuinely spent.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="border-l-2 border-emerald-500 pl-4">
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-emerald-700 mb-2">&#9679; Recoverable</h4>
+                            <p class="text-xs text-gray-500 font-light leading-relaxed">Your capital stays yours. You hold a fund unit, a bond or a title deed, and you can exit it after the minimum holding period. Market value at exit is not guaranteed.</p>
+                        </div>
+                        <div class="border-l-2 border-amber-500 pl-4">
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-amber-700 mb-2">&#9684; At Business Risk</h4>
+                            <p class="text-xs text-gray-500 font-light leading-relaxed">Deployed into an operating company or early-stage equity. Recoverable only through a sale or exit, and the business has to genuinely perform. Treat it as a real investment decision.</p>
+                        </div>
+                        <div class="border-l-2 border-gray-400 pl-4">
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-2">&#9675; Contribution</h4>
+                            <p class="text-xs text-gray-500 font-light leading-relaxed">A payment to the state or a national fund. It is not returned &mdash; it is what buys the status itself. Government, legal and due-diligence fees are never recoverable on any program.</p>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-gray-400 font-light leading-relaxed mt-8 pt-5 border-t border-gray-100"><strong class="text-gray-500">Important:</strong> Return figures on this site are indicative historical or target ranges published by program operators and market sources. They are not offers, forecasts or guarantees. Capital placed in funds, equity or property is at risk and can fall in value. Past performance is not a reliable indicator of future results. Legacy Wealth Visa is not a licensed investment adviser and does not provide investment, tax or legal advice; suitability is confirmed with the licensed operator in each jurisdiction.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -595,6 +663,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
                                     <span class="text-xs font-bold text-navy">4 to 6 Months</span>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-[#C5A059]/10 text-[#8a6d35] border border-[#C5A059]/40">Route Dependent</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">SISC donation $250,000</strong> &mdash; contribution to the state. Not returned.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $325,000</strong> &mdash; you hold the title deed; resaleable after 7 years.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return on the real-estate route: <strong class="text-navy">2&ndash;5% p.a.</strong> rental yield on approved developments, plus any resale gain. Not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
@@ -634,6 +713,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
                                     <span class="text-xs font-bold text-navy">7 to 8 Months</span>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-[#C5A059]/10 text-[#8a6d35] border border-[#C5A059]/40">Route Dependent</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">NTF donation $235,000</strong> &mdash; contribution to the national fund. Not returned.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $270,000</strong> &mdash; title in an approved development; resaleable after 5 years.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return on the real-estate route: <strong class="text-navy">2&ndash;5% p.a.</strong> rental yield from branded resort shares. Not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
@@ -676,6 +766,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-xs font-bold text-navy">6 to 10 Months</span>
                                 </div>
                             </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable Route</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Donation $240,000</strong> &mdash; contribution to the national fund. Not returned.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Government bond $300,000</strong> &mdash; <strong class="text-navy">100% of principal returned after 5 years.</strong> The strongest capital-preservation route in the Caribbean.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $300,000</strong> &mdash; title held; resaleable after 5 years.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">The bond pays <strong class="text-navy">0% interest</strong> &mdash; but returns the entire $300,000. On that route your true cost is the fees, not the capital.</p>
+                                </div>
+                            </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                 <p class="text-[11px] text-navy font-medium leading-relaxed">The $300k government bond guarantees full principal return after 5 yrs; 90 day grace period to invest post approval.</p>
@@ -714,6 +816,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
                                     <span class="text-xs font-bold text-navy">3 to 6 Months</span>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-[#C5A059]/10 text-[#8a6d35] border border-[#C5A059]/40">Route Dependent</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">NDF donation $230,000</strong> &mdash; not returned.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">UWI fund $260,000</strong> &mdash; not returned; includes one year of university tuition for a family member.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $300,000</strong> &mdash; title held; resaleable after 5 years.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return on the real-estate route: <strong class="text-navy">2&ndash;5% p.a.</strong> rental yield. Not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
@@ -755,6 +869,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-xs font-bold text-navy">6+ Months</span>
                                 </div>
                             </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-[#C5A059]/10 text-[#8a6d35] border border-[#C5A059]/40">Route Dependent</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">EDF donation $200,000</strong> &mdash; not returned.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $200,000</strong> &mdash; title held; resaleable after 3 years (5 if sold to another CBI applicant).</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return on the real-estate route: <strong class="text-navy">2&ndash;4% p.a.</strong> from eco-resort rental pools. Not guaranteed.</p>
+                                </div>
+                            </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                 <p class="text-[11px] text-navy font-medium leading-relaxed">Deep eco-development integration; flexible inclusion (unmarried daughters under 25, students to 30). New biometric e-passports and mandatory virtual interviews for applicants 16+. <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants (existing US visas honoured).</em></p>
@@ -794,6 +919,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-xs font-bold text-navy">30 to 90 Days</span>
                                 </div>
                             </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-gray-100 text-gray-500 border border-gray-200">Non-Recoverable</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Donation $130,000</strong> &mdash; contribution to the state. Not returned. There is no recoverable route on this program.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">You are buying speed, not an asset. If capital recovery matters more than turnaround time, look at Saint Lucia&rsquo;s bond route instead.</p>
+                                </div>
+                            </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                 <p class="text-[11px] text-navy font-medium leading-relaxed">Fastest processing globally via a fully remote process; zero income, corporate, or wealth tax. <em>Note: no longer visa-free to the EU/Schengen Area &mdash; visa-free access remains to ~90+ countries across Asia & Oceania (incl. Hong Kong, Singapore).</em></p>
@@ -811,7 +946,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">The European & Global Base</h2>
                     <p class="text-4xl serif mb-6">Residence by Investment (RBI)</p>
                     <p class="text-gray-500 max-w-2xl mx-auto font-light">
-                        Secure a safe haven, exceptional corporate tax regimes, and high living standards. These fast track residency programs allow investors to establish a strategic base, with many leading to citizenship without physical disruption.
+                        Secure a safe haven, exceptional corporate tax regimes, and high living standards. These fast track residency programs allow investors to establish a strategic base, with many leading to citizenship without physical disruption. Unlike CBI, almost every route here is a genuine investment &mdash; the capital comes back to you.
                     </p>
                 </div>
                 
@@ -845,6 +980,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
                                     <span class="text-xs font-bold text-navy">3 to 4 Months</span>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate €250,000</strong> &mdash; you own the property outright and hold the title. Sellable at any time; the residence permit lapses unless the investment is replaced.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Elevate Greece startup €250,000</strong> &mdash; early-stage equity; genuine capital risk.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return: <strong class="text-navy">4&ndash;5% p.a.</strong> gross residential rental yield in Athens, higher on short-let. Not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
@@ -886,6 +1032,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-xs font-bold text-navy">3 to 6 Months</span>
                                 </div>
                             </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">REIF fund units €250,000</strong> &mdash; redeemable units in a regulated real-estate fund. Minimum 5-year hold to maintain the permit, then redeemable.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Public trust donation €1,000,000</strong> &mdash; not returned.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return: set per fund and confirmed in your briefing. Fund NAV can fall as well as rise.</p>
+                                </div>
+                            </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                 <p class="text-[11px] text-navy font-medium leading-relaxed">Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. Direct €500k property route closed Jan 1, 2025 &mdash; only the fund (€250k) and €1M trust donation routes remain.</p>
@@ -923,6 +1080,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
                                     <span class="text-xs font-bold text-navy">~12 to 24 Months (easing)</span>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Regulated fund units €500,000</strong> &mdash; CMVM-supervised VC/PE funds. Capital returns at fund maturity, typically 6 to 10 years, at the value it has then reached.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Cultural heritage €250,000</strong> &mdash; a donation; not returned.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Fund managers typically target <strong class="text-navy">4&ndash;10% p.a.</strong>; individual funds have reported materially more in strong years. Capital at risk; not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
@@ -965,6 +1133,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-xs font-bold text-navy">2 to 6 Months</span>
                                 </div>
                             </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">New-build property €300,000 (+VAT)</strong> &mdash; title in your name; must be retained to keep permanent residency.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Fund units or company shares €300,000</strong> &mdash; redeemable or sellable, subject to holding the status.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return: <strong class="text-navy">4&ndash;5% p.a.</strong> gross rental yield. The real financial case here is the non-dom tax regime, not the yield.</p>
+                                </div>
+                            </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                 <p class="text-[11px] text-navy font-medium leading-relaxed">Residency is granted for life; features an excellent non domicile tax regime (requires proof of €50k/yr offshore income).</p>
@@ -1002,6 +1181,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
                                     <span class="text-xs font-bold text-navy">8 to 18 Months</span>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $1,000,000</strong> &mdash; freehold title, fully sellable; must be retained while permanent residency is held.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Government bonds</strong> &mdash; principal returned at maturity.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return: <strong class="text-navy">3&ndash;6% p.a.</strong> rental in prime Nassau and Exuma markets, in USD-pegged currency. Not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
@@ -1043,6 +1233,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-xs font-bold text-navy">6 to 18 Months</span>
                                 </div>
                             </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate</strong> &mdash; freehold title; foreigners hold the same ownership rights as citizens. Fully sellable.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Innovation fund</strong> &mdash; capital at market risk; exit on fund terms.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">The return here is fiscal, not rental: the <strong class="text-navy">11-year tax holiday</strong> on foreign-sourced income is usually worth more than any yield on the asset itself.</p>
+                                </div>
+                            </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                 <p class="text-[11px] text-navy font-medium leading-relaxed">Grants an unparalleled 11 year absolute tax holiday on foreign sourced income for qualifying tax residents.</p>
@@ -1079,6 +1280,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
                                     <span class="text-xs font-bold text-navy">45 to 90 Days</span>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-amber-50 text-amber-700 border border-amber-200">At Business Risk</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">SUACE business $70,000</strong> &mdash; working capital in your own Paraguayan company. Recoverable only through the business itself, not through a redemption.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Investor Pass real estate ~$200,000</strong> (Res. 0283/2026) &mdash; title held; sellable.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Return is entirely dependent on the operating business. Treat the $70,000 route as founding a company, not as buying a product.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
@@ -1119,6 +1331,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-xs font-bold text-navy">1 to 4 Months</span>
                                 </div>
                             </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-amber-50 text-amber-700 border border-amber-200">At Business Risk</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Company equity €50,000</strong> &mdash; equity in a genuinely trading Latvian company. Not a redeemable instrument; you recover it only by selling the business or drawing profit from it.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Return is business-dependent. This is the one EU route where &ldquo;investment&rdquo; means running an actual company &mdash; choose it for that reason, not for the low headline number.</p>
+                                </div>
+                            </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                 <p class="text-[11px] text-navy font-medium leading-relaxed">Lowest entry threshold in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the qualifying company must genuinely operate and pay &ge;€40,000/yr in tax &mdash; best suited to active business investors. €5,000 renewal fee.</em></p>
@@ -1157,6 +1379,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
                                     <span class="text-xs font-bold text-navy">3 to 4 Months</span>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                    <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-[#C5A059]/10 text-[#8a6d35] border border-[#C5A059]/40">Route Dependent</span>
+                                </div>
+                                <div class="px-4 py-3 space-y-2">
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Innovative startup €250,000</strong> &mdash; early-stage equity. Highest risk, highest potential upside; recoverable only on exit.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Italian company €500,000</strong> &mdash; equity in an established company.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Government bonds €2,000,000</strong> &mdash; <strong class="text-navy">principal returned at maturity, plus coupon.</strong> The lowest-risk route on this site.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Philanthropic donation €1,000,000</strong> &mdash; not returned.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Bond route: Italian BTP yields have recently run around <strong class="text-navy">3&ndash;4% p.a.</strong>, paid as coupon, with principal repaid at maturity. Yields move with the market.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
@@ -1207,6 +1442,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <span class="text-xs font-bold text-navy">6 to 8 Months</span>
                                     </div>
                                 </div>
+                                <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                    <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                        <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                        <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-gray-100 text-gray-500 border border-gray-200">Mostly Non-Recoverable</span>
+                                    </div>
+                                    <div class="px-4 py-3 space-y-2">
+                                        <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Government contribution €37,000 + admin fee €60,000</strong> &mdash; not returned.</p>
+                                        <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Property lease from €14,000/yr</strong> &mdash; rent; recurs annually, not returned.</p>
+                                        <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Property purchase €375,000</strong> &mdash; the alternative to leasing. Title held, resaleable after 5 years &mdash; converts most of the cost into a recoverable asset.</p>
+                                        <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">We say this plainly: Malta is the one program here where a large share of the money genuinely disappears. If capital recovery matters, <strong class="text-navy">buy rather than lease</strong> &mdash; or consider Portugal or Bulgaria instead.</p>
+                                    </div>
+                                </div>
                                 <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                     <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                     <p class="text-[11px] text-navy font-medium leading-relaxed">Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. Immediate 1 year temp residence on application. <em>Note: MPRP grants permanent residence only &mdash; not a path to citizenship.</em></p>
@@ -1250,6 +1497,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <span class="text-xs font-bold text-navy">3 to 6 Months</span>
                                     </div>
                                 </div>
+                                <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
+                                    <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                                        <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
+                                        <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">&asymp;98% Recoverable</span>
+                                    </div>
+                                    <div class="px-4 py-3 space-y-2">
+                                        <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Regulated AIF / ETF units €512,000</strong> &mdash; marketable fund units, redeemable after the 5-year holding period at their value at that time.</p>
+                                        <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">State and legal fees ~€13,000</strong> &mdash; not returned.</p>
+                                        <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Of the ~€525,000 total, roughly <strong class="text-navy">€512,000 remains your asset</strong> and only ~€13,000 is genuinely spent. Indicative return is fund-dependent and confirmed at briefing; unit values can fall.</p>
+                                    </div>
+                                </div>
                                 <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                     <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">Strategic USP</span>
                                     <p class="text-[11px] text-navy font-medium leading-relaxed">Unlike standard EU Golden Visas, Bulgaria grants absolute Permanent Residency upfront via regulated AIFs. <strong>Now full Schengen (Jan 2025) and Eurozone (Jan 2026).</strong></p>
@@ -1262,6 +1520,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
+
+        <section id="how-we-are-paid" class="py-24 bg-gray-50 border-t border-gray-100 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Our Revenue Model</h2>
+                    <p class="text-4xl serif mb-6">You Pay Us Nothing.</p>
+                    <p class="text-gray-500 max-w-2xl mx-auto font-light">
+                        No advisory fee, no retainer, no success fee, no percentage of your investment. Most firms in this industry charge the client for the advice and then take a commission from the provider as well. We only do the second one &mdash; and we would rather tell you that ourselves than have you wonder about it.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
+                        <p class="text-2xl serif text-gold mb-4">i.</p>
+                        <h3 class="text-xl serif text-navy font-bold mb-3">Who Pays Us</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed">When a file closes, the fund manager, developer or licensed law firm on the other side pays us a commission out of their own margin. That is our entire income. It is a standard, disclosed intermediary arrangement &mdash; the same way nearly all regulated distribution works.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
+                        <p class="text-2xl serif text-gold mb-4">ii.</p>
+                        <h3 class="text-xl serif text-navy font-bold mb-3">What It Costs You</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed">Nothing extra. Your investment amount and your government fees are exactly the same figures you would pay walking into that fund or law firm on your own. Our commission is not added on top of your price &mdash; it comes out of theirs.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
+                        <p class="text-2xl serif text-gold mb-4">iii.</p>
+                        <h3 class="text-xl serif text-navy font-bold mb-3">Why We Can Still Be Neutral</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed">We hold no exclusivity with any program, fund or developer, so no single outcome is worth more to us than getting the fit right. And if you want to know what we earn on the route we recommend &mdash; ask us, and we will tell you.</p>
+                    </div>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-white border border-gray-200 rounded-sm card-shadow overflow-hidden">
+                    <div class="px-8 py-4 bg-navy">
+                        <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold">Where Every Euro Actually Goes</p>
+                    </div>
+                    <div class="divide-y divide-gray-100">
+                        <div class="px-8 py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+                            <div class="max-w-xl">
+                                <p class="text-sm font-semibold text-navy">The investment or contribution</p>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Paid directly to the regulated fund, the developer or the state &mdash; never to us, and never through us. On most programs this is the recoverable part.</p>
+                            </div>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gray-400 whitespace-nowrap">To the fund / state</p>
+                        </div>
+                        <div class="px-8 py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+                            <div class="max-w-xl">
+                                <p class="text-sm font-semibold text-navy">Government &amp; processing fees</p>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Application, due diligence, biometrics, permit issuance. Set by the government, non-negotiable, and non-recoverable on every program.</p>
+                            </div>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gray-400 whitespace-nowrap">To the government</p>
+                        </div>
+                        <div class="px-8 py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+                            <div class="max-w-xl">
+                                <p class="text-sm font-semibold text-navy">Local legal &amp; due-diligence fees</p>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Charged by the licensed firm that files your case in that jurisdiction. Quoted to you in writing before you commit to anything.</p>
+                            </div>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gray-400 whitespace-nowrap">To the local firm</p>
+                        </div>
+                        <div class="px-8 py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 bg-gold/10 border-l-4 border-gold">
+                            <div class="max-w-xl">
+                                <p class="text-sm font-bold text-navy">Legacy Wealth &amp; Visa advisory fee</p>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Program selection, structuring, partner management and running your file from first call to passport or permit in hand.</p>
+                            </div>
+                            <p class="text-lg serif font-bold text-navy whitespace-nowrap">&euro;0</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-[10px] text-gray-400 font-light leading-relaxed text-center max-w-2xl mx-auto mt-8">Fee structures are confirmed in writing before engagement. Legacy Wealth Visa is an independent consultancy, not a government agency or a licensed investment adviser, and does not provide investment, tax or legal advice.</p>
+            </div>
+        </section>
 
         <section id="why-plan-b" class="py-24 bg-white border-b border-gray-100 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
@@ -1448,6 +1773,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="space-y-4">
                     <details class="group bg-white border border-gray-200 rounded-sm">
                         <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
+                            Do I actually get my investment back?
+                            <span class="text-gold group-open:rotate-180 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
+                            <p class="mb-4">On most programs, yes &mdash; and this is the single most misunderstood point in the industry.</p>
+                            <ul class="list-disc ml-5 mb-4 space-y-2">
+                                <li><strong>Recoverable routes.</strong> Fund units (Portugal, Hungary, Bulgaria), property (Greece, Cyprus, the Bahamas, Uruguay) and government bonds (Saint Lucia, Italy) all leave you holding a real asset. After the minimum holding period you can redeem or sell it. Saint Lucia&rsquo;s $300,000 bond returns 100% of your principal after five years.</li>
+                                <li><strong>At-risk routes.</strong> Company equity (Latvia, Paraguay&rsquo;s SUACE route, Italy&rsquo;s startup route) is recoverable only if the business performs and you find a buyer.</li>
+                                <li><strong>Contributions.</strong> Caribbean donations, Malta&rsquo;s government contribution and Portugal&rsquo;s cultural-heritage route are payments, not investments. They are not returned.</li>
+                            </ul>
+                            <p class="bg-gray-50 p-4 border-l-2 border-gold font-medium">Government, legal and due-diligence fees are never recoverable on any program, and market value at exit is never guaranteed on any investment route. Each program card above states its own position explicitly.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-sm">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
+                            How does Legacy make money if I pay you nothing?
+                            <span class="text-gold group-open:rotate-180 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
+                            <p class="mb-4">We are paid a commission by the fund, developer or licensed law firm when a file closes &mdash; out of their margin, not added to your price. You pay no advisory fee, no retainer and no success fee to us.</p>
+                            <p>The obvious follow-up question is whether that biases our advice. Two answers. First, we hold no exclusivity with any program or provider, so no single outcome is structurally worth more to us than getting the fit right and earning the referral. Second, if you want to know what we earn on the route we recommend, ask and we will tell you. Very few firms in this sector will say that in writing.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-sm">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
                             What is the difference between CBI and RBI?
                             <span class="text-gold group-open:rotate-180 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1459,13 +1815,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <ul class="list-disc ml-5 mb-4 space-y-2">
                                 <li><strong>What it is:</strong> CBI is a streamlined process that grants you full nationality and a second passport directly in exchange for a qualifying economic contribution to a host country. Common investment routes include nonrefundable state contributions, real estate purchases, or national development fund investments.</li>
                                 <li><strong>The Benefits:</strong> You receive the exact same rights as any other citizen of that nation. This includes the right to live and work indefinitely, vote in national elections (in certain jurisdictions), hold public office, and seamlessly pass your citizenship down to future generations.</li>
-                                <li><strong>Timeline and Cost:</strong> CBI programs are designed for speed and efficiency, entirely bypassing traditional naturalization requirements. Citizenship is often granted within 3 to 18 months, with minimum investments typically starting from USD 100,000.</li>
+                                <li><strong>Timeline and Cost:</strong> CBI programs are designed for speed and efficiency, entirely bypassing traditional naturalization requirements. Citizenship is often granted within 3 to 18 months, with minimum investments typically starting from USD 130,000 all-in. Note that the cheapest CBI route is almost always the donation &mdash; the one route that is not returned.</li>
                             </ul>
                             <h4 class="font-bold text-navy mb-2">Residency by Investment (RBI): The "Golden Visa" Lifestyle Pathway</h4>
                             <ul class="list-disc ml-5 mb-4 space-y-2">
                                 <li><strong>What it is:</strong> Often referred to as a "Golden Visa," RBI provides a residence permit that grants you and your family the legal right to live, work, and study in the host country.</li>
                                 <li><strong>The Benefits:</strong> RBI is ideal for individuals seeking a physical lifestyle change, enhanced structural tax efficiency through relocation, or strategic access to regional markets (such as the European Union's Schengen Area). While it provides an immediate safe haven and access to premium healthcare and education, it does not immediately confer full citizenship rights, such as holding a passport or voting.</li>
-                                <li><strong>Timeline and Cost:</strong> RBI programs generally offer lower initial investment thresholds, with some starting from USD 25,000. While you do not receive a passport immediately, most RBI programs offer a clear pathway to naturalized citizenship. This usually requires holding the legal residency for 8 to 10+ years and meeting specific physical presence or language criteria. Note that certain programs, such as the Malta MPRP, grant permanent residence only and do not constitute a pathway to citizenship.</li>
+                                <li><strong>Timeline and Cost:</strong> RBI programs generally offer lower initial investment thresholds, starting from approximately &euro;60,000 all-in &mdash; and, importantly, RBI capital is far more often recoverable, because it sits in property or regulated funds rather than in a state donation. While you do not receive a passport immediately, most RBI programs offer a clear pathway to naturalized citizenship. This usually requires holding the legal residency for 8 to 10+ years and meeting specific physical presence or language criteria. Note that certain programs, such as the Malta MPRP, grant permanent residence only and do not constitute a pathway to citizenship.</li>
                             </ul>
                             <p class="bg-gray-50 p-4 border-l-2 border-gold font-medium"><strong>Summary:</strong> If your priority is immediate, unrestricted global mobility and securing a permanent generational legacy without the need to relocate, CBI is the definitive choice. However, if your goal is to physically relocate your family, establish tax residency in a favorable jurisdiction, or build a gradual pathway to citizenship over several years, an RBI program provides the perfect foundation.</p>
                         </div>
@@ -1558,7 +1914,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <button id="gate-invest" type="button" class="border-2 border-navy text-navy px-5 py-4 text-left rounded-sm hover:bg-navy hover:text-white transition-colors group">
                                     <span class="block text-[11px] font-bold uppercase tracking-widest mb-1">Investment Migration</span>
-                                    <span class="block text-[10px] text-gray-500 group-hover:text-gray-200 transition-colors">I hold $100,000+ in liquid capital for a residency or citizenship investment</span>
+                                    <span class="block text-[10px] text-gray-500 group-hover:text-gray-200 transition-colors">I am looking to place capital into a residency or citizenship program</span>
                                 </button>
                                 <button id="gate-work" type="button" class="border border-gray-300 text-gray-500 px-5 py-4 text-left rounded-sm hover:border-red-600 hover:text-red-700 transition-colors">
                                     <span class="block text-[11px] font-bold uppercase tracking-widest mb-1">Work / Study / Job Seeking</span>
@@ -1568,7 +1924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div id="gate-rejection" class="hidden my-8 border-2 border-red-600 p-6 bg-red-50">
                             <h4 class="text-red-700 font-bold uppercase tracking-widest text-[11px] mb-2">We Are Unable to Assist You</h4>
-                            <p class="text-[11px] text-red-800 leading-relaxed">Legacy Wealth Visa exclusively structures capital investment migration, with programs starting at $84,000 USD. We do not process work permits, job sponsorships, or study visas &mdash; such inquiries are not reviewed or answered. Kindly direct employment and study matters to the relevant embassy or a licensed immigration agency.</p>
+                            <p class="text-[11px] text-red-800 leading-relaxed">Legacy Wealth Visa exclusively structures capital investment migration, with programs starting at approximately &euro;60,000 all-in. We do not process work permits, job sponsorships, or study visas &mdash; such inquiries are not reviewed or answered. Kindly direct employment and study matters to the relevant embassy or a licensed immigration agency.</p>
                         </div>
                         <div id="form-body" class="hidden">
                         <!-- Strict Prescreening Warning -->
@@ -1578,7 +1934,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 Eligibility Restriction
                             </h4>
                             <p class="text-[11px] text-red-800 leading-relaxed font-bold italic">
-                                This form is for CAPITAL INVESTMENT MIGRATION only (Minimum starting at $84,000 USD). We do NOT process work permits, job sponsorships, or study visas. Inquiries of this nature will be automatically discarded.
+                                This form is for CAPITAL INVESTMENT MIGRATION only (programs starting at approximately &euro;60,000 all-in). We do NOT process work permits, job sponsorships, or study visas. Inquiries of this nature will be automatically discarded.
                             </p>
                         </div>
 
@@ -1630,18 +1986,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                             </div>
 
+                            <!-- Capital Band Slider -->
+                            <div class="border border-gold/40 bg-gold/5 rounded-sm p-5">
+                                <label for="capSlider" class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">How Much Capital Are You Looking to Invest?</label>
+                                <p class="text-[10px] text-gray-500 font-light leading-relaxed mb-4">This is the investment itself &mdash; on most programs it remains your asset and comes back to you. Government and legal fees come on top.</p>
+                                <div class="flex flex-wrap justify-between items-end gap-2 mb-1">
+                                    <output id="capOut" for="capSlider" class="serif text-2xl font-bold text-navy leading-none">&euro;250,000 &ndash; &euro;300,000</output>
+                                    <span id="capCount" class="text-[9px] uppercase tracking-widest font-bold text-gray-400"><strong class="text-navy">11</strong> programs in range</span>
+                                </div>
+                                <input type="range" id="capSlider" class="lwv-range" min="0" max="12" step="1" value="7" aria-describedby="capMatch">
+                                <div class="flex justify-between text-[8px] uppercase tracking-widest text-gray-400 -mt-1">
+                                    <span>Under &euro;25k</span><span>&euro;250k</span><span>&euro;1M+</span>
+                                </div>
+                                <input type="hidden" name="investment_band" id="capBandValue" value="&euro;250,000 &ndash; &euro;300,000">
+                                <p id="capMatch" class="text-[10px] text-gray-500 font-light leading-relaxed mt-3 pt-3 border-t border-dashed border-gray-200 min-h-[30px]"></p>
+                            </div>
+
+                            <div>
+                                <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">When Is This Capital Available?</label>
+                                <select name="capital_liquidity" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm bg-transparent transition-colors" required>
+                                    <option value="" disabled selected>Select availability</option>
+                                    <option value="Liquid now">Liquid and available now</option>
+                                    <option value="Within 3-6 months">Available within 3&ndash;6 months</option>
+                                    <option value="After asset/business sale">After an asset or business sale</option>
+                                    <option value="Requires financing">Requires financing or partial funding</option>
+                                    <option value="Not yet determined">Not yet determined</option>
+                                </select>
+                            </div>
+
                             <div>
                                 <label class="block text-[#0A1128] text-[10px] uppercase font-bold tracking-widest mb-1">Target Program / Country</label>
                                 <input type="text" name="target_program" placeholder="e.g. Hungary, Saint Kitts, Greece, or Undecided" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold text-sm transition-colors">
                             </div>
 
                             <div class="space-y-4 py-4 border-y border-gray-100">
-                                <label class="flex items-start space-x-3 cursor-pointer group">
-                                    <input type="checkbox" name="confirm_funds" class="mt-1 h-4 w-4 rounded border-gray-300 text-navy focus:ring-navy" required>
-                                    <span class="text-[11px] text-gray-600 group-hover:text-navy transition-colors font-medium">
-                                        I confirm I possess the minimum <strong>$100,000 USD</strong> in liquid capital required to initiate an investment program.
-                                    </span>
-                                </label>
                                 <label class="flex items-start space-x-3 cursor-pointer group">
                                     <input type="checkbox" name="not_seeking_job" class="mt-1 h-4 w-4 rounded border-gray-300 text-navy focus:ring-navy" required>
                                     <span class="text-[11px] text-gray-600 group-hover:text-navy transition-colors font-medium">
@@ -1664,7 +2042,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <!-- Transparency Disclaimer -->
                             <div class="bg-gray-50 border-l-2 border-gold p-4 mb-2">
                                 <p class="text-[10px] leading-relaxed text-gray-600">
-                                    <span class="font-bold text-navy uppercase tracking-wider">Transparency Commitment:</span> No hidden success fees. All advisory costs are outlined formally before engagement.
+                                    <span class="font-bold text-navy uppercase tracking-wider">Transparency Commitment:</span> You pay Legacy no advisory fee &mdash; we are compensated by the program partner, out of their margin. Government, legal and due-diligence costs are set by the program and shown to you in writing before you commit. No hidden success fees.
                                 </p>
                             </div>
 
@@ -1716,17 +2094,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <h3 style="color: #fff; font-size: 15px; margin-top: 20px; font-family: 'Playfair Display', serif;">7. Disclosures</h3>
                 <p><strong>Physical Business Location:</strong> The primary physical address of <strong>Keystone Dynamics Kft.</strong> (Registration Number: 01-09-355601) is located at: 1136 Budapest, Pannónia utca 19. 1. emelet 4., Hungary.</p>
+                <p><strong>Remuneration:</strong> The Firm charges the client no advisory fee. The Firm is remunerated by program partners &mdash; funds, developers and licensed law firms &mdash; from their own margin, on completion of a file; this does not increase the amount payable by the client. Government fees and third-party legal and due-diligence costs are set by the relevant program or authority, are payable by the client directly to those parties, and are disclosed in writing prior to engagement. The Firm holds no exclusivity arrangement with any program or provider, and will disclose the commission applicable to a recommended route on client request.</p>
               </div>
             </details>
 
             <!-- Google Ads Disclosures -->
             <div style="text-align: left; margin-bottom: 30px; padding: 20px; background-color: rgba(255,255,255,0.02); border-radius: 4px; font-size: 11px; line-height: 1.6;">
-                <p style="margin-bottom: 10px;"><strong>Financial Services & Advertising Disclosure:</strong> All professional advisory fees, government contribution minimums, and due diligence costs are disclosed transparently and upfront prior to engagement. There are no hidden success fees.</p>
+                <p style="margin-bottom: 10px;"><strong>Financial Services & Advertising Disclosure:</strong> Legacy Wealth Visa charges the client no advisory fee; the firm is remunerated by program partners (funds, developers and licensed law firms) from their own margin, which does not increase the amount payable by the client. Government contribution minimums and third-party legal and due-diligence costs are set by the relevant program or authority, are payable by the client directly to those parties, and are disclosed transparently and in writing prior to engagement. There are no hidden success fees. The firm holds no exclusivity arrangement with any program or provider and will disclose the commission applicable to a recommended route on client request.</p>
                 <p><strong>Accreditations:</strong> Legacy Wealth Visa acts as an authorized consultant. Official government accreditations for relevant Citizenship by Investment Units (CIUs) and authorized processing partners are available upon request.</p>
             </div>
 
             <p style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; font-size: 11px; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
-              Legacy Wealth Visa is a private consulting firm and is not a government agency, embassy, or official visa-issuing body. We provide independent strategic advisory and documentation assistance for a fee. Final decisions on residency and visas are at the sole discretion of the respective governments.
+              Legacy Wealth Visa is a private consulting firm and is not a government agency, embassy, or official visa-issuing body. We provide independent strategic advisory and documentation assistance at no cost to the client; we are remunerated by the program partners. Final decisions on residency and visas are at the sole discretion of the respective governments. Investment thresholds, holding periods and return figures shown on this site are indicative and subject to change; capital placed in funds, equity or property is at risk and may fall in value, and past performance is not a reliable indicator of future results.
             </p>
             <p style="margin-top: 15px; font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.1em;">
               © 2026 Keystone Dynamics Kft. (operating as Legacy Wealth Visa). All rights reserved.
@@ -1819,6 +2198,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.getElementById('gate-rejection').classList.remove('hidden');
         });
 
+        // Capital Band Slider (13 bands, live program matching from window.__pfPrograms)
+        (function () {
+            var slider = document.getElementById('capSlider');
+            if (!slider) { return; }
+            var out = document.getElementById('capOut');
+            var hidden = document.getElementById('capBandValue');
+            var match = document.getElementById('capMatch');
+            var count = document.getElementById('capCount');
+            var BANDS = [
+                { label: 'Under \u20AC25,000', max: 25000 },
+                { label: '\u20AC25,000 \u2013 \u20AC50,000', max: 50000 },
+                { label: '\u20AC50,000 \u2013 \u20AC75,000', max: 75000 },
+                { label: '\u20AC75,000 \u2013 \u20AC100,000', max: 100000 },
+                { label: '\u20AC100,000 \u2013 \u20AC150,000', max: 150000 },
+                { label: '\u20AC150,000 \u2013 \u20AC200,000', max: 200000 },
+                { label: '\u20AC200,000 \u2013 \u20AC250,000', max: 250000 },
+                { label: '\u20AC250,000 \u2013 \u20AC300,000', max: 300000 },
+                { label: '\u20AC300,000 \u2013 \u20AC400,000', max: 400000 },
+                { label: '\u20AC400,000 \u2013 \u20AC500,000', max: 500000 },
+                { label: '\u20AC500,000 \u2013 \u20AC700,000', max: 700000 },
+                { label: '\u20AC700,000 \u2013 \u20AC1,000,000', max: 1000000 },
+                { label: '\u20AC1,000,000 and above', max: Infinity }
+            ];
+            function programs() {
+                var list = (typeof window !== 'undefined' && window.__pfPrograms) ? window.__pfPrograms : [];
+                return list.filter(function (p) { return typeof p.entryEur === 'number'; });
+            }
+            function render() {
+                var i = parseInt(slider.value, 10);
+                var band = BANDS[i];
+                slider.style.setProperty('--fill', ((i / (BANDS.length - 1)) * 100) + '%');
+                out.textContent = band.label;
+                hidden.value = band.label;
+                var hits = programs().filter(function (p) { return p.entryEur <= band.max; })
+                                     .sort(function (a, b) { return b.entryEur - a.entryEur; });
+                count.innerHTML = '<strong class="text-navy">' + hits.length + '</strong> program' + (hits.length === 1 ? '' : 's') + ' in range';
+                if (!hits.length) {
+                    match.className = 'text-[10px] text-red-700 font-medium leading-relaxed mt-3 pt-3 border-t border-dashed border-gray-200 min-h-[30px]';
+                    match.textContent = 'Below our entry point. The lowest program we work with \u2014 Latvia \u2014 starts at roughly \u20AC60,000 all-in.';
+                    return;
+                }
+                match.className = 'text-[10px] text-gray-500 font-light leading-relaxed mt-3 pt-3 border-t border-dashed border-gray-200 min-h-[30px]';
+                var names = hits.slice(0, 5).map(function (p) { return p.name; });
+                var extra = hits.length - names.length;
+                match.innerHTML = 'In range at this level: <strong class="text-navy">' + names.join(', ') + '</strong>' + (extra > 0 ? ' and <strong class="text-navy">' + extra + ' more</strong>' : '') + '. Government and legal fees come on top of the investment itself.';
+            }
+            slider.addEventListener('input', render);
+            render();
+        })();
+
         // Form Logic
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Stop immediate navigation
@@ -1836,6 +2265,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 submitBtn.innerText = "INELIGIBLE — NOT SUBMITTED";
                 setTimeout(() => { submitBtn.innerText = originalText; }, 4000);
                 return;
+            }
+
+            // Investment band into the email subject (instant inbox triage)
+            var subjInput = form.querySelector('input[name="_subject"]');
+            var bandInput = document.getElementById('capBandValue');
+            if (subjInput && bandInput && bandInput.value) {
+                subjInput.value = 'CBI/RBI Inquiry \u2014 ' + bandInput.value.replace(/\u20AC/g, 'EUR ');
             }
 
             submitBtn.innerText = "SENDING...";
