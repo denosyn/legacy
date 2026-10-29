@@ -145,6 +145,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: 0 0 0 1px var(--gold), 0 2px 6px rgba(0,0,0,0.15);
         }
         .lwv-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px rgba(197,160,89,0.45); }
+        .my-tab { cursor: pointer; }
+        .my-tab-on { border-color: var(--gold) !important; box-shadow: 0 0 0 1px var(--gold), 0 10px 30px rgba(0,0,0,0.08); }
+        .my-tab-on .my-tab-foot { background-color: var(--gold); color: #fff; }
+        #my-panel { scroll-margin-top: 96px; }
     </style>
     
     <!-- Event snippet for Submit lead form NEW conversion page -->
@@ -323,10 +327,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     { id: 'bahamas', entryEur: 944000, capType: 'recover', name: 'The Bahamas', img: 'img/bahamas.jpg', fb: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Gov. Bonds'], total: '~$1,021,000', base: '$1,000,000', fees: '~$21,000', timeline: '8 to 18 Months', usp: 'No income, capital gains or inheritance tax, for life. A $1.5M+ property investment triggers priority processing (3 to 6 months).', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'zero', citYears: null, fam: 2, notes: ['$1.5M+ triggers fast-track processing'], flags: { taxHaven: true, prOnly: true } },
                     { id: 'uruguay', entryEur: 1850000, capType: 'recover', name: 'Uruguay', img: 'img/uruguay.jpg', fb: 'https://images.unsplash.com/photo-1598284566378-005dc9b04f7a?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Innovation Fund'], total: 'Varies', base: '~$2M (Tax Res.)', fees: 'Varies', timeline: '6 to 18 Months', usp: 'An 11 year tax holiday on foreign sourced income for qualifying tax residents.', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'required', citYears: 4, fam: 2, notes: ['Tax residency requires physical presence'], flags: { taxFriendly: true } },
                     { id: 'paraguay', entryEur: 78000, capType: 'risk', name: 'Paraguay', img: 'img/paraguay.jpg', fb: 'https://images.unsplash.com/photo-1589139599187-54b67d53bb21?q=80&w=800&auto=format&fit=crop', pills: ['Business Investment'], total: '~$84,000', base: '$70,000', fees: '~$14,000', timeline: '45 to 90 Days', usp: 'Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 10% flat local). <em>Note: the $70k SUACE route requires a local company and 5 jobs. The April 2026 Investor Pass adds passive tiers (~$150k / ~$200k) with no job requirement.</em>', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 1, tlMax: 3, presence: 'minimal', citYears: 3, fam: 2, notes: ['SUACE: active business', 'Passive tiers from ~$150k'], flags: { activeBiz: true, taxFriendly: true } },
-                    { id: 'my_silver', group: 'Malaysia', entryEur: 160000, capType: 'recover', name: 'Malaysia: MM2H Silver', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase'], total: '~$174,000', base: '$150,000 deposit', fees: '~$24,000', timeline: '4 to 8 Months', usp: 'The entry tier: a 5 year renewable pass backed by a $150,000 bank deposit in your own name. A home from RM600,000 (RM1,000,000 in Kuala Lumpur) is compulsory and stays yours. 90 days a year in Malaysia, by any family member. <em>No work rights; not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 2, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['Deposit returned in full on exit', 'Home purchase compulsory (RM600k+)', '90 days/yr'], flags: { taxFriendly: true, prOnly: true } },
-                    { id: 'my_gold', group: 'Malaysia', entryEur: 485000, capType: 'recover', name: 'Malaysia: MM2H Gold', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase'], total: '~$527,000', base: '$500,000 deposit', fees: '~$27,000', timeline: '4 to 8 Months', usp: 'A 15 year pass from a $500,000 deposit that stays yours, plus a home from RM1,000,000. Same family rules and 90 day stay as Silver; the extra capital buys the long pass. <em>No work rights; not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 3, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['15 year pass', 'Deposit returned in full on exit', 'Home purchase compulsory'], flags: { taxFriendly: true, prOnly: true } },
-                    { id: 'my_platinum', group: 'Malaysia', entryEur: 990000, capType: 'recover', name: 'Malaysia: MM2H Platinum', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase', 'Work Rights'], total: '~$1,079,000', base: '$1,000,000 deposit', fees: '~$79,000', timeline: '4 to 8 Months', usp: 'A 20 year pass from a $1,000,000 deposit, plus a home from RM2,000,000. The only MM2H tier that lets you run a business and take employment in Malaysia. <em>Not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 4, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['20 year pass', 'Work and business allowed', 'Home purchase compulsory'], flags: { taxFriendly: true, prOnly: true } },
-                    { id: 'my_pvip', group: 'Malaysia', entryEur: 300000, capType: 'recover', name: 'Malaysia: PVIP', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'No Property', 'Work Rights'], total: '~$325,000', base: 'RM1,000,000 deposit', fees: '~$80,000', timeline: '3 to 6 Months', usp: 'The premium visa: 20 years, no age limit, no minimum stay, no property to buy, and you may work or run a business. Backed by a RM1,000,000 (~$245,000) deposit that stays yours. Needs proof of RM40,000 a month in offshore income. <em>Not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 3, tlMax: 6, presence: 'zero', citYears: null, fam: 3, notes: ['No minimum stay', 'No property purchase', 'Work and business allowed'], flags: { taxFriendly: true, prOnly: true } }
+                    { id: 'my_silver', group: 'Malaysia', entryEur: 275000, capType: 'recover', name: 'Malaysia: MM2H Silver', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase'], total: '~$321,000', base: '$150k deposit + RM600k home', fees: '~$24,000', timeline: '4 to 8 Months', usp: 'The entry tier: a 5 year renewable pass backed by a $150,000 bank deposit in your own name. A home from RM600,000 (RM1,000,000 in Kuala Lumpur) is compulsory and stays yours. 90 days a year in Malaysia, by any family member. <em>No work rights; not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 3, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['Deposit and home stay yours', 'KL homes from RM1M', '90 days/yr, waived from 50'], flags: { taxFriendly: true, prOnly: true } },
+                    { id: 'my_gold', group: 'Malaysia', entryEur: 685000, capType: 'recover', name: 'Malaysia: MM2H Gold', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase'], total: '~$772,000', base: '$500k deposit + RM1M home', fees: '~$27,000', timeline: '4 to 8 Months', usp: 'A 15 year pass from a $500,000 deposit that stays yours, plus a home from RM1,000,000. Same family rules and 90 day stay as Silver; the extra capital buys the long pass. <em>No work rights; not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 4, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['15 year pass', 'Deposit and home stay yours', '90 days/yr, waived from 50'], flags: { taxFriendly: true, prOnly: true } },
+                    { id: 'my_platinum', group: 'Malaysia', entryEur: 1370000, capType: 'recover', name: 'Malaysia: MM2H Platinum', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase', 'Work Rights'], total: '~$1,568,000', base: '$1M deposit + RM2M home', fees: '~$79,000', timeline: '4 to 8 Months', usp: 'A 20 year pass from a $1,000,000 deposit, plus a home from RM2,000,000. The only MM2H tier that lets you run a business and take employment in Malaysia. <em>Not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 4, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['20 year pass', 'Work and business allowed', 'Deposit and home stay yours'], flags: { taxFriendly: true, prOnly: true } },
+                    { id: 'my_pvip', group: 'Malaysia', entryEur: 225000, capType: 'recover', name: 'Malaysia: PVIP', img: 'img/malaysia-city.jpg', fb: '', pills: ['Fixed Deposit', 'No Property', 'Work Rights'], total: '~$325,000', base: 'RM1M deposit, no home', fees: '~$80,000', timeline: '3 to 6 Months', usp: 'The premium visa: 20 years, no age limit, no minimum stay, no property to buy, and you may work or run a business. Backed by a RM1,000,000 (~$245,000) deposit that stays yours. Needs proof of RM40,000 a month in offshore income. <em>Not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 3, tlMax: 6, presence: 'zero', citYears: null, fam: 3, notes: ['No minimum stay', 'No property purchase', 'Work and business allowed'], flags: { taxFriendly: true, prOnly: true } }
                 ];
 
                 function pfScore(p, prof) {
@@ -349,7 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     }
                     if (prof.goal === 'tax') { s += f.taxHaven ? 30 : (f.taxFriendly ? 24 : 5); }
                     if (prof.goal === 'americas') { s += (p.type === 'am') ? 30 : (f.e2 ? 12 : 0); }
-                    if (prof.goal === 'asia') { s += (p.type === 'asia') ? 30 : 0; }
+                    if (prof.goal === 'asia') { s += (p.type === 'asia') ? 30 : 0; if (p.type === 'asia' && p.bucket === prof.budget + 1) { s += 17; } }
                     // 2. Budget (1-4)
                     if (p.bucket <= prof.budget) { s += 15 + (p.bucket === prof.budget ? 5 : 0); }
                     else if (p.bucket === prof.budget + 1) { s -= 25; }
@@ -1558,197 +1562,317 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <section id="asia-programs" class="py-24 bg-white border-t border-gray-100 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-12">
+                <div class="text-center mb-10">
                     <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">The Asian Base</h2>
                     <p class="text-4xl serif mb-6">Residence in Asia</p>
-                    <p class="text-gray-500 max-w-2xl mx-auto font-light">
-                        Malaysia is the first Asian program we list. It suits a particular client: someone who wants a long-term base in Asia, English-speaking schools and hospitals, a cost of living far below Singapore or Hong Kong, and capital that sits in a bank deposit in their own name rather than in a donation. There are four ways in, and the price depends on which one you choose.
+                    <p class="text-gray-500 max-w-xl mx-auto font-light">
+                        Malaysia: a long-stay pass backed by a bank deposit that stays yours. Four ways in, from a retirement base to a 20 year premium visa.
                     </p>
                 </div>
 
-                <div class="relative h-56 md:h-72 rounded-sm overflow-hidden mb-12 bg-navy">
+                <div class="relative h-64 md:h-80 rounded-sm overflow-hidden mb-6 bg-navy">
                     <img src="img/malaysia.jpg" alt="Kuala Lumpur skyline at dusk" class="w-full h-full object-cover object-[center_40%]" loading="lazy" onerror="this.onerror=null;this.style.display='none'">
                     <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/60 to-navy/10"></div>
                     <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-navy/90 to-transparent"></div>
-                    <div class="absolute left-6 md:left-10 bottom-6 md:bottom-8 text-white max-w-md">
-                        <p class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-2">Kuala Lumpur</p>
-                        <p class="text-2xl md:text-3xl serif leading-tight" style="text-shadow:0 2px 12px rgba(0,0,0,.6)">Three MM2H tiers and one premium visa. The deposit comes back on all four.</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
-                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group h-full">
-                        <div class="w-full bg-gray-400 text-white text-center py-1.5 text-[9px] uppercase tracking-widest font-bold">MM2H Silver &middot; 5 Year Renewable Pass</div>
-                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <h3 class="text-xl serif text-navy font-bold">Malaysia</h3>
-                            <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">MM2H Silver</p>
+                    <div class="absolute left-6 md:left-10 bottom-6 md:bottom-8 right-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6 text-white">
+                        <div class="max-w-md">
+                            <p class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-2">Kuala Lumpur</p>
+                            <p class="text-2xl md:text-3xl serif leading-tight" style="text-shadow:0 2px 12px rgba(0,0,0,.6)">Three MM2H tiers and one premium visa. The deposit comes back on all four.</p>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between">
-                            <div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span><span class="text-lg font-bold text-navy">~$174,000</span></div>
-                                    <div class="flex justify-between items-center"><span class="text-[10px] uppercase tracking-widest text-gray-400">Base Capital</span><span class="text-xs font-semibold text-gray-700">$150,000 deposit</span></div>
-                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] uppercase tracking-widest text-gray-500">Est. Fees</span><span class="text-xs font-semibold text-gray-700">~$24,000</span></div>
-                                    <div class="flex justify-between items-center pt-1"><span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span><span class="text-xs font-bold text-navy">4 to 8 Months</span></div>
-                                </div>
-                                <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
-                                    <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
-                                        <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
-                                        <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
-                                    </div>
-                                    <div class="px-4 py-3 space-y-2">
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Fixed deposit $150,000</strong>: in your name at a Malaysian bank, earns interest, returned in full when you leave. Half can be released after approval for the home, education or medical costs.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Home from RM600,000 (~$147,000)</strong>: compulsory after approval, title in your name, held 10 years. Kuala Lumpur sets its own floor for foreign buyers at RM1,000,000; see the note below.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Fees ~$24,000</strong>: licensed agent, RM1,000 government fee, medical and pass fees. Not returned.</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
-                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                    <p class="text-[11px] text-navy font-medium leading-relaxed">The entry tier. Spouse, unmarried children under 34, parents and parents-in-law included. 90 days a year in Malaysia, which any family member can cover. Renewal RM1,500. No work or business rights.</p>
-                                </div>
-                            </div>
-                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire About Silver &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group h-full">
-                        <div class="w-full bg-gold text-white text-center py-1.5 text-[9px] uppercase tracking-widest font-bold">MM2H Gold &middot; 15 Year Renewable Pass</div>
-                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <h3 class="text-xl serif text-navy font-bold">Malaysia</h3>
-                            <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">MM2H Gold</p>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between">
-                            <div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span><span class="text-lg font-bold text-navy">~$527,000</span></div>
-                                    <div class="flex justify-between items-center"><span class="text-[10px] uppercase tracking-widest text-gray-400">Base Capital</span><span class="text-xs font-semibold text-gray-700">$500,000 deposit</span></div>
-                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] uppercase tracking-widest text-gray-500">Est. Fees</span><span class="text-xs font-semibold text-gray-700">~$27,000</span></div>
-                                    <div class="flex justify-between items-center pt-1"><span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span><span class="text-xs font-bold text-navy">4 to 8 Months</span></div>
-                                </div>
-                                <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
-                                    <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
-                                        <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
-                                        <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
-                                    </div>
-                                    <div class="px-4 py-3 space-y-2">
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Fixed deposit $500,000</strong>: in your name, earns interest, returned in full when you leave. Half can be released after approval.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Home from RM1,000,000 (~$245,000)</strong>: compulsory after approval, title in your name, held 10 years. Covers the Kuala Lumpur minimum; Selangor is RM2,000,000.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Fees ~$27,000</strong>: licensed agent, RM3,000 government fee, medical and pass fees. Not returned.</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
-                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                    <p class="text-[11px] text-navy font-medium leading-relaxed">Three times the pass length of Silver for the same family rules and the same 90 day stay. Renewal RM3,000. Still no work or business rights; the extra capital buys the 15 years.</p>
-                                </div>
-                            </div>
-                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire About Gold &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-sm overflow-hidden program-card flex flex-col group h-full">
-                        <div class="w-full bg-gray-800 text-white text-center py-1.5 text-[9px] uppercase tracking-widest font-bold">MM2H Platinum &middot; 20 Year Renewable Pass</div>
-                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <h3 class="text-xl serif text-navy font-bold">Malaysia</h3>
-                            <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">MM2H Platinum</p>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between">
-                            <div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span><span class="text-lg font-bold text-navy">~$1,079,000</span></div>
-                                    <div class="flex justify-between items-center"><span class="text-[10px] uppercase tracking-widest text-gray-400">Base Capital</span><span class="text-xs font-semibold text-gray-700">$1,000,000 deposit</span></div>
-                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] uppercase tracking-widest text-gray-500">Est. Fees</span><span class="text-xs font-semibold text-gray-700">~$79,000</span></div>
-                                    <div class="flex justify-between items-center pt-1"><span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span><span class="text-xs font-bold text-navy">4 to 8 Months</span></div>
-                                </div>
-                                <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
-                                    <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
-                                        <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
-                                        <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
-                                    </div>
-                                    <div class="px-4 py-3 space-y-2">
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Fixed deposit $1,000,000</strong>: in your name, earns interest, returned in full when you leave. Half can be released after approval.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Home from RM2,000,000 (~$489,000)</strong>: compulsory after approval, title in your name, held 10 years. Clears every state minimum, Selangor included.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Fees ~$79,000</strong>: RM200,000 government participation fee, licensed agent, medical and pass fees. Not returned.</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
-                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                    <p class="text-[11px] text-navy font-medium leading-relaxed">The only MM2H tier that allows you to run a business and take employment in Malaysia. 20 years, renewal RM5,000, foreign maid permitted. Same 90 day stay as the other tiers.</p>
-                                </div>
-                            </div>
-                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire About Platinum &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="bg-white border-2 border-gold shadow-md rounded-sm overflow-hidden program-card flex flex-col group h-full">
-                        <div class="w-full bg-navy text-gold text-center py-1.5 text-[9px] uppercase tracking-widest font-bold">PVIP &middot; 20 Year Premium Visa</div>
-                        <div class="p-6 border-b border-gray-100 bg-gray-50/50">
-                            <h3 class="text-xl serif text-navy font-bold">Malaysia</h3>
-                            <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">Premium Visa Programme &middot; No Property, No Minimum Stay</p>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between">
-                            <div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span><span class="text-lg font-bold text-navy">~$325,000</span></div>
-                                    <div class="flex justify-between items-center"><span class="text-[10px] uppercase tracking-widest text-gray-400">Base Capital</span><span class="text-xs font-semibold text-gray-700">RM1,000,000 deposit</span></div>
-                                    <div class="flex justify-between items-center border-b border-gray-100 pb-2"><span class="text-[10px] uppercase tracking-widest text-gray-500">Est. Fees</span><span class="text-xs font-semibold text-gray-700">~$80,000</span></div>
-                                    <div class="flex justify-between items-center pt-1"><span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span><span class="text-xs font-bold text-navy">3 to 6 Months</span></div>
-                                </div>
-                                <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
-                                    <div class="flex justify-between items-center px-4 py-2.5 bg-gray-50 border-b border-gray-100">
-                                        <span class="text-[9px] uppercase tracking-widest font-bold text-gray-400">Capital Treatment</span>
-                                        <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
-                                    </div>
-                                    <div class="px-4 py-3 space-y-2">
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Fixed deposit RM1,000,000 (~$245,000)</strong>: in your name at a Malaysian bank, returned in full when you leave. Up to half can be released after the first year.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Fees ~$80,000</strong>: RM200,000 government participation fee, licensed agent, medical and pass fees. Not returned. Each dependant adds RM100,000 in government fee plus agent fees, roughly $33,000.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Offshore income proof</strong>: RM40,000 a month (~$9,800) or RM480,000 a year, shown with six months of bank statements.</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
-                                    <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                    <p class="text-[11px] text-navy font-medium leading-relaxed">No age limit, no minimum stay, no property to buy, and you may work or run a business. Spouse, children under 25, parents and parents-in-law included. Renewal for a further 20 years at RM100,000. The option for someone who wants the pass without the 90 days or the home.</p>
-                                </div>
-                            </div>
-                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire About PVIP &rarr;</a>
+                        <div class="flex flex-wrap gap-2 md:justify-end">
+                            <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 text-[9px] uppercase tracking-widest font-bold">Deposit returned</span>
+                            <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 text-[9px] uppercase tracking-widest font-bold">Parents included</span>
+                            <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 text-[9px] uppercase tracking-widest font-bold">No minimum stay from 50</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
-                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
-                        <h3 class="text-xl serif text-navy font-bold mb-4">Common to All Four</h3>
-                        <ul class="text-sm text-gray-500 font-light leading-relaxed space-y-3">
-                            <li class="flex items-start gap-3"><span class="text-gold mt-1">&#9679;</span><span>The qualifying capital is a fixed deposit in your own name at a Malaysian bank. It earns interest and is returned when you leave the program.</span></li>
-                            <li class="flex items-start gap-3"><span class="text-gold mt-1">&#9679;</span><span>Foreign funds you bring in, the deposit included, are tax-exempt under the program.</span></li>
-                            <li class="flex items-start gap-3"><span class="text-gold mt-1">&#9679;</span><span>Dependants can study at recognised Malaysian institutions and the family can use private healthcare, including long-term treatment.</span></li>
-                            <li class="flex items-start gap-3"><span class="text-gold mt-1">&#9679;</span><span>Professional fees are paid 20% on engagement and 80% only after approval.</span></li>
-                        </ul>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                    <a href="#my-panel" data-my-go="silver" class="group block rounded-sm overflow-hidden bg-navy border border-navy hover:border-gold transition-colors">
+                        <div class="h-44 md:h-52 overflow-hidden bg-[#1C2541]">
+                            <img src="img/malaysia-beach.jpg" alt="Beach with palm trees and sun loungers, Malaysia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.onerror=null;this.style.display='none'">
+                        </div>
+                        <div class="p-6 text-white">
+                            <p class="text-gold uppercase tracking-[0.25em] text-[9px] font-bold mb-1">Retire</p>
+                            <p class="text-xl serif mb-2">Retire in Malaysia</p>
+                            <p class="text-xs text-gray-200 font-light leading-relaxed mb-3">MM2H began as a retirement visa and still works best as one. From age 50 there is no minimum stay, private hospitals are first-rate at a fraction of Western prices, and the deposit keeps earning interest in your name.</p>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">Usually Silver &rarr;</p>
+                        </div>
+                    </a>
+                    <a href="#my-panel" data-my-go="gold" class="group block rounded-sm overflow-hidden bg-navy border border-navy hover:border-gold transition-colors">
+                        <div class="h-44 md:h-52 overflow-hidden bg-[#1C2541]">
+                            <img src="img/malaysia-park.jpg" alt="Petronas Towers seen through park trees, Kuala Lumpur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.onerror=null;this.style.display='none'">
+                        </div>
+                        <div class="p-6 text-white">
+                            <p class="text-gold uppercase tracking-[0.25em] text-[9px] font-bold mb-1">Relocate</p>
+                            <p class="text-xl serif mb-2">Move the Family</p>
+                            <p class="text-xs text-gray-200 font-light leading-relaxed mb-3">International schools, English-speaking private hospitals and a comfortable life at a fraction of Singapore prices. Spouse, children, parents and parents-in-law come on one application.</p>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">Silver or Gold &rarr;</p>
+                        </div>
+                    </a>
+                    <a href="#my-panel" data-my-go="pvip" class="group block rounded-sm overflow-hidden bg-navy border border-navy hover:border-gold transition-colors">
+                        <div class="h-44 md:h-52 overflow-hidden bg-[#1C2541]">
+                            <img src="img/malaysia-city.jpg" alt="Kuala Lumpur business district" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.onerror=null;this.style.display='none'">
+                        </div>
+                        <div class="p-6 text-white">
+                            <p class="text-gold uppercase tracking-[0.25em] text-[9px] font-bold mb-1">Work</p>
+                            <p class="text-xl serif mb-2">Work From Asia</p>
+                            <p class="text-xs text-gray-200 font-light leading-relaxed mb-3">Only Platinum and the premium visa let you take employment or run a business in Malaysia. The premium visa adds no property purchase and no minimum stay.</p>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">Platinum or PVIP &rarr;</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="text-center mb-8">
+                    <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-gold mb-2">The Four Options</p>
+                    <p class="text-2xl serif text-navy">Pick one to see the full breakdown</p>
+                    <p class="text-xs text-gray-400 font-light mt-2">All-in means deposit, home where required, and fees, at RM4.09 to the dollar. Home minimums are the MM2H floor; Kuala Lumpur and Selangor set higher ones.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 mb-6" role="tablist" aria-label="Malaysia options">
+                    <button type="button" data-my-tab="silver" role="tab" aria-selected="false" aria-controls="my-panel" class="my-tab text-left bg-white border border-gray-200 rounded-sm overflow-hidden hover:border-gold transition-all flex flex-col focus:outline-none">
+                        <div class="w-full bg-gray-400 text-white px-4 py-2 flex justify-between items-center text-[9px] uppercase tracking-widest font-bold"><span>MM2H Silver</span><span class="opacity-80">5 Year Pass</span></div>
+                        <div class="p-5 flex-grow w-full">
+                            <p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mb-1">All-in from</p>
+                            <p class="text-2xl serif font-bold text-navy leading-none">~$321,000</p>
+                            <p class="text-[10px] text-emerald-700 font-semibold mt-2 mb-4">~$297,000 of it stays yours</p>
+                            <ul class="text-[11px] text-gray-600 space-y-1.5 leading-snug"><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>$150,000 bank deposit</span></li><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>Home from RM600,000</span></li><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>90 days a year, waived from 50</span></li></ul>
+                        </div>
+                        <div class="my-tab-foot w-full px-5 py-3 border-t border-gray-100 text-[10px] uppercase tracking-widest font-bold text-gold flex justify-between items-center transition-colors"><span>Full breakdown</span><span>&darr;</span></div>
+                    </button>
+                    <button type="button" data-my-tab="gold" role="tab" aria-selected="false" aria-controls="my-panel" class="my-tab text-left bg-white border border-gray-200 rounded-sm overflow-hidden hover:border-gold transition-all flex flex-col focus:outline-none">
+                        <div class="w-full bg-gold text-white px-4 py-2 flex justify-between items-center text-[9px] uppercase tracking-widest font-bold"><span>MM2H Gold</span><span class="opacity-80">15 Year Pass</span></div>
+                        <div class="p-5 flex-grow w-full">
+                            <p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mb-1">All-in from</p>
+                            <p class="text-2xl serif font-bold text-navy leading-none">~$772,000</p>
+                            <p class="text-[10px] text-emerald-700 font-semibold mt-2 mb-4">~$745,000 of it stays yours</p>
+                            <ul class="text-[11px] text-gray-600 space-y-1.5 leading-snug"><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>$500,000 bank deposit</span></li><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>Home from RM1,000,000</span></li><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>90 days a year, waived from 50</span></li></ul>
+                        </div>
+                        <div class="my-tab-foot w-full px-5 py-3 border-t border-gray-100 text-[10px] uppercase tracking-widest font-bold text-gold flex justify-between items-center transition-colors"><span>Full breakdown</span><span>&darr;</span></div>
+                    </button>
+                    <button type="button" data-my-tab="platinum" role="tab" aria-selected="false" aria-controls="my-panel" class="my-tab text-left bg-white border border-gray-200 rounded-sm overflow-hidden hover:border-gold transition-all flex flex-col focus:outline-none">
+                        <div class="w-full bg-gray-800 text-white px-4 py-2 flex justify-between items-center text-[9px] uppercase tracking-widest font-bold"><span>MM2H Platinum</span><span class="opacity-80">20 Year Pass</span></div>
+                        <div class="p-5 flex-grow w-full">
+                            <p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mb-1">All-in from</p>
+                            <p class="text-2xl serif font-bold text-navy leading-none">~$1,568,000</p>
+                            <p class="text-[10px] text-emerald-700 font-semibold mt-2 mb-4">~$1,489,000 of it stays yours</p>
+                            <ul class="text-[11px] text-gray-600 space-y-1.5 leading-snug"><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>$1,000,000 bank deposit</span></li><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>Home from RM2,000,000</span></li><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>Work and business allowed</span></li></ul>
+                        </div>
+                        <div class="my-tab-foot w-full px-5 py-3 border-t border-gray-100 text-[10px] uppercase tracking-widest font-bold text-gold flex justify-between items-center transition-colors"><span>Full breakdown</span><span>&darr;</span></div>
+                    </button>
+                    <button type="button" data-my-tab="pvip" role="tab" aria-selected="false" aria-controls="my-panel" class="my-tab text-left bg-white border border-gray-200 rounded-sm overflow-hidden hover:border-gold transition-all flex flex-col focus:outline-none">
+                        <div class="w-full bg-navy text-gold px-4 py-2 flex justify-between items-center text-[9px] uppercase tracking-widest font-bold"><span>PVIP</span><span class="opacity-80">20 Year Premium Visa</span></div>
+                        <div class="p-5 flex-grow w-full">
+                            <p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mb-1">All-in from</p>
+                            <p class="text-2xl serif font-bold text-navy leading-none">~$325,000</p>
+                            <p class="text-[10px] text-emerald-700 font-semibold mt-2 mb-4">~$245,000 of it stays yours</p>
+                            <ul class="text-[11px] text-gray-600 space-y-1.5 leading-snug"><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>RM1,000,000 bank deposit</span></li><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>No home to buy, no minimum stay</span></li><li class="flex items-start gap-2"><span class="text-gold mt-[3px]">&#9679;</span><span>Work and business allowed</span></li></ul>
+                        </div>
+                        <div class="my-tab-foot w-full px-5 py-3 border-t border-gray-100 text-[10px] uppercase tracking-widest font-bold text-gold flex justify-between items-center transition-colors"><span>Full breakdown</span><span>&darr;</span></div>
+                    </button>
+                </div>
+
+                <div id="my-panel" class="bg-white border border-gray-200 rounded-sm card-shadow overflow-hidden mb-12" role="tabpanel">
+                <div data-my-panel="silver" class="hidden">
+                    <div class="grid lg:grid-cols-12">
+                        <div class="lg:col-span-7 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-100">
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-1">MM2H Silver &middot; 5 Year Pass</p>
+                            <h3 class="text-2xl serif text-navy font-bold mb-2">Where the money goes</h3>
+                            <p class="text-xs text-gray-500 font-light mb-4">The all-in figure includes everything you commit. Most of it stays in assets you own.</p>
+                            <div class="divide-y divide-gray-100 text-sm">
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Fixed deposit</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">In your name at a Malaysian bank. Earns interest; half can be released after approval for the home, education or medical costs. Returned in full when you leave.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">$150,000</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">&#9679; Stays yours</p></div>
+                                </div>
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Home purchase</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Compulsory within a year of approval, title in your name, held 10 years (you may trade up). Kuala Lumpur sets its own floor for foreign buyers at RM1,000,000, Selangor at RM2,000,000.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">RM600,000+ (~$147,000)</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">&#9679; Stays yours</p></div>
+                                </div>
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Fees</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Licensed agent, RM1,000 government fee, medical and pass fees. Professional fees are paid 20% on engagement and 80% after approval. Not returned.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">~$24,000</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">&#9675; Spent</p></div>
+                                </div>
+                            </div>
+                            <div class="mt-2 pt-4 border-t-2 border-navy flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2">
+                                <div><p class="text-[9px] uppercase tracking-widest font-bold text-gray-400">All-in</p><p class="text-2xl serif font-bold text-navy">~$321,000</p></div>
+                                <div class="sm:text-right text-xs"><p class="text-emerald-700 font-semibold">~$297,000 stays yours</p><p class="text-gray-500">~$24,000 is spent</p></div>
+                            </div>
+                            <p class="text-[11px] text-gray-500 font-light leading-relaxed mt-5 bg-gray-50 border-l-2 border-gold p-3">In Kuala Lumpur, with the RM1,000,000 minimum, the all-in is ~$419,000, of which ~$395,000 stays in your assets.</p>
+                        </div>
+                        <div class="lg:col-span-5 p-8 md:p-10 bg-gray-50/60 flex flex-col">
+                            <h4 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">Terms at a glance</h4>
+                            <dl class="mb-6"><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Pass</dt><dd class="text-xs text-gray-600">5 years, renewable (RM1,500)</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Age</dt><dd class="text-xs text-gray-600">25 and over</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Family</dt><dd class="text-xs text-gray-600">Spouse, unmarried children under 34, parents, parents-in-law</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Stay</dt><dd class="text-xs text-gray-600">90 days a year, by any family member; waived from age 50</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Work</dt><dd class="text-xs text-gray-600">Not allowed</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Timeline</dt><dd class="text-xs text-gray-600">4 to 8 months</dd></div></dl>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The entry tier, and the one most retirees choose: the deposit keeps earning interest in your name, and from age 50 there is no minimum stay. The home you buy is the only part of the price that is not liquid, and it is yours.</p>
+                            </div>
+                            <a href="#contact" class="mt-auto btn-gold px-8 py-3 rounded-sm uppercase text-[10px] tracking-widest font-bold text-center block">Inquire About Silver &rarr;</a>
+                        </div>
                     </div>
-                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
-                        <h3 class="text-xl serif text-navy font-bold mb-4">The Property Rule, Plainly</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed mb-4">On MM2H you must buy a home after approval and keep it for 10 years (you may trade up, not down). MM2H sets RM600,000, RM1,000,000 and RM2,000,000 by tier, but each state has its own minimum for foreign buyers and the higher figure applies.</p>
-                        <ul class="text-sm text-gray-500 font-light leading-relaxed space-y-2">
-                            <li class="flex justify-between gap-4 border-b border-gray-100 pb-2"><span>Kuala Lumpur</span><strong class="text-navy">RM1,000,000 (~$245,000)</strong></li>
-                            <li class="flex justify-between gap-4 border-b border-gray-100 pb-2"><span>Selangor</span><strong class="text-navy">RM2,000,000 (~$489,000)</strong></li>
-                            <li class="flex justify-between gap-4"><span>PVIP</span><strong class="text-navy">No purchase required</strong></li>
-                        </ul>
-                        <p class="text-[11px] text-gray-400 font-light leading-relaxed mt-4">Other states are lower; we confirm the figure for the area you want before you commit. The home is an asset you own, so the card totals above show it separately.</p>
+                </div>
+                <div data-my-panel="gold" class="hidden">
+                    <div class="grid lg:grid-cols-12">
+                        <div class="lg:col-span-7 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-100">
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-1">MM2H Gold &middot; 15 Year Pass</p>
+                            <h3 class="text-2xl serif text-navy font-bold mb-2">Where the money goes</h3>
+                            <p class="text-xs text-gray-500 font-light mb-4">The all-in figure includes everything you commit. Most of it stays in assets you own.</p>
+                            <div class="divide-y divide-gray-100 text-sm">
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Fixed deposit</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">In your name, earns interest, half releasable after approval. Returned in full when you leave.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">$500,000</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">&#9679; Stays yours</p></div>
+                                </div>
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Home purchase</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Compulsory within a year of approval, title in your name, held 10 years. Covers the Kuala Lumpur minimum; Selangor is RM2,000,000.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">RM1,000,000+ (~$245,000)</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">&#9679; Stays yours</p></div>
+                                </div>
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Fees</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Licensed agent, RM3,000 government fee, medical and pass fees. 20% on engagement, 80% after approval. Not returned.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">~$27,000</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">&#9675; Spent</p></div>
+                                </div>
+                            </div>
+                            <div class="mt-2 pt-4 border-t-2 border-navy flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2">
+                                <div><p class="text-[9px] uppercase tracking-widest font-bold text-gray-400">All-in</p><p class="text-2xl serif font-bold text-navy">~$772,000</p></div>
+                                <div class="sm:text-right text-xs"><p class="text-emerald-700 font-semibold">~$745,000 stays yours</p><p class="text-gray-500">~$27,000 is spent</p></div>
+                            </div>
+                            <p class="text-[11px] text-gray-500 font-light leading-relaxed mt-5 bg-gray-50 border-l-2 border-gold p-3">In Selangor, with the RM2,000,000 minimum, the all-in is ~$1,016,000; the extra all sits in the home.</p>
+                        </div>
+                        <div class="lg:col-span-5 p-8 md:p-10 bg-gray-50/60 flex flex-col">
+                            <h4 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">Terms at a glance</h4>
+                            <dl class="mb-6"><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Pass</dt><dd class="text-xs text-gray-600">15 years, renewable (RM3,000)</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Age</dt><dd class="text-xs text-gray-600">25 and over</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Family</dt><dd class="text-xs text-gray-600">Spouse, unmarried children under 34, parents, parents-in-law</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Stay</dt><dd class="text-xs text-gray-600">90 days a year, by any family member; waived from age 50</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Work</dt><dd class="text-xs text-gray-600">Not allowed</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Timeline</dt><dd class="text-xs text-gray-600">4 to 8 months</dd></div></dl>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Three times the pass length of Silver for the same family rules. The extra capital buys 15 years without a renewal, which suits a family settling the children through school. Still no work or business rights.</p>
+                            </div>
+                            <a href="#contact" class="mt-auto btn-gold px-8 py-3 rounded-sm uppercase text-[10px] tracking-widest font-bold text-center block">Inquire About Gold &rarr;</a>
+                        </div>
                     </div>
-                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
-                        <h3 class="text-xl serif text-navy font-bold mb-4">What None of Them Is</h3>
-                        <ul class="text-sm text-gray-500 font-light leading-relaxed space-y-3">
-                            <li class="flex items-start gap-3"><span class="text-gray-400 mt-1">&#9675;</span><span>Not a route to Malaysian permanent residence or citizenship. All four are renewable long-stay passes.</span></li>
-                            <li class="flex items-start gap-3"><span class="text-gray-400 mt-1">&#9675;</span><span>Not a work visa on Silver or Gold. Only Platinum and PVIP allow employment or running a business.</span></li>
-                            <li class="flex items-start gap-3"><span class="text-gray-400 mt-1">&#9675;</span><span>Not a quick flip. MM2H homes are held for 10 years, and every application goes through a licensed MM2H agent, which is how we file it.</span></li>
-                        </ul>
+                </div>
+                <div data-my-panel="platinum" class="hidden">
+                    <div class="grid lg:grid-cols-12">
+                        <div class="lg:col-span-7 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-100">
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-1">MM2H Platinum &middot; 20 Year Pass</p>
+                            <h3 class="text-2xl serif text-navy font-bold mb-2">Where the money goes</h3>
+                            <p class="text-xs text-gray-500 font-light mb-4">The all-in figure includes everything you commit. Most of it stays in assets you own.</p>
+                            <div class="divide-y divide-gray-100 text-sm">
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Fixed deposit</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">In your name, earns interest, half releasable after approval. Returned in full when you leave.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">$1,000,000</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">&#9679; Stays yours</p></div>
+                                </div>
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Home purchase</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Compulsory within a year of approval, title in your name, held 10 years. Clears every state minimum, Selangor included.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">RM2,000,000+ (~$489,000)</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">&#9679; Stays yours</p></div>
+                                </div>
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Fees</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">RM200,000 government participation fee, licensed agent, medical and pass fees. 20% on engagement, 80% after approval. Not returned.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">~$79,000</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">&#9675; Spent</p></div>
+                                </div>
+                            </div>
+                            <div class="mt-2 pt-4 border-t-2 border-navy flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2">
+                                <div><p class="text-[9px] uppercase tracking-widest font-bold text-gray-400">All-in</p><p class="text-2xl serif font-bold text-navy">~$1,568,000</p></div>
+                                <div class="sm:text-right text-xs"><p class="text-emerald-700 font-semibold">~$1,489,000 stays yours</p><p class="text-gray-500">~$79,000 is spent</p></div>
+                            </div>
+                            <p class="text-[11px] text-gray-500 font-light leading-relaxed mt-5 bg-gray-50 border-l-2 border-gold p-3">The RM200,000 participation fee is what buys the work rights; it is the one large non-returnable item on any MM2H tier.</p>
+                        </div>
+                        <div class="lg:col-span-5 p-8 md:p-10 bg-gray-50/60 flex flex-col">
+                            <h4 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">Terms at a glance</h4>
+                            <dl class="mb-6"><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Pass</dt><dd class="text-xs text-gray-600">20 years, renewable (RM5,000)</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Age</dt><dd class="text-xs text-gray-600">25 and over</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Family</dt><dd class="text-xs text-gray-600">Spouse, unmarried children under 34, parents, parents-in-law; a foreign maid is permitted</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Stay</dt><dd class="text-xs text-gray-600">90 days a year, by any family member; waived from age 50</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Work</dt><dd class="text-xs text-gray-600">Employment and business allowed</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Timeline</dt><dd class="text-xs text-gray-600">4 to 8 months</dd></div></dl>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The only MM2H tier that lets you run a business and take employment in Malaysia. For someone who will actually work from Kuala Lumpur, compare it with the premium visa, which asks for less capital and no home.</p>
+                            </div>
+                            <a href="#contact" class="mt-auto btn-gold px-8 py-3 rounded-sm uppercase text-[10px] tracking-widest font-bold text-center block">Inquire About Platinum &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div data-my-panel="pvip" class="hidden">
+                    <div class="grid lg:grid-cols-12">
+                        <div class="lg:col-span-7 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-100">
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-1">PVIP &middot; 20 Year Premium Visa</p>
+                            <h3 class="text-2xl serif text-navy font-bold mb-2">Where the money goes</h3>
+                            <p class="text-xs text-gray-500 font-light mb-4">The all-in figure includes everything you commit. Most of it stays in assets you own.</p>
+                            <div class="divide-y divide-gray-100 text-sm">
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Fixed deposit</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">In your name at a Malaysian bank. Up to half can be released after the first year. Returned in full when you leave.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">RM1,000,000 (~$245,000)</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">&#9679; Stays yours</p></div>
+                                </div>
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Fees</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">RM200,000 government participation fee, licensed agent, medical and pass fees. 20% on engagement, 80% after approval. Not returned. Each dependant adds RM100,000 in government fee plus agent fees, roughly $33,000.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">~$80,000</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">&#9675; Spent</p></div>
+                                </div>
+                                <div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-6">
+                                    <div class="max-w-md"><p class="font-semibold text-navy">Offshore income proof</p><p class="text-xs text-gray-500 font-light leading-relaxed mt-1">About $9,800 a month or RM480,000 a year, shown with six months of bank statements. A requirement, not a cost.</p></div>
+                                    <div class="sm:text-right whitespace-nowrap"><p class="font-bold text-navy">RM40,000 a month</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">Requirement</p></div>
+                                </div>
+                            </div>
+                            <div class="mt-2 pt-4 border-t-2 border-navy flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2">
+                                <div><p class="text-[9px] uppercase tracking-widest font-bold text-gray-400">All-in</p><p class="text-2xl serif font-bold text-navy">~$325,000</p></div>
+                                <div class="sm:text-right text-xs"><p class="text-emerald-700 font-semibold">~$245,000 stays yours</p><p class="text-gray-500">~$80,000 is spent</p></div>
+                            </div>
+                            <p class="text-[11px] text-gray-500 font-light leading-relaxed mt-5 bg-gray-50 border-l-2 border-gold p-3">No property purchase is required. If you do buy, the state minimum for foreign buyers applies (RM1,000,000 in Kuala Lumpur).</p>
+                        </div>
+                        <div class="lg:col-span-5 p-8 md:p-10 bg-gray-50/60 flex flex-col">
+                            <h4 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">Terms at a glance</h4>
+                            <dl class="mb-6"><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Pass</dt><dd class="text-xs text-gray-600">20 years, renewable for a further 20 (RM100,000)</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Age</dt><dd class="text-xs text-gray-600">No minimum</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Family</dt><dd class="text-xs text-gray-600">Spouse, children under 25, parents, parents-in-law</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Stay</dt><dd class="text-xs text-gray-600">No minimum</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Work</dt><dd class="text-xs text-gray-600">Employment and business allowed</dd></div><div class="flex gap-4 py-2 border-b border-gray-100 last:border-0"><dt class="w-20 flex-shrink-0 text-[9px] uppercase tracking-widest font-bold text-gray-400 pt-0.5">Timeline</dt><dd class="text-xs text-gray-600">3 to 6 months</dd></div></dl>
+                            <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
+                                <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The option for someone who wants the pass without the 90 days or the home: no age limit, no minimum stay, no property, and you may work or run a business. The price of that freedom is the RM200,000 participation fee, which is spent, not deposited.</p>
+                            </div>
+                            <a href="#contact" class="mt-auto btn-gold px-8 py-3 rounded-sm uppercase text-[10px] tracking-widest font-bold text-center block">Inquire About PVIP &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                    <div class="border-l-2 border-emerald-500 pl-4">
+                        <h4 class="text-[10px] uppercase tracking-widest font-bold text-emerald-700 mb-2">The deposit is yours</h4>
+                        <p class="text-xs text-gray-500 font-light leading-relaxed">Held in your name, earning interest, returned in full when you leave the program.</p>
+                    </div>
+                    <div class="border-l-2 border-emerald-500 pl-4">
+                        <h4 class="text-[10px] uppercase tracking-widest font-bold text-emerald-700 mb-2">The home is an asset</h4>
+                        <p class="text-xs text-gray-500 font-light leading-relaxed">Title in your name. Sell after 10 years, or trade up sooner. Each state sets its own minimum for foreign buyers.</p>
+                    </div>
+                    <div class="border-l-2 border-gold pl-4">
+                        <h4 class="text-[10px] uppercase tracking-widest font-bold text-gold mb-2">Tax</h4>
+                        <p class="text-xs text-gray-500 font-light leading-relaxed">Foreign funds you bring in, the deposit included, are tax-exempt under the program.</p>
+                    </div>
+                    <div class="border-l-2 border-gray-400 pl-4">
+                        <h4 class="text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-2">What it is not</h4>
+                        <p class="text-xs text-gray-500 font-light leading-relaxed">Not a route to permanent residence or citizenship. Every file goes through a licensed MM2H agent, which is how we file it.</p>
                     </div>
                 </div>
 
-                <div class="mt-8 bg-navy rounded-sm px-8 py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-l-4 border-gold">
+                <div class="bg-navy rounded-sm px-8 py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-l-4 border-gold">
                     <div class="max-w-2xl">
                         <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-2">Talk to Us About Malaysia</p>
-                        <p class="text-sm text-gray-300 font-light leading-relaxed">We met our licensed Kuala Lumpur partner in person in October 2026. One call covers which of the four fits you, the property minimum for the area you want, the timeline and the full cost, in writing. Dollar figures are at RM4.09 to the dollar and move with the exchange rate.</p>
+                        <p class="text-sm text-gray-300 font-light leading-relaxed">We met our licensed Kuala Lumpur partner in person in October 2026. One call covers which of the four fits you, the property minimum for the area you want, the timeline and the full cost, in writing.</p>
                     </div>
                     <a href="#contact" class="btn-gold px-8 py-3 rounded-sm uppercase text-[10px] tracking-widest font-bold text-center whitespace-nowrap flex-shrink-0">Book a Call &rarr;</a>
                 </div>
             </div>
+            <script>
+            (function () {
+                var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-my-tab]'));
+                var panels = Array.prototype.slice.call(document.querySelectorAll('[data-my-panel]'));
+                if (!tabs.length || !panels.length) { return; }
+                function select(id, scroll) {
+                    tabs.forEach(function (t) {
+                        var on = t.getAttribute('data-my-tab') === id;
+                        t.classList.toggle('my-tab-on', on);
+                        t.setAttribute('aria-selected', on ? 'true' : 'false');
+                        var foot = t.querySelector('.my-tab-foot span');
+                        if (foot) { foot.textContent = on ? 'Shown below' : 'Full breakdown'; }
+                    });
+                    panels.forEach(function (p) { p.classList.toggle('hidden', p.getAttribute('data-my-panel') !== id); });
+                    if (scroll) { var el = document.getElementById('my-panel'); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
+                }
+                tabs.forEach(function (t) { t.addEventListener('click', function () { select(t.getAttribute('data-my-tab'), true); }); });
+                Array.prototype.slice.call(document.querySelectorAll('[data-my-go]')).forEach(function (a) {
+                    a.addEventListener('click', function (e) { e.preventDefault(); select(a.getAttribute('data-my-go'), true); });
+                });
+                select('silver', false);
+            })();
+            </script>
         </section>
 
         <section id="how-we-are-paid" class="py-24 bg-gray-50 border-t border-gray-100 overflow-hidden">
