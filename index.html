@@ -184,9 +184,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="#cbi-programs" class="nav-link">CBI Programs</a>
                     <a href="#rbi-programs" class="nav-link">RBI Programs</a>
                     <a href="#asia-programs" class="nav-link">Asia</a>
-                    <a href="#how-we-are-paid" class="nav-link">How We're Paid</a>
                     <a href="#why-plan-b" class="nav-link">Why a Plan B?</a>
-                    <a href="#eu-citizenship" class="nav-link">EU Citizenship</a>
                     <a href="#team" class="nav-link">Advisor</a>
                     <a href="#contact" class="nav-link text-gold">Consultation</a>
                 </div>
@@ -201,9 +199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="#cbi-programs" class="py-3 border-b border-gray-100">CBI Programs</a>
                     <a href="#rbi-programs" class="py-3 border-b border-gray-100">RBI Programs</a>
                     <a href="#asia-programs" class="py-3 border-b border-gray-100">Asia</a>
-                    <a href="#how-we-are-paid" class="py-3 border-b border-gray-100">How We're Paid</a>
                     <a href="#why-plan-b" class="py-3 border-b border-gray-100">Why a Plan B?</a>
-                    <a href="#eu-citizenship" class="py-3 border-b border-gray-100">EU Citizenship</a>
                     <a href="#team" class="py-3 border-b border-gray-100">Advisor</a>
                     <a href="#contact" class="py-3 text-gold">Consultation</a>
                 </div>
@@ -308,27 +304,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             (function () {
                 // PF-LOGIC-START
                 var PF_PROGRAMS = [
-                    { id: 'stkitts', entryEur: 242000, capType: 'mixed', name: 'Saint Kitts & Nevis', img: 'img/saintkitts.jpg', fb: 'https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate', 'Public Benefit'], total: '~$261,000', base: '$250,000', fees: '~$11,000', timeline: '4 to 6 Months', usp: 'The oldest, gold-standard CBI. Real-estate route reduced to $325k. Biometric enrollment now mandatory; 30-day presence rule proposed but not yet in force.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 2, notes: ['Proposed 30-day presence rule pending'], flags: {} },
-                    { id: 'grenada', entryEur: 227000, capType: 'mixed', name: 'Grenada', img: 'img/grenada.jpg', fb: 'https://images.unsplash.com/photo-1580979450379-3c35b84c8a81?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$245,000', base: '$235,000', fees: '~$10,000', timeline: '7 to 8 Months', usp: 'Retains USA E2 treaty access and visa-free China. New 30-day presence rule (5 days main applicant yr 1, 25 days family across yrs 2&ndash;5) effective 2026.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 8, presence: 'minimal', citYears: 0, fam: 3, notes: ['USA E2 treaty access'], flags: { e2: true } },
-                    { id: 'stlucia', entryEur: 231000, capType: 'recover', name: 'Saint Lucia', img: 'img/saintlucia.jpg', fb: 'https://images.unsplash.com/photo-1583804825983-500e57577541?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Gov. Bonds', 'Real Estate'], total: '~$250,000', base: '$240,000 / $300k', fees: '~$10,000', timeline: '6 to 10 Months', usp: 'The $300k government bond guarantees full principal return after 5 yrs; 90 day grace period to invest post approval.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 10, presence: 'zero', citYears: 0, fam: 2, notes: ['Bond route returns capital after 5 yrs'], flags: {} },
-                    { id: 'antigua', entryEur: 232000, capType: 'mixed', name: 'Antigua & Barbuda', img: 'img/antigua.jpg', fb: 'https://images.unsplash.com/photo-1574347209709-a1b7e4dd38b6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Univ. Fund', 'Real Estate'], total: '~$251,000', base: '$230,000', fees: '~$21,000', timeline: '3 to 6 Months', usp: 'UWI Fund ($260k) most cost-effective globally for families of 6+. Mandatory interview added in 2026. <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 3, notes: ['US partial visa restriction (new applicants)'], flags: { usRestriction: true } },
-                    { id: 'dominica', entryEur: 195000, capType: 'mixed', name: 'Dominica', img: 'img/dominica.jpg', fb: 'https://images.unsplash.com/photo-1549466710-534fc181cda6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$211,000', base: '$200,000', fees: '~$11,000', timeline: '6+ Months', usp: 'Deep eco-development integration; flexible inclusion (unmarried daughters under 25, students to 30). <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 9, presence: 'zero', citYears: 0, fam: 3, notes: ['US partial visa restriction (new applicants)'], flags: { usRestriction: true } },
-                    { id: 'vanuatu', entryEur: 126000, capType: 'contrib', name: 'Vanuatu', img: 'img/vanuatu.jpg', fb: 'https://images.unsplash.com/photo-1550742137-b4d619ed1d03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$136,000', base: '$130,000', fees: '~$6,000', timeline: '30 to 90 Days', usp: 'Fastest processing globally via a fully remote process; zero income, corporate, or wealth tax. <em>Note: no longer visa-free to the EU/Schengen Area.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 1, tlMax: 3, presence: 'zero', citYears: 0, fam: 2, notes: ['No EU/Schengen visa-free access'], flags: { noSchengen: true, taxHaven: true } },
-                    { id: 'greece', entryEur: 270000, capType: 'recover', name: 'Greece', img: 'img/greece.jpg', fb: 'https://images.unsplash.com/photo-1503152394-c571994fd383?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Startup Route'], total: '~€270,000+', base: 'From €250,000*', fees: '~€20,000', timeline: '3 to 4 Months', usp: '<strong>*Important:</strong> The €250,000 threshold requires a commercial to residential conversion. Standard real estate: €400,000 to €800,000 by zone. <strong>New 2026 route:</strong> €250,000 in an Elevate Greece startup (Law 5162/2024).', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 7, citPresence: 'substantial', fam: 3, notes: ['€250k entry requires commercial conversion', 'Citizenship requires genuine residence (183+ days/yr)'], flags: {} },
-                    { id: 'hungary', entryEur: 320000, capType: 'recover', name: 'Hungary', img: 'img/hungary.jpg', fb: 'https://images.unsplash.com/photo-1516738905335-af586d5ca2bb?q=80&w=800&auto=format&fit=crop', pills: ['REIF Fund', 'Public Trust'], total: '~€320,000', base: '€250,000', fees: '~€70,000', timeline: '3 to 6 Months', usp: 'Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. The direct €500k property route closed on 1 January 2025; only the €250k fund and the €1M trust donation routes remain.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'zero', citYears: 8, citPresence: 'substantial', fam: 2, notes: ['No minimum stay for the permit', 'Citizenship requires ~8 yrs actual residence'], flags: {} },
-                    { id: 'portugal', entryEur: 542000, capType: 'recover', name: 'Portugal', img: 'img/portugal.jpg', fb: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop', pills: ['VC/PE Funds', 'Cultural Heritage'], total: '~€542,000', base: '€500,000', fees: '~€42,000', timeline: '~12 to 24 Months (easing)', usp: 'Requires only ~7 days per year of physical presence; pathway to EU citizenship after <strong>10 years (7 for EU/CPLP nationals)</strong> under the new nationality law.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 24, presence: 'minimal', citYears: 10, citPresence: 'minimal', fam: 2, notes: ['Citizenship after 10 yrs (7 EU/CPLP)', 'Only ~7 days/yr presence counts toward it'], flags: {} },
-                    { id: 'cyprus', entryEur: 320000, capType: 'recover', name: 'Cyprus', img: 'img/cyprus.jpg', fb: 'https://images.unsplash.com/photo-1523910375841-a1e4ba29f5f0?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Funds', 'Shares'], total: '~€320,000+', base: '€300,000', fees: '~€20,000+', timeline: '2 to 6 Months', usp: 'Residency is granted for life; features an excellent non domicile tax regime (requires proof of €50k/yr offshore income).', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 8, citPresence: 'substantial', fam: 3, notes: ['Not in the Schengen Area'], flags: { notSchengen: true, taxFriendly: true } },
-                    { id: 'malta', entryEur: 170000, capType: 'contrib', name: 'Malta', img: 'img/malta.jpg', fb: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=800&auto=format&fit=crop', pills: ['Property Purchase', 'Property Lease'], total: '~€170,000 (Sunk)', base: 'Lease from €14k/yr', fees: '~€99,000', timeline: '6 to 8 Months', usp: 'Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. <em>Note: MPRP grants permanent residence only, not a path to citizenship.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 8, presence: 'zero', citYears: null, citPresence: 'substantial', fam: 3, notes: ['Permanent residence only, no citizenship path'], flags: { prOnly: true } },
-                    { id: 'bulgaria', entryEur: 525000, capType: 'recover', name: 'Bulgaria', img: 'img/bulgaria.jpg', fb: 'https://images.unsplash.com/photo-1513069020900-a162c4db0762?q=80&w=800&auto=format&fit=crop', pills: ['AIFs / ETFs'], total: '~€525,000', base: '€512,000', fees: '~€13,000', timeline: '3 to 6 Months', usp: 'Unlike standard EU Golden Visas, Bulgaria grants full permanent residency upfront via regulated AIFs. <strong>Now full Schengen (Jan 2025) and Eurozone (Jan 2026).</strong>', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 5, citPresence: 'minimal', fam: 2, notes: ['Immediate EU PR', 'Full Schengen & Eurozone', 'Citizenship track after 5 yrs PR, no stay requirement'], flags: { euPR: true, fullSchengen: true } },
-                    { id: 'latvia', entryEur: 60000, capType: 'risk', name: 'Latvia', img: 'img/latvia.jpg', fb: 'https://images.unsplash.com/photo-1542485060-70fbf1e2dce4?q=80&w=800&auto=format&fit=crop', pills: ['Company Share'], total: '~€60,000+', base: '€50,000', fees: '~€10,000', timeline: '1 to 4 Months', usp: 'Lowest entry threshold in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the company must actually trade and pay at least €40,000 a year in tax, so it suits active business investors. €5,000 renewal fee.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 1, tlMax: 4, presence: 'minimal', citYears: 10, citPresence: 'substantial', fam: 1, notes: ['Active business required (&ge;€40k/yr tax)'], flags: { activeBiz: true } },
-                    { id: 'italy', entryEur: 275000, capType: 'mixed', name: 'Italy', img: 'img/italy.jpg', fb: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop', pills: ['Startup', 'Gov. Bonds', 'Donation'], total: '~€275,000', base: 'From €250,000', fees: '~€25,000', timeline: '3 to 4 Months', usp: 'Pre-approval (Nulla Osta) before you invest capital; no minimum stay. Four routes: €250k innovative startup (a structured qualifying investment), €500k Italian company, €2M govt bonds, or €1M philanthropic donation. PR after 5 years.', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 10, citPresence: 'substantial', fam: 2, notes: ['Nulla Osta pre-approval', 'No minimum stay for the permit', 'Citizenship requires genuine residence'], flags: {} },
-                    { id: 'bahamas', entryEur: 944000, capType: 'recover', name: 'The Bahamas', img: 'img/bahamas.jpg', fb: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Gov. Bonds'], total: '~$1,021,000', base: '$1,000,000', fees: '~$21,000', timeline: '8 to 18 Months', usp: 'No income, capital gains or inheritance tax, for life. A $1.5M+ property investment triggers priority processing (3 to 6 months).', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'zero', citYears: null, fam: 2, notes: ['$1.5M+ triggers fast-track processing'], flags: { taxHaven: true, prOnly: true } },
-                    { id: 'uruguay', entryEur: 1850000, capType: 'recover', name: 'Uruguay', img: 'img/uruguay.jpg', fb: 'https://images.unsplash.com/photo-1598284566378-005dc9b04f7a?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Innovation Fund'], total: 'Varies', base: '~$2M (Tax Res.)', fees: 'Varies', timeline: '6 to 18 Months', usp: 'An 11 year tax holiday on foreign sourced income for qualifying tax residents.', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'required', citYears: 4, fam: 2, notes: ['Tax residency requires physical presence'], flags: { taxFriendly: true } },
-                    { id: 'paraguay', entryEur: 78000, capType: 'risk', name: 'Paraguay', img: 'img/paraguay.jpg', fb: 'https://images.unsplash.com/photo-1589139599187-54b67d53bb21?q=80&w=800&auto=format&fit=crop', pills: ['Business Investment'], total: '~$84,000', base: '$70,000', fees: '~$14,000', timeline: '45 to 90 Days', usp: 'Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 10% flat local). <em>Note: the $70k SUACE route requires a local company and 5 jobs. The April 2026 Investor Pass adds passive tiers (~$150k / ~$200k) with no job requirement.</em>', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 1, tlMax: 3, presence: 'minimal', citYears: 3, fam: 2, notes: ['SUACE: active business', 'Passive tiers from ~$150k'], flags: { activeBiz: true, taxFriendly: true } },
-                    { id: 'my_silver', group: 'Malaysia', entryEur: 275000, capType: 'recover', name: 'Malaysia: MM2H Silver', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase'], total: '~$321,000', base: '$150k deposit + RM600k home', fees: '~$24,000', timeline: '4 to 8 Months', usp: 'The entry tier: a 5 year renewable pass backed by a $150,000 bank deposit in your own name. A home from RM600,000 (RM1,000,000 in Kuala Lumpur) is compulsory and stays yours. 90 days a year in Malaysia, by any family member. <em>No work rights; not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 3, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['Deposit and home stay yours', 'KL homes from RM1M', '90 days/yr, waived from 50'], flags: { taxFriendly: true, prOnly: true } },
-                    { id: 'my_gold', group: 'Malaysia', entryEur: 685000, capType: 'recover', name: 'Malaysia: MM2H Gold', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase'], total: '~$772,000', base: '$500k deposit + RM1M home', fees: '~$27,000', timeline: '4 to 8 Months', usp: 'A 15 year pass from a $500,000 deposit that stays yours, plus a home from RM1,000,000. Same family rules and 90 day stay as Silver; the extra capital buys the long pass. <em>No work rights; not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 4, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['15 year pass', 'Deposit and home stay yours', '90 days/yr, waived from 50'], flags: { taxFriendly: true, prOnly: true } },
-                    { id: 'my_platinum', group: 'Malaysia', entryEur: 1370000, capType: 'recover', name: 'Malaysia: MM2H Platinum', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase', 'Work Rights'], total: '~$1,568,000', base: '$1M deposit + RM2M home', fees: '~$79,000', timeline: '4 to 8 Months', usp: 'A 20 year pass from a $1,000,000 deposit, plus a home from RM2,000,000. The only MM2H tier that lets you run a business and take employment in Malaysia. <em>Not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 4, tlMax: 8, presence: 'required', citYears: null, fam: 3, notes: ['20 year pass', 'Work and business allowed', 'Deposit and home stay yours'], flags: { taxFriendly: true, prOnly: true } },
-                    { id: 'my_pvip', group: 'Malaysia', entryEur: 225000, capType: 'recover', name: 'Malaysia: PVIP', img: 'img/malaysia-city.jpg', fb: '', pills: ['Fixed Deposit', 'No Property', 'Work Rights'], total: '~$325,000', base: 'RM1M deposit, no home', fees: '~$80,000', timeline: '3 to 6 Months', usp: 'The premium visa: 20 years, no age limit, no minimum stay, no property to buy, and you may work or run a business. Backed by a RM1,000,000 (~$245,000) deposit that stays yours. Needs proof of RM40,000 a month in offshore income. <em>Not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 3, tlMax: 6, presence: 'zero', citYears: null, fam: 3, notes: ['No minimum stay', 'No property purchase', 'Work and business allowed'], flags: { taxFriendly: true, prOnly: true } }
+                    { id: 'stkitts', entryEur: 242000, capType: 'mixed', name: 'Saint Kitts & Nevis', img: 'img/saintkitts.jpg', fb: 'https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate', 'Public Benefit'], total: '~$263,000', base: '$250,000', fees: '~$13,000', timeline: '4 to 6 Months', usp: 'The oldest Caribbean program and the shortest queue (3 to 8 months observed). Real-estate route $325k. Biometric enrolment mandatory since April 2026 ($2,500 per adult). A presence rule is proposed, not in force. Not covered by the US visa proclamation.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 6, presence: 'minimal', citYears: 0, fam: 2, notes: ['Presence rule proposed, not in force', 'EU asks for phase-out by 2028'], flags: {} },
+                    { id: 'grenada', entryEur: 227000, capType: 'mixed', name: 'Grenada', img: 'img/grenada.jpg', fb: 'https://images.unsplash.com/photo-1580979450379-3c35b84c8a81?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$245,000', base: '$235,000', fees: '~$10,000', timeline: '7 to 8 Months', usp: 'Retains USA E2 treaty access and visa-free China. The 30-day presence rule was deferred in August 2026; no visit is required today. First passports valid 5 years; interviews for all applicants 17+.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 8, presence: 'minimal', citYears: 0, fam: 3, notes: ['USA E2 treaty access', 'Presence rule deferred (Aug 2026)', 'EU asks for phase-out by 2028'], flags: { e2: true } },
+                    { id: 'stlucia', entryEur: 231000, capType: 'recover', name: 'Saint Lucia', img: 'img/saintlucia.jpg', fb: 'https://images.unsplash.com/photo-1583804825983-500e57577541?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Gov. Bonds', 'Real Estate'], total: '~$250,000', base: '$240,000 / $300k', fees: '~$11,000 ($61,000 bond)', timeline: '12 to 26 Months', usp: 'The $300k government bond returns full principal after 5 years, with a $50,000 non-refundable government fee; 90 days after approval to invest. Processing currently 12 to 26 months. UK visitor visa required since March 2026.', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 26, presence: 'zero', citYears: 0, fam: 2, notes: ['Bond returns capital after 5 yrs ($50k fee)', 'Slow processing: 12 to 26 months', 'EU asks for phase-out by 2028'], flags: {} },
+                    { id: 'antigua', entryEur: 232000, capType: 'mixed', name: 'Antigua & Barbuda', img: 'img/antigua.jpg', fb: 'https://images.unsplash.com/photo-1574347209709-a1b7e4dd38b6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Univ. Fund', 'Real Estate'], total: '~$251,000', base: '$230,000', fees: '~$21,000', timeline: '10 to 18 Months', usp: 'UWI Fund ($260k) is the most cost-effective route for families of 6+. Interviews for all applicants 16+. <em>Important: US immigrant and visitor visas suspended for Antiguan nationals without a valid visa since 1 January 2026 (Proclamation 10998). The government may suspend the program by 12 November 2026.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 18, presence: 'minimal', citYears: 0, fam: 3, notes: ['US visa suspension (Procl. 10998)', 'Suspension possible by 12 Nov 2026'], flags: { usRestriction: true } },
+                    { id: 'dominica', entryEur: 195000, capType: 'mixed', name: 'Dominica', img: 'img/dominica.jpg', fb: 'https://images.unsplash.com/photo-1549466710-534fc181cda6?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'Real Estate'], total: '~$211,000', base: '$200,000', fees: '~$11,000', timeline: '6 to 12 Months', usp: 'Flexible family inclusion (unmarried daughters under 25, students to 30, parents 65+). Real-estate route carries a $75,000 government fee. <em>Important: US immigrant and visitor visas suspended for Dominican nationals without a valid visa since 1 January 2026 (Proclamation 10998). A 30-day presence rule is announced, not yet in force.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 2, tlMax: 12, presence: 'zero', citYears: 0, fam: 3, notes: ['US visa suspension (Procl. 10998)', 'EU asks for phase-out by 2028'], flags: { usRestriction: true } },
+                    { id: 'vanuatu', entryEur: 128000, capType: 'contrib', name: 'Vanuatu', img: 'img/vanuatu.jpg', fb: 'https://images.unsplash.com/photo-1550742137-b4d619ed1d03?q=80&w=800&auto=format&fit=crop', pills: ['Donation', 'CIIP Fund'], total: '~$138,000', base: '$130,000', fees: '~$8,000', timeline: '30 to 90 Days', usp: 'Fastest processing globally (30 to 90 days); zero income, corporate or wealth tax. Biometrics in person (Port Vila, Dubai, Hong Kong or Noum&eacute;a), oath by video. <em>Note: no visa-free access to the EU/Schengen Area or the UK.</em>', pathway: 'CBI - Caribbean/Global', type: 'cbi', bucket: 1, tlMax: 3, presence: 'zero', citYears: 0, fam: 2, notes: ['No EU/Schengen or UK visa-free access', 'In-person biometrics'], flags: { noSchengen: true, taxHaven: true } },
+                    { id: 'greece', entryEur: 270000, capType: 'recover', name: 'Greece', img: 'img/greece.jpg', fb: 'https://images.unsplash.com/photo-1503152394-c571994fd383?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Startup Route'], total: '~€270,000+', base: 'From €250,000*', fees: '~€20,000', timeline: '4 to 9 Months', usp: '<strong>*Important:</strong> The €250,000 tier applies only to completed commercial-to-residential conversions and restored listed buildings. Standard real estate: €400,000 to €800,000 by zone. Startup route since 2025: €250,000 in an Elevate Greece company. <em>Announced for 2027, not yet law: transfer tax for non-EU buyers to rise from 3.09% to 15%.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 9, presence: 'zero', citYears: 7, citPresence: 'substantial', fam: 3, notes: ['€250k entry requires commercial conversion', 'Short-term letting banned', '15% transfer tax proposed for 2027'], flags: {} },
+                    { id: 'hungary', entryEur: 320000, capType: 'recover', name: 'Hungary', img: 'img/hungary.jpg', fb: 'https://images.unsplash.com/photo-1516738905335-af586d5ca2bb?q=80&w=800&auto=format&fit=crop', pills: ['REIF Fund', 'Public Trust'], total: '~€320,000', base: '€250,000', fees: '~€70,000', timeline: '3 to 6 Months', usp: 'Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. The direct €500k property route closed on 1 January 2025; only the €250k fund and the €1M trust donation routes remain. <em>Open as of October 2026; the new government has said it wants to abolish it, so status is confirmed before you commit.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'zero', citYears: 8, citPresence: 'substantial', fam: 2, notes: ['No minimum stay for the permit', 'PR after 3 yrs, citizenship after 8 yrs of residence', 'Abolition announced, not enacted'], flags: {} },
+                    { id: 'portugal', entryEur: 542000, capType: 'recover', name: 'Portugal', img: 'img/portugal.jpg', fb: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop', pills: ['VC/PE Funds', 'Cultural Heritage'], total: '~€542,000', base: '€500,000', fees: '~€42,000', timeline: '~12 to 24 Months to first card', usp: 'Requires only ~7 days per year of physical presence; pathway to EU citizenship after <strong>10 years (7 for EU/CPLP nationals)</strong> under the May 2026 nationality law, counted from the first residence card.', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 24, presence: 'minimal', citYears: 10, citPresence: 'minimal', fam: 2, notes: ['Citizenship after 10 yrs (7 EU/CPLP)', 'Only ~7 days/yr presence counts toward it'], flags: {} },
+                    { id: 'cyprus', entryEur: 320000, capType: 'recover', name: 'Cyprus', img: 'img/cyprus.jpg', fb: 'https://images.unsplash.com/photo-1523910375841-a1e4ba29f5f0?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Funds', 'Shares'], total: '~€320,000+', base: '€300,000', fees: '~€20,000+', timeline: '2 to 6 Months', usp: 'Permanent residence for life, provided you keep the investment and show €50,000 a year of secured foreign income. Non-dom tax status available separately: 0% on dividends and interest for 17 years. <em>Not in Schengen yet; a tightening of the program was announced in September 2026.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 6, presence: 'minimal', citYears: 8, citPresence: 'substantial', fam: 3, notes: ['Not in the Schengen Area', 'Tightening announced Sept 2026'], flags: { notSchengen: true, taxFriendly: true } },
+                    { id: 'malta', entryEur: 170000, capType: 'contrib', name: 'Malta', img: 'img/malta.jpg', fb: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?q=80&w=800&auto=format&fit=crop', pills: ['Property Purchase', 'Property Lease'], total: '~€170,000 (Sunk)', base: 'Lease from €14k/yr', fees: '~€99,000', timeline: '6 to 12 Months', usp: 'Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. <em>Note: MPRP grants permanent residence only, not a path to citizenship.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 12, presence: 'zero', citYears: null, citPresence: 'substantial', fam: 3, notes: ['Permanent residence only, no citizenship path'], flags: { prOnly: true } },
+                    { id: 'bulgaria', entryEur: 525000, capType: 'recover', name: 'Bulgaria', img: 'img/bulgaria.jpg', fb: 'https://images.unsplash.com/photo-1513069020900-a162c4db0762?q=80&w=800&auto=format&fit=crop', pills: ['AIFs / ETFs'], total: '~€525,000', base: '€511,300', fees: '~€13,000', timeline: '4 to 8 Months', usp: 'Unlike standard EU Golden Visas, Bulgaria grants full permanent residency upfront via regulated AIFs. <strong>Full Schengen since January 2025, euro since January 2026.</strong> <em>Warning: a bill passed at first reading in September 2026 would require PR holders to spend six months a year in Bulgaria. Not yet law; status confirmed before committing.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 3, tlMax: 8, presence: 'minimal', citYears: 5, citPresence: 'minimal', fam: 2, notes: ['Immediate EU PR', 'Full Schengen & Eurozone', 'Residency-requirement bill pending (Sept 2026)'], flags: { euPR: true, fullSchengen: true } },
+                    { id: 'latvia', entryEur: 60000, capType: 'risk', name: 'Latvia', img: 'img/latvia.jpg', fb: 'https://images.unsplash.com/photo-1542485060-70fbf1e2dce4?q=80&w=800&auto=format&fit=crop', pills: ['Company Share'], total: '~€60,000+', base: '€50,000', fees: '~€10,000', timeline: '1 to 4 Months', usp: 'One of the lowest entry thresholds in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the company must actually trade and pay at least €40,000 a year in tax, so it suits active business investors. Since 15 September 2026 the property and deposit routes are closed, so this is the main investor route in Latvia. Not open to Russian or Belarusian nationals.</em>', pathway: 'RBI - Europe', type: 'eu', bucket: 1, tlMax: 4, presence: 'minimal', citYears: 10, citPresence: 'substantial', fam: 1, notes: ['Active business required (&ge;€40k/yr tax)'], flags: { activeBiz: true } },
+                    { id: 'italy', entryEur: 275000, capType: 'mixed', name: 'Italy', img: 'img/italy.jpg', fb: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop', pills: ['Startup', 'Gov. Bonds', 'Donation'], total: '~€275,000', base: 'From €250,000', fees: '~€25,000', timeline: '3 to 4 Months', usp: 'Pre-approval (Nulla Osta) before you invest capital; no minimum stay for the visa. Four routes: €250k innovative startup (a structured qualifying investment), €500k Italian company, €2M govt bonds, or €1M philanthropic donation. Permanent residence after 5 years requires actually living in Italy, plus A2 Italian and an income test. Suspended for Russian and Belarusian nationals.', pathway: 'RBI - Europe', type: 'eu', bucket: 2, tlMax: 4, presence: 'zero', citYears: 10, citPresence: 'substantial', fam: 2, notes: ['Nulla Osta pre-approval', 'No minimum stay for the permit', 'Citizenship requires genuine residence'], flags: {} },
+                    { id: 'bahamas', entryEur: 944000, capType: 'recover', name: 'The Bahamas', img: 'img/bahamas.jpg', fb: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Gov. Bonds'], total: '~$1,021,000', base: '$1,000,000', fees: '~$21,000', timeline: '8 to 18 Months', usp: 'No income, capital gains or inheritance tax in the Bahamas. An investment of $1.5M or more qualifies for faster consideration.', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'zero', citYears: null, fam: 2, notes: ['$1.5M+ qualifies for faster consideration'], flags: { taxHaven: true, prOnly: true } },
+                    { id: 'uruguay', entryEur: 1850000, capType: 'recover', name: 'Uruguay', img: 'img/uruguay.jpg', fb: 'https://images.unsplash.com/photo-1598284566378-005dc9b04f7a?q=80&w=800&auto=format&fit=crop', pills: ['Real Estate', 'Innovation Fund'], total: 'Varies', base: '~$2M (Tax Res.)', fees: 'Varies', timeline: '6 to 18 Months', usp: 'An 11 year tax holiday on foreign sourced capital income (dividends, interest, gains, rent). It opens with property above about US$2M bought from 1 January 2026, qualifying funds of about US$100,000 a year, or more than 183 days a year in Uruguay.', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 4, tlMax: 18, presence: 'required', citYears: 4, fam: 2, notes: ['Tax residency requires physical presence'], flags: { taxFriendly: true } },
+                    { id: 'paraguay', entryEur: 78000, capType: 'risk', name: 'Paraguay', img: 'img/paraguay.jpg', fb: 'https://images.unsplash.com/photo-1589139599187-54b67d53bb21?q=80&w=800&auto=format&fit=crop', pills: ['Business Investment'], total: '~$84,000', base: '$70,000', fees: '~$14,000', timeline: '45 Days to 6 Months', usp: 'Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 8 to 10% on local income). <em>Note: the $70k SUACE route requires a local company and 5 jobs. The April 2026 Investor Pass adds tiers with no job requirement: ~$200k in real estate or financial assets, or ~$150k in tourism with an approved business plan.</em>', pathway: 'RBI - LatAm/Bahamas', type: 'am', bucket: 1, tlMax: 6, presence: 'minimal', citYears: 3, fam: 2, notes: ['SUACE: active business', 'Tiers without jobs from ~$150k'], flags: { activeBiz: true, taxFriendly: true } },
+                    { id: 'my_silver', group: 'Malaysia', entryEur: 275000, capType: 'recover', name: 'Malaysia: MM2H Silver', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase'], total: '~$336,000', base: '$150k deposit + RM600k home', fees: '~$38,000', timeline: '6 to 12 Months', usp: 'The entry tier: a 5 year renewable pass backed by a $150,000 bank deposit in your own name. A home from RM600,000 (RM1,000,000 in Kuala Lumpur) is compulsory and stays yours. 90 days a year in Malaysia, by any family member. <em>No work rights; not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 3, tlMax: 12, presence: 'required', citYears: null, fam: 3, notes: ['Deposit and home stay yours', 'KL homes from RM1M', '90 days/yr, waived from 50'], flags: { taxFriendly: true, prOnly: true } },
+                    { id: 'my_gold', group: 'Malaysia', entryEur: 685000, capType: 'recover', name: 'Malaysia: MM2H Gold', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase'], total: '~$796,000', base: '$500k deposit + RM1M home', fees: '~$50,000', timeline: '6 to 12 Months', usp: 'A 15 year pass from a $500,000 deposit that stays yours, plus a home from RM1,000,000. Same family rules and 90 day stay as Silver; the extra capital buys the long pass. <em>No work rights; not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 4, tlMax: 12, presence: 'required', citYears: null, fam: 3, notes: ['15 year pass', 'Deposit and home stay yours', '90 days/yr, waived from 50'], flags: { taxFriendly: true, prOnly: true } },
+                    { id: 'my_platinum', group: 'Malaysia', entryEur: 1370000, capType: 'recover', name: 'Malaysia: MM2H Platinum', img: 'img/malaysia.jpg', fb: '', pills: ['Fixed Deposit', 'Home Purchase', 'Work Rights'], total: '~$1,618,000', base: '$1M deposit + RM2M home', fees: '~$125,000', timeline: '6 to 12 Months', usp: 'A 20 year pass from a $1,000,000 deposit, plus a home from RM2,000,000. The only MM2H tier that lets you run a business and take employment in Malaysia. <em>Not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 4, tlMax: 12, presence: 'required', citYears: null, fam: 3, notes: ['20 year pass', 'Work and business allowed', 'Deposit and home stay yours'], flags: { taxFriendly: true, prOnly: true } },
+                    { id: 'my_pvip', group: 'Malaysia', entryEur: 225000, capType: 'recover', name: 'Malaysia: PVIP', img: 'img/malaysia-terrace.jpg', fb: '', pills: ['Fixed Deposit', 'No Property', 'Work Rights'], total: '~$328,000', base: 'RM1M deposit, no home', fees: '~$82,000', timeline: '3 to 6 Months', usp: 'The premium visa: 20 years, no age limit, no minimum stay, no property to buy, and you may work or run a business. Backed by a RM1,000,000 (~$245,000) deposit that stays yours. Needs income of RM40,000 a month, onshore or offshore. <em>Not a route to PR or citizenship.</em>', pathway: 'RBI - Asia', type: 'asia', bucket: 3, tlMax: 6, presence: 'zero', citYears: null, fam: 3, notes: ['No minimum stay', 'No property purchase', 'Work and business allowed'], flags: { taxFriendly: true, prOnly: true } }
                 ];
 
                 function pfScore(p, prof) {
@@ -648,6 +644,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </p>
                 </div>
 
+                <div class="max-w-5xl mx-auto bg-amber-50 border border-amber-200 rounded-sm p-6 md:p-8 mb-10">
+                    <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-amber-700 mb-3">Read before you compare Caribbean programs</p>
+                    <p class="text-sm text-gray-700 font-light leading-relaxed">On 25 June 2026 the European Commission asked Antigua, Dominica, Grenada, Saint Kitts and Saint Lucia to end their citizenship programs by 1 June 2028, and running such a program is now in itself a ground for suspending Schengen visa-free travel. The governments have until 12 November 2026 to respond; Antigua has said it is leaning towards suspending its program by then. Separately, the United States has paused immigrant visas for nationals of all five countries since January 2026, and restricts visitor visas for Antigua and Dominica. None of this is final, but it changes the advice: a Caribbean passport bought today should be valued on what it is likely to offer after 2028, and we say so on every call. Vanuatu is not covered by the EU letter; its EU visa-free access was withdrawn earlier.</p>
+                </div>
+
                 <!-- Capital Treatment Legend -->
                 <div id="capital-treatment" class="max-w-5xl mx-auto bg-white border border-gray-200 rounded-sm card-shadow p-8 md:p-10 mb-16">
                     <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-gold mb-3">Read This First</p>
@@ -688,7 +689,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="space-y-3 mb-6">
                                 <div class="flex justify-between items-center border-b border-gray-100 pb-2">
                                     <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
-                                    <span class="text-lg font-bold text-navy">~$261,000</span>
+                                    <span class="text-lg font-bold text-navy">~$263,000</span>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
@@ -696,7 +697,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center border-b border-gray-100 pb-2">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. Fees</span>
-                                    <span class="text-xs font-semibold text-gray-700">~$11,000</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$13,000</span>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
@@ -716,7 +717,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">The oldest, gold-standard CBI. Real-estate route reduced to $325k. Biometric enrollment now mandatory; 30-day presence rule proposed but not yet in force.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The oldest Caribbean program and the one with the shortest queue (3 to 8 months observed). Real-estate route $325k. Biometric enrolment mandatory since April 2026 (government fee $2,500 per adult, 10% off until 31 December 2026). A presence rule is proposed, not in force. Not covered by the US visa proclamation.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -766,7 +767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Retains USA E2 treaty access and visa-free China. New 30-day presence rule (5 days main applicant yr 1, 25 days family across yrs 2&ndash;5) effective 2026.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Retains USA E2 treaty access and visa-free China. The 30-day presence rule (30 days across the first five years, at least 5 days per applicant in year one) was deferred in August 2026 pending the regional regulator; no visit is required today. First passports are now valid 5 years, and all applicants 17+ are interviewed.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -797,11 +798,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center border-b border-gray-100 pb-2">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. Fees</span>
-                                    <span class="text-xs font-semibold text-gray-700">~$10,000</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$11,000 (bond route ~$61,000)</span>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">6 to 10 Months</span>
+                                    <span class="text-xs font-bold text-navy">12 to 26 Months</span>
                                 </div>
                             </div>
                             <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
@@ -811,14 +812,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="px-4 py-3 space-y-2">
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Donation $240,000</strong>: contribution to the national fund. Not returned.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Government bond $300,000</strong>: <strong class="text-navy">100% of principal returned after 5 years.</strong> The strongest capital-preservation route in the Caribbean.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Government bond $300,000</strong>: <strong class="text-navy">100% of principal returned after 5 years,</strong> but the route carries a $50,000 non-refundable government fee on top of the usual charges.</p>
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $300,000</strong>: title held; resaleable after 5 years.</p>
-                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">The bond pays <strong class="text-navy">0% interest</strong>, but it returns the entire $300,000. On that route your real cost is the fees, not the capital.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">The bond pays <strong class="text-navy">0% interest</strong> and returns the entire $300,000. The price of that route is about $61,000 in fees that are not returned, $50,000 of it the bond administration fee.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">The $300k government bond guarantees full principal return after 5 yrs; 90 day grace period to invest post approval.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">The $300k government bond returns full principal after 5 years; 90 days after approval to invest. Processing is currently the slowest in the region (12 to 26 months observed). UK visitor visa required since March 2026.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -853,7 +854,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">3 to 6 Months</span>
+                                    <span class="text-xs font-bold text-navy">10 to 18 Months</span>
                                 </div>
                             </div>
                             <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
@@ -870,7 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">UWI Fund ($260k) most cost-effective globally for families of 6+. Mandatory interview added in 2026. <em>Note: physical-residency requirement being increased; since Jan 2026 the US applies partial visa restrictions to new passport applicants (visas issued before 31 Dec 2025 are honoured).</em></p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">UWI Fund ($260k) is the most cost-effective route for families of 6+. Virtual interviews for all applicants 16+. Presence: 5 days in five years today; a bill would raise it to 30. <em>The government is leaning towards suspending the program by 12 November 2026 under EU pressure. New nationals face US visa restrictions (Proclamation 10998).</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -904,7 +905,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">6+ Months</span>
+                                    <span class="text-xs font-bold text-navy">6 to 12 Months</span>
                                 </div>
                             </div>
                             <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
@@ -914,13 +915,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="px-4 py-3 space-y-2">
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">EDF donation $200,000</strong>: not returned.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $200,000</strong>: title held; resaleable after 3 years (5 if sold to another CBI applicant).</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $200,000</strong>: plus a $75,000 government fee on this route (single applicant), so about $285,000 in total. Title held; resaleable after 3 years (5 if sold to another CBI applicant).</p>
                                     <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return on the real-estate route: <strong class="text-navy">2&ndash;4% p.a.</strong> from eco-resort rental pools. Not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Deep eco-development integration; flexible inclusion (unmarried daughters under 25, students to 30). New biometric e-passports and mandatory virtual interviews for applicants 16+. <em>Note: since Jan 2026 the US applies partial visa restrictions to new passport applicants (existing US visas honoured).</em></p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Flexible family inclusion (unmarried daughters under 25, students to 30, parents 65+). Virtual interviews for all applicants 16+. UK visitor visa required. <em>New nationals face US visa restrictions (Proclamation 10998). Announced, not yet in force: 30 days' presence in the first five years and in-person passport collection.</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -932,7 +933,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <img src="img/vanuatu.jpg" alt="Vanuatu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 smooth-downscale" onerror="this.src='https://images.unsplash.com/photo-1550742137-b4d619ed1d03?q=80&w=800&auto=format&fit=crop'">
                             <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
                                 <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Donation</span>
-                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">Real Estate</span>
+                                <span class="bg-white/95 backdrop-blur-sm text-navy text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded-sm shadow-sm border-l-2 border-gold">CIIP Fund</span>
                             </div>
                         </div>
                         <div class="p-6 border-b border-gray-100 bg-gray-50/50">
@@ -942,7 +943,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="space-y-3 mb-6">
                                 <div class="flex justify-between items-center border-b border-gray-100 pb-2">
                                     <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Total Price</span>
-                                    <span class="text-lg font-bold text-navy">~$136,000</span>
+                                    <span class="text-lg font-bold text-navy">~$138,000</span>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
@@ -950,7 +951,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center border-b border-gray-100 pb-2">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. Fees</span>
-                                    <span class="text-xs font-semibold text-gray-700">~$6,000</span>
+                                    <span class="text-xs font-semibold text-gray-700">~$8,000</span>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
@@ -963,13 +964,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-gray-100 text-gray-500 border border-gray-200">Non-Recoverable</span>
                                 </div>
                                 <div class="px-4 py-3 space-y-2">
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Donation $130,000</strong>: contribution to the state. Not returned. There is no recoverable route on this program.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Donation $130,000</strong>: contribution to the state. Not returned. The separate CIIP route (about $170,000 all-in) includes a $50,000 fund unit redeemable after 4 years.</p>
                                     <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">You are buying speed, not an asset. If capital recovery matters more than turnaround time, look at Saint Lucia&rsquo;s bond route instead.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Fastest processing globally via a fully remote process; zero income, corporate, or wealth tax. <em>Note: no longer visa-free to the EU/Schengen Area; visa-free access remains to roughly 90 countries across Asia and Oceania, including Hong Kong and Singapore.</em></p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Fastest processing globally (30 to 90 days); zero income, corporate or wealth tax. Biometrics are given in person (Port Vila, Dubai, Hong Kong or Noum&eacute;a); the oath can be taken by video. <em>Note: no visa-free access to the EU/Schengen Area or the UK; about 90 countries remain visa-free, including Hong Kong and Singapore. CBI citizens cannot vote in Vanuatu.</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1017,7 +1018,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">3 to 4 Months</span>
+                                    <span class="text-xs font-bold text-navy">4 to 9 Months (by region)</span>
                                 </div>
                             </div>
                             <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
@@ -1028,12 +1029,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="px-4 py-3 space-y-2">
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate €250,000</strong>: you own the property outright and hold the title. Sellable at any time; the residence permit lapses unless the investment is replaced.</p>
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Elevate Greece startup €250,000</strong>: early-stage equity; genuine capital risk.</p>
-                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return: <strong class="text-navy">4&ndash;5% p.a.</strong> gross residential rental yield in Athens, higher on short-let. Not guaranteed.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return: <strong class="text-navy">3&ndash;5% p.a.</strong> gross on long-term lets in Athens. Short-term letting of golden visa property is banned (&euro;50,000 fine and loss of the permit). Not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed"><strong>*Important:</strong> The €250,000 threshold requires a commercial to residential conversion. Standard real estate: €400,000 to €800,000 by zone. <strong>New 2026 route:</strong> €250,000 in an Elevate Greece startup (Law 5162/2024).</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed"><strong>*Important:</strong> The €250,000 tier applies only to completed commercial-to-residential conversions and restored listed buildings, and only once per property. Standard real estate: €400,000 to €800,000 by zone. Startup route since 2025: €250,000 in an Elevate Greece company (max 33% stake, two jobs; 1 year permit, renewable). <em>Announced for 2027, not yet law: property transfer tax for non-EU buyers to rise from 3.09% to 15%. Deeds signed before the change keep 3.09%.</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1083,7 +1084,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. The direct €500k property route closed on 1 January 2025; only the €250k fund and the €1M trust donation routes remain.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Grants a 10 year upfront residence permit with a low risk "approve first, invest later" model. The direct €500k property route closed on 1 January 2025; only the €250k fund and the €1M trust donation routes remain. <em>Open as of October 2026. The party that won the April 2026 election has said it wants to abolish the scheme; nothing is enacted yet, so we confirm the status before you commit. Not open to Russian or Belarusian nationals.</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1117,7 +1118,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">~12 to 24 Months (easing)</span>
+                                    <span class="text-xs font-bold text-navy">~12 to 24 Months to first card</span>
                                 </div>
                             </div>
                             <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
@@ -1133,7 +1134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Requires only ~7 days per year of physical presence; pathway to EU citizenship after <strong>10 years (7 for EU/CPLP nationals)</strong> under the new nationality law.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Requires only ~7 days per year of physical presence; pathway to EU citizenship after <strong>10 years (7 for EU/CPLP nationals)</strong> under the May 2026 nationality law, counted from the first residence card, with an A2 Portuguese test.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1184,7 +1185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Residency is granted for life; features an excellent non domicile tax regime (requires proof of €50k/yr offshore income).</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Permanent residence for life, provided you keep the investment and show €50,000 a year of secured foreign income (+€15,000 for a spouse, +€10,000 per child). Separately, tax residents can elect non-dom status: 0% tax on dividends and interest for 17 years. <em>Not in Schengen yet (accession targeted for 2027). The government said in September 2026 it will tighten the program; current criteria still apply.</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1227,14 +1228,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">Recoverable</span>
                                 </div>
                                 <div class="px-4 py-3 space-y-2">
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $1,000,000</strong>: freehold title, fully sellable; must be retained while permanent residency is held.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Government bonds</strong>: principal returned at maturity.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate $1,000,000</strong>: freehold title, fully sellable; must be kept for the 10-year holding period.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Government bonds</strong>: zero-coupon Central Bank bonds, principal returned at maturity after 10 years.</p>
                                     <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Indicative return: <strong class="text-navy">3&ndash;6% p.a.</strong> rental in prime Nassau and Exuma markets, in USD-pegged currency. Not guaranteed.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">No income, capital gains or inheritance tax, for life. A $1.5M+ property investment triggers priority processing (3 to 6 months).</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">No income, capital gains or inheritance tax in the Bahamas. An investment of $1.5M or more qualifies for faster consideration.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1278,13 +1279,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="px-4 py-3 space-y-2">
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Real estate</strong>: freehold title; foreigners hold the same ownership rights as citizens. Fully sellable.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Innovation fund</strong>: capital at market risk; exit on fund terms.</p>
-                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">The return here is fiscal, not rental: the <strong class="text-navy">11-year tax holiday</strong> on foreign-sourced income is usually worth more than any yield on the asset itself.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Qualifying fund route</strong>: the Ministry of Economy and Finance has yet to define which funds qualify; capital at market risk.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">The return here is fiscal, not rental: the <strong class="text-navy">11-year tax holiday</strong> on foreign-sourced capital income is usually worth more than any yield on the asset itself.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">An 11 year tax holiday on foreign sourced income for qualifying tax residents.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">An 11 year tax holiday on foreign sourced capital income (dividends, interest, gains, rent). It opens with property above about US$2M bought from 1 January 2026, qualifying funds of about US$100,000 a year, or more than 183 days a year in Uruguay.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1317,7 +1318,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="flex justify-between items-center pt-1">
                                     <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                    <span class="text-xs font-bold text-navy">45 to 90 Days</span>
+                                    <span class="text-xs font-bold text-navy">45 Days to 6 Months</span>
                                 </div>
                             </div>
                             <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
@@ -1327,13 +1328,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="px-4 py-3 space-y-2">
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">SUACE business $70,000</strong>: working capital in your own Paraguayan company. Recoverable only through the business itself, not through a redemption.</p>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Investor Pass real estate ~$200,000</strong> (Res. 0283/2026): title held; sellable.</p>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Investor Pass real estate ~$200,000</strong> (Res. 0283/2026): title held.</p>
                                     <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Return is entirely dependent on the operating business. Treat the $70,000 route as founding a company, not as buying a product.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 10% flat local). <em>Note: the $70k SUACE route requires a local company and 5 jobs for Paraguayans. The April 2026 Investor Pass (Res. 0283/2026) adds passive tiers (~$150k tourism / ~$200k real estate or financial) with no job requirement.</em></p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Direct 10 year permanent residency; strict territorial tax (0% on foreign income, 8 to 10% on local income). <em>Note: the $70k SUACE route requires a local company and 5 jobs for Paraguayans. The April 2026 Investor Pass (Res. 0283/2026) adds tiers with no job requirement: ~$200k in real estate or financial assets, or ~$150k in tourism with an approved business plan.</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1381,7 +1382,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Lowest entry threshold in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the company must actually trade and pay at least €40,000 a year in tax, so it suits active business investors. €5,000 renewal fee.</em></p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">One of the lowest entry thresholds in the EU: €50,000 company equity + €10,000 one-time state fee. <em>Note: the company must actually trade and pay at least €40,000 a year in tax, so it suits active business investors. Since 15 September 2026 the property and deposit routes are closed, so this is the main investor route in Latvia. Not open to Russian or Belarusian nationals.</em></p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1429,12 +1430,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-amber-600 font-bold">&#9684;</span> <strong class="text-navy">Italian company €500,000</strong>: equity in an established company.</p>
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Government bonds €2,000,000</strong>: <strong class="text-navy">principal returned at maturity, plus coupon.</strong> The lowest-risk route on this site.</p>
                                     <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">Philanthropic donation €1,000,000</strong>: not returned.</p>
-                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Bond route: Italian BTP yields have recently run around <strong class="text-navy">3&ndash;4% p.a.</strong>, paid as coupon, with principal repaid at maturity. Yields move with the market.</p>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Bond route: Italian BTP yields currently run <strong class="text-navy">4.6% p.a.</strong> on 10-year bonds, paid as coupon, with principal repaid at maturity. Shorter maturities pay less, and yields move with the market.</p>
                                 </div>
                             </div>
                             <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                 <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                <p class="text-[11px] text-navy font-medium leading-relaxed">Pre-approval (Nulla Osta) before you invest capital; no minimum stay. Four routes: €250k innovative startup (a structured qualifying investment), €500k Italian company, €2M govt bonds, or €1M philanthropic donation. PR after 5 years.</p>
+                                <p class="text-[11px] text-navy font-medium leading-relaxed">Pre-approval (Nulla Osta) before you invest capital; no minimum stay for the visa. Four routes: €250k innovative startup (a structured qualifying investment), €500k Italian company, €2M govt bonds, or €1M philanthropic donation. Permanent residence after 5 years requires actually living in Italy, plus A2 Italian and an income test. Suspended for Russian and Belarusian nationals.</p>
                             </div>
                             <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire &rarr;</a>
                         </div>
@@ -1459,7 +1460,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="p-6 border-b border-gray-100 bg-gray-50/50">
                                 <h3 class="text-xl serif text-navy font-bold">Malta</h3>
-                                <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">Direct PR in 6-8 Months</p>
+                                <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">Direct PR in 6 to 12 Months</p>
                             </div>
                             <div class="p-6 flex-grow flex flex-col justify-between">
                                 <div class="space-y-3 mb-6">
@@ -1477,7 +1478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     </div>
                                     <div class="flex justify-between items-center pt-1">
                                         <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                        <span class="text-xs font-bold text-navy">6 to 8 Months</span>
+                                        <span class="text-xs font-bold text-navy">6 to 12 Months</span>
                                     </div>
                                 </div>
                                 <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
@@ -1494,7 +1495,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                                 <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                     <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                    <p class="text-[11px] text-navy font-medium leading-relaxed">Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. Immediate 1 year temp residence on application. <em>Note: MPRP grants permanent residence only, not a path to citizenship.</em></p>
+                                    <p class="text-[11px] text-navy font-medium leading-relaxed">Unified €37k government contribution + €60k admin fee. Property purchase €375k or lease €14k/yr. An optional 1 year temporary residence permit is available once initial screening clears. <em>Note: MPRP grants permanent residence only, not a path to citizenship.</em></p>
                                 </div>
                                 <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire About Malta &rarr;</a>
                             </div>
@@ -1514,7 +1515,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="p-6 border-b border-gray-100 bg-gray-50/50">
                                 <h3 class="text-xl serif text-navy font-bold">Bulgaria</h3>
-                                <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">Direct PR in 3-6 Months</p>
+                                <p class="text-[9px] text-gold uppercase tracking-widest font-bold mt-1">Direct PR in 4 to 8 Months</p>
                             </div>
                             <div class="p-6 flex-grow flex flex-col justify-between">
                                 <div class="space-y-3 mb-6">
@@ -1524,7 +1525,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     </div>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[10px] uppercase tracking-widest text-gray-500">Base Capital</span>
-                                        <span class="text-xs font-semibold text-gray-700">€512,000</span>
+                                        <span class="text-xs font-semibold text-gray-700">€511,300</span>
                                     </div>
                                     <div class="flex justify-between items-center border-b border-gray-100 pb-2">
                                         <span class="text-[10px] uppercase tracking-widest text-gray-500">Est. Fees</span>
@@ -1532,7 +1533,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     </div>
                                     <div class="flex justify-between items-center pt-1">
                                         <span class="text-[10px] uppercase tracking-widest text-gray-400">Timeline</span>
-                                        <span class="text-xs font-bold text-navy">3 to 6 Months</span>
+                                        <span class="text-xs font-bold text-navy">4 to 8 Months</span>
                                     </div>
                                 </div>
                                 <div class="border border-gray-200 rounded-sm mb-6 overflow-hidden">
@@ -1541,14 +1542,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <span class="text-[8px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm bg-emerald-50 text-emerald-700 border border-emerald-200">&asymp;98% Recoverable</span>
                                     </div>
                                     <div class="px-4 py-3 space-y-2">
-                                        <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Regulated AIF / ETF units €512,000</strong>: marketable fund units, redeemable after the 5-year holding period at their value at that time.</p>
+                                        <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-emerald-600 font-bold">&#9679;</span> <strong class="text-navy">Regulated AIF / ETF units €511,300 (BGN 1 million)</strong>: marketable fund units, redeemable after the 5-year holding period at their value at that time.</p>
                                         <p class="text-[11px] text-gray-600 leading-relaxed"><span class="text-gray-400 font-bold">&#9675;</span> <strong class="text-navy">State and legal fees ~€13,000</strong>: not returned.</p>
-                                        <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Of the ~€525,000 total, roughly <strong class="text-navy">€512,000 remains your asset</strong> and only ~€13,000 is actually spent. Indicative return is fund-dependent and confirmed at briefing; unit values can fall.</p>
+                                        <p class="text-[10px] text-gray-500 leading-relaxed border-t border-dashed border-gray-200 pt-2">Of the ~€525,000 total, roughly <strong class="text-navy">€511,300 remains your asset</strong> and only ~€13,000 is actually spent. Indicative return is fund-dependent and confirmed at briefing; unit values can fall.</p>
                                     </div>
                                 </div>
                                 <div class="bg-gold/10 p-4 border-l-2 border-gold mb-6 rounded-r-sm">
                                     <span class="text-[9px] uppercase tracking-widest font-bold text-gold block mb-1">What Stands Out</span>
-                                    <p class="text-[11px] text-navy font-medium leading-relaxed">Unlike standard EU Golden Visas, Bulgaria grants full permanent residency upfront via regulated AIFs. <strong>Now full Schengen (Jan 2025) and Eurozone (Jan 2026).</strong></p>
+                                    <p class="text-[11px] text-navy font-medium leading-relaxed">Unlike standard EU Golden Visas, Bulgaria grants full permanent residency upfront via regulated AIFs. <strong>Full Schengen since January 2025, euro since January 2026.</strong> <em>Warning: a bill passed at first reading in September 2026 would cancel permanent residence for anyone spending less than six months a year in Bulgaria, existing investors included, with no grandfathering in the draft. Not yet law; ask us for the current status before committing.</em></p>
                                 </div>
                                 <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-navy text-center block w-full border border-navy py-3 hover:bg-navy hover:text-white transition-colors">Inquire About Bulgaria &rarr;</a>
                             </div>
@@ -1589,103 +1590,145 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <p class="text-gold uppercase tracking-[0.25em] text-[9px] font-bold mb-1">Retire</p>
                             <p class="text-xl serif mb-2">Retire in Malaysia</p>
                             <p class="text-xs text-gray-200 font-light leading-relaxed mb-3">MM2H began as a retirement visa and still works best as one. From age 50 there is no minimum stay, private hospitals are first-rate at a fraction of Western prices, and the deposit keeps earning interest in your name.</p>
-                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">Usually Silver &rarr;</p>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">See Silver &rarr;</p>
                         </div>
                     </a>
-                    <a href="#asia-options" data-my-go="gold" class="group block rounded-sm overflow-hidden bg-navy border border-navy hover:border-gold transition-colors">
+                    <a href="#asia-options" data-my-go="silver,gold" class="group block rounded-sm overflow-hidden bg-navy border border-navy hover:border-gold transition-colors">
                         <div class="h-44 md:h-52 overflow-hidden bg-[#1C2541]">
-                            <img src="img/malaysia-park.jpg" alt="Petronas Towers seen through park trees, Kuala Lumpur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.onerror=null;this.style.display='none'">
+                            <img src="img/malaysia-penang.jpg" alt="Heritage shophouses in George Town, Penang" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.onerror=null;this.style.display='none'">
                         </div>
                         <div class="p-6 text-white">
                             <p class="text-gold uppercase tracking-[0.25em] text-[9px] font-bold mb-1">Relocate</p>
                             <p class="text-xl serif mb-2">Move the Family</p>
                             <p class="text-xs text-gray-200 font-light leading-relaxed mb-3">International schools, English-speaking private hospitals and a comfortable life at a fraction of Singapore prices. Spouse, children, parents and parents-in-law come on one application.</p>
-                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">Silver or Gold &rarr;</p>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">See Silver and Gold &rarr;</p>
                         </div>
                     </a>
-                    <a href="#asia-options" data-my-go="pvip" class="group block rounded-sm overflow-hidden bg-navy border border-navy hover:border-gold transition-colors">
+                    <a href="#asia-options" data-my-go="platinum,pvip" class="group block rounded-sm overflow-hidden bg-navy border border-navy hover:border-gold transition-colors">
                         <div class="h-44 md:h-52 overflow-hidden bg-[#1C2541]">
-                            <img src="img/malaysia-city.jpg" alt="Kuala Lumpur business district" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.onerror=null;this.style.display='none'">
+                            <img src="img/malaysia-terrace.jpg" alt="Rooftop terrace overlooking Kuala Lumpur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.onerror=null;this.style.display='none'">
                         </div>
                         <div class="p-6 text-white">
                             <p class="text-gold uppercase tracking-[0.25em] text-[9px] font-bold mb-1">Work</p>
                             <p class="text-xl serif mb-2">Work From Asia</p>
                             <p class="text-xs text-gray-200 font-light leading-relaxed mb-3">Only Platinum and the premium visa let you take employment or run a business in Malaysia. The premium visa adds no property purchase and no minimum stay.</p>
-                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">Platinum or PVIP &rarr;</p>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold">See Platinum and PVIP &rarr;</p>
                         </div>
                     </a>
                 </div>
 
-                <div id="asia-options" class="max-w-4xl mx-auto">
-                    <div class="flex items-end justify-between border-b border-navy pb-3">
-                        <p class="text-2xl serif text-navy">The four options</p>
-                        <p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">All-in, from</p>
+                <div id="asia-options" class="max-w-5xl mx-auto">
+                    <div class="flex flex-wrap items-end gap-x-4 md:gap-x-6 border-b border-navy pb-3">
+                        <span class="w-1 flex-shrink-0"></span>
+                        <p class="flex-1 min-w-[180px] text-2xl serif text-navy">The four options</p>
+                        <div class="hidden sm:grid sm:w-[330px] md:w-[400px] grid-cols-3 gap-6 text-right text-[9px] uppercase tracking-widest font-bold"><p class="text-emerald-700">Stays yours</p><p class="text-gray-400">Not returned</p><p class="text-navy">All-in</p></div>
+                        <span class="w-4 flex-shrink-0"></span>
                     </div>
                     <details id="my-silver" data-my-row class="group border-b border-gray-200">
-                        <summary class="flex items-center gap-4 md:gap-6 py-5 cursor-pointer list-none select-none">
+                        <summary class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-3 py-5 cursor-pointer list-none select-none">
                             <span class="w-1 h-10 rounded-full bg-gray-400 flex-shrink-0"></span>
-                            <div class="flex-1 min-w-0">
+                            <div class="flex-1 min-w-[180px]">
                                 <p class="text-lg serif text-navy leading-tight">MM2H Silver <span class="block sm:inline text-[10px] uppercase tracking-widest text-gray-400 font-sans font-bold sm:ml-2">5 year pass</span></p>
                                 <p class="text-xs text-gray-500 font-light mt-1">Retirement, or a first base in Asia</p>
                             </div>
-                            <p class="text-base md:text-xl font-semibold text-navy whitespace-nowrap">~$321,000</p>
+                            <div class="w-full sm:w-[330px] md:w-[400px] grid grid-cols-3 gap-3 sm:gap-6 order-last sm:order-none pl-5 sm:pl-0"><div class="text-right"><p class="text-sm md:text-base font-semibold text-emerald-700 whitespace-nowrap">~$298,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">Stays yours</p></div><div class="text-right"><p class="text-sm md:text-base font-semibold text-gray-500 whitespace-nowrap">~$38,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">Not returned</p></div><div class="text-right"><p class="text-sm md:text-base font-semibold text-navy whitespace-nowrap">~$336,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">All-in</p></div></div>
                             <svg class="w-4 h-4 text-gold flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </summary>
-                        <div class="pl-5 md:pl-7 pb-7">
-                            <div class="grid grid-cols-3 gap-px bg-gray-100 border border-gray-100 rounded-sm overflow-hidden text-center"><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Deposit</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">$150,000</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">Stays yours</p></div><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Home</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">RM600,000+<br><span class="text-gray-400 font-normal">~$147,000</span></p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">Stays yours</p></div><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Fees</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">~$24,000</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">Spent</p></div></div>
-                            <p class="text-xs text-gray-500 font-light leading-relaxed mt-4">Age 25+ &middot; 90 days a year in Malaysia, none from age 50 &middot; No work rights &middot; In Kuala Lumpur the home minimum is RM1,000,000, which makes the all-in ~$419,000.</p>
+                        <div class="pl-5 md:pl-7 pb-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="border border-emerald-200 rounded-sm p-5 bg-emerald-50/40">
+                                    <div class="flex justify-between items-baseline mb-2"><p class="text-[10px] uppercase tracking-widest font-bold text-emerald-700">Stays yours</p><p class="text-lg font-semibold text-emerald-700">~$298,000</p></div>
+                                    <ul class="text-xs"><li class="py-2 border-b border-emerald-100 last:border-0"><div class="flex justify-between gap-3"><span class="font-semibold text-navy">Fixed deposit</span><span class="font-semibold text-navy whitespace-nowrap">$150,000</span></div><p class="text-[11px] text-gray-500 font-light leading-relaxed mt-0.5">In your name at a Malaysian bank. Earns interest, returned in full when you leave.</p></li><li class="py-2 border-b border-emerald-100 last:border-0"><div class="flex justify-between gap-3"><span class="font-semibold text-navy">Home purchase</span><span class="font-semibold text-navy whitespace-nowrap">RM600,000+ ($148,000)</span></div><p class="text-[11px] text-gray-500 font-light leading-relaxed mt-0.5">Title in your name. Held 10 years, then yours to sell. Kuala Lumpur sets its own floor at RM1,000,000.</p></li></ul>
+                                </div>
+                                <div class="border border-gray-200 rounded-sm p-5 bg-gray-50/60">
+                                    <div class="flex justify-between items-baseline mb-2"><p class="text-[10px] uppercase tracking-widest font-bold text-gray-500">Not returned</p><p class="text-lg font-semibold text-gray-600">~$38,000</p></div>
+                                    <ul class="text-xs"><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Licensed agent and professional fees</span><span class="font-semibold text-navy whitespace-nowrap">~$23,000</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Government participation fee</span><span class="font-semibold text-navy whitespace-nowrap">RM1,000 (~$250)</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Medical check, insurance and pass fees</span><span class="font-semibold text-navy whitespace-nowrap">~$750</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Stamp duty on the home, 8% for foreign buyers</span><span class="font-semibold text-navy whitespace-nowrap">~$12,000</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Legal fees on the purchase, about 1%</span><span class="font-semibold text-navy whitespace-nowrap">~$1,500</span></li></ul>
+                                    <p class="text-[11px] text-gray-400 font-light leading-relaxed mt-3">Professional fees are paid 20% on engagement and 80% only after approval.</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light leading-relaxed mt-4">Age 25+ &middot; 90 days a year in Malaysia under 50, by any family member &middot; Spouse, children, parents included &middot; No work rights &middot; With a Kuala Lumpur home the all-in is ~$443,000.</p>
                             <a href="#contact" class="inline-block mt-4 text-[10px] uppercase tracking-widest font-bold text-navy border-b border-gold pb-0.5 hover:text-gold transition-colors">Ask about Silver &rarr;</a>
                         </div>
                     </details>
                     <details id="my-gold" data-my-row class="group border-b border-gray-200">
-                        <summary class="flex items-center gap-4 md:gap-6 py-5 cursor-pointer list-none select-none">
+                        <summary class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-3 py-5 cursor-pointer list-none select-none">
                             <span class="w-1 h-10 rounded-full bg-gold flex-shrink-0"></span>
-                            <div class="flex-1 min-w-0">
+                            <div class="flex-1 min-w-[180px]">
                                 <p class="text-lg serif text-navy leading-tight">MM2H Gold <span class="block sm:inline text-[10px] uppercase tracking-widest text-gray-400 font-sans font-bold sm:ml-2">15 year pass</span></p>
                                 <p class="text-xs text-gray-500 font-light mt-1">A family settling in for the long term</p>
                             </div>
-                            <p class="text-base md:text-xl font-semibold text-navy whitespace-nowrap">~$772,000</p>
+                            <div class="w-full sm:w-[330px] md:w-[400px] grid grid-cols-3 gap-3 sm:gap-6 order-last sm:order-none pl-5 sm:pl-0"><div class="text-right"><p class="text-sm md:text-base font-semibold text-emerald-700 whitespace-nowrap">~$746,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">Stays yours</p></div><div class="text-right"><p class="text-sm md:text-base font-semibold text-gray-500 whitespace-nowrap">~$50,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">Not returned</p></div><div class="text-right"><p class="text-sm md:text-base font-semibold text-navy whitespace-nowrap">~$796,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">All-in</p></div></div>
                             <svg class="w-4 h-4 text-gold flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </summary>
-                        <div class="pl-5 md:pl-7 pb-7">
-                            <div class="grid grid-cols-3 gap-px bg-gray-100 border border-gray-100 rounded-sm overflow-hidden text-center"><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Deposit</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">$500,000</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">Stays yours</p></div><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Home</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">RM1,000,000+<br><span class="text-gray-400 font-normal">~$245,000</span></p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">Stays yours</p></div><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Fees</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">~$27,000</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">Spent</p></div></div>
-                            <p class="text-xs text-gray-500 font-light leading-relaxed mt-4">Age 25+ &middot; 90 days a year in Malaysia, none from age 50 &middot; No work rights &middot; In Selangor the home minimum is RM2,000,000.</p>
+                        <div class="pl-5 md:pl-7 pb-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="border border-emerald-200 rounded-sm p-5 bg-emerald-50/40">
+                                    <div class="flex justify-between items-baseline mb-2"><p class="text-[10px] uppercase tracking-widest font-bold text-emerald-700">Stays yours</p><p class="text-lg font-semibold text-emerald-700">~$746,000</p></div>
+                                    <ul class="text-xs"><li class="py-2 border-b border-emerald-100 last:border-0"><div class="flex justify-between gap-3"><span class="font-semibold text-navy">Fixed deposit</span><span class="font-semibold text-navy whitespace-nowrap">$500,000</span></div><p class="text-[11px] text-gray-500 font-light leading-relaxed mt-0.5">In your name, earns interest, returned in full when you leave.</p></li><li class="py-2 border-b border-emerald-100 last:border-0"><div class="flex justify-between gap-3"><span class="font-semibold text-navy">Home purchase</span><span class="font-semibold text-navy whitespace-nowrap">RM1,000,000+ ($246,000)</span></div><p class="text-[11px] text-gray-500 font-light leading-relaxed mt-0.5">Title in your name. Held 10 years, then yours to sell. Covers the Kuala Lumpur minimum; Selangor's Klang Valley districts are RM2,000,000.</p></li></ul>
+                                </div>
+                                <div class="border border-gray-200 rounded-sm p-5 bg-gray-50/60">
+                                    <div class="flex justify-between items-baseline mb-2"><p class="text-[10px] uppercase tracking-widest font-bold text-gray-500">Not returned</p><p class="text-lg font-semibold text-gray-600">~$50,000</p></div>
+                                    <ul class="text-xs"><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Licensed agent and professional fees</span><span class="font-semibold text-navy whitespace-nowrap">~$26,500</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Government participation fee</span><span class="font-semibold text-navy whitespace-nowrap">RM3,000 (~$750)</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Medical check, insurance and pass fees</span><span class="font-semibold text-navy whitespace-nowrap">~$750</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Stamp duty on the home, 8% for foreign buyers</span><span class="font-semibold text-navy whitespace-nowrap">~$19,500</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Legal fees on the purchase, about 1%</span><span class="font-semibold text-navy whitespace-nowrap">~$2,500</span></li></ul>
+                                    <p class="text-[11px] text-gray-400 font-light leading-relaxed mt-3">Professional fees are paid 20% on engagement and 80% only after approval.</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light leading-relaxed mt-4">Age 25+ &middot; 90 days a year in Malaysia under 50, by any family member &middot; Spouse, children, parents included &middot; No work rights.</p>
                             <a href="#contact" class="inline-block mt-4 text-[10px] uppercase tracking-widest font-bold text-navy border-b border-gold pb-0.5 hover:text-gold transition-colors">Ask about Gold &rarr;</a>
                         </div>
                     </details>
                     <details id="my-platinum" data-my-row class="group border-b border-gray-200">
-                        <summary class="flex items-center gap-4 md:gap-6 py-5 cursor-pointer list-none select-none">
+                        <summary class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-3 py-5 cursor-pointer list-none select-none">
                             <span class="w-1 h-10 rounded-full bg-gray-800 flex-shrink-0"></span>
-                            <div class="flex-1 min-w-0">
+                            <div class="flex-1 min-w-[180px]">
                                 <p class="text-lg serif text-navy leading-tight">MM2H Platinum <span class="block sm:inline text-[10px] uppercase tracking-widest text-gray-400 font-sans font-bold sm:ml-2">20 year pass</span></p>
                                 <p class="text-xs text-gray-500 font-light mt-1">Running a business from Kuala Lumpur</p>
                             </div>
-                            <p class="text-base md:text-xl font-semibold text-navy whitespace-nowrap">~$1,568,000</p>
+                            <div class="w-full sm:w-[330px] md:w-[400px] grid grid-cols-3 gap-3 sm:gap-6 order-last sm:order-none pl-5 sm:pl-0"><div class="text-right"><p class="text-sm md:text-base font-semibold text-emerald-700 whitespace-nowrap">~$1,493,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">Stays yours</p></div><div class="text-right"><p class="text-sm md:text-base font-semibold text-gray-500 whitespace-nowrap">~$125,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">Not returned</p></div><div class="text-right"><p class="text-sm md:text-base font-semibold text-navy whitespace-nowrap">~$1,618,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">All-in</p></div></div>
                             <svg class="w-4 h-4 text-gold flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </summary>
-                        <div class="pl-5 md:pl-7 pb-7">
-                            <div class="grid grid-cols-3 gap-px bg-gray-100 border border-gray-100 rounded-sm overflow-hidden text-center"><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Deposit</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">$1,000,000</p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">Stays yours</p></div><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Home</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">RM2,000,000+<br><span class="text-gray-400 font-normal">~$489,000</span></p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">Stays yours</p></div><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Fees</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">~$79,000</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">Spent</p></div></div>
-                            <p class="text-xs text-gray-500 font-light leading-relaxed mt-4">Age 25+ &middot; 90 days a year in Malaysia, none from age 50 &middot; Work and business allowed &middot; The fees include a RM200,000 government participation fee.</p>
+                        <div class="pl-5 md:pl-7 pb-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="border border-emerald-200 rounded-sm p-5 bg-emerald-50/40">
+                                    <div class="flex justify-between items-baseline mb-2"><p class="text-[10px] uppercase tracking-widest font-bold text-emerald-700">Stays yours</p><p class="text-lg font-semibold text-emerald-700">~$1,493,000</p></div>
+                                    <ul class="text-xs"><li class="py-2 border-b border-emerald-100 last:border-0"><div class="flex justify-between gap-3"><span class="font-semibold text-navy">Fixed deposit</span><span class="font-semibold text-navy whitespace-nowrap">$1,000,000</span></div><p class="text-[11px] text-gray-500 font-light leading-relaxed mt-0.5">In your name, earns interest, returned in full when you leave.</p></li><li class="py-2 border-b border-emerald-100 last:border-0"><div class="flex justify-between gap-3"><span class="font-semibold text-navy">Home purchase</span><span class="font-semibold text-navy whitespace-nowrap">RM2,000,000+ ($493,000)</span></div><p class="text-[11px] text-gray-500 font-light leading-relaxed mt-0.5">Title in your name. Held 10 years, then yours to sell. Clears every state minimum.</p></li></ul>
+                                </div>
+                                <div class="border border-gray-200 rounded-sm p-5 bg-gray-50/60">
+                                    <div class="flex justify-between items-baseline mb-2"><p class="text-[10px] uppercase tracking-widest font-bold text-gray-500">Not returned</p><p class="text-lg font-semibold text-gray-600">~$125,000</p></div>
+                                    <ul class="text-xs"><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Government participation fee</span><span class="font-semibold text-navy whitespace-nowrap">RM200,000 (~$49,500)</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Licensed agent and professional fees</span><span class="font-semibold text-navy whitespace-nowrap">~$30,000</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Medical check, insurance and pass fees</span><span class="font-semibold text-navy whitespace-nowrap">~$750</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Stamp duty on the home, 8% for foreign buyers</span><span class="font-semibold text-navy whitespace-nowrap">~$39,500</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Legal fees on the purchase, about 1%</span><span class="font-semibold text-navy whitespace-nowrap">~$5,000</span></li></ul>
+                                    <p class="text-[11px] text-gray-400 font-light leading-relaxed mt-3">Professional fees are paid 20% on engagement and 80% only after approval.</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light leading-relaxed mt-4">Age 25+ &middot; 90 days a year in Malaysia under 50, by any family member &middot; Spouse, children, parents included &middot; Work and business allowed.</p>
                             <a href="#contact" class="inline-block mt-4 text-[10px] uppercase tracking-widest font-bold text-navy border-b border-gold pb-0.5 hover:text-gold transition-colors">Ask about Platinum &rarr;</a>
                         </div>
                     </details>
                     <details id="my-pvip" data-my-row class="group border-b border-gray-200">
-                        <summary class="flex items-center gap-4 md:gap-6 py-5 cursor-pointer list-none select-none">
+                        <summary class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-3 py-5 cursor-pointer list-none select-none">
                             <span class="w-1 h-10 rounded-full bg-navy flex-shrink-0"></span>
-                            <div class="flex-1 min-w-0">
+                            <div class="flex-1 min-w-[180px]">
                                 <p class="text-lg serif text-navy leading-tight">PVIP <span class="block sm:inline text-[10px] uppercase tracking-widest text-gray-400 font-sans font-bold sm:ml-2">20 year premium visa</span></p>
                                 <p class="text-xs text-gray-500 font-light mt-1">Full flexibility: no home, no minimum stay</p>
                             </div>
-                            <p class="text-base md:text-xl font-semibold text-navy whitespace-nowrap">~$325,000</p>
+                            <div class="w-full sm:w-[330px] md:w-[400px] grid grid-cols-3 gap-3 sm:gap-6 order-last sm:order-none pl-5 sm:pl-0"><div class="text-right"><p class="text-sm md:text-base font-semibold text-emerald-700 whitespace-nowrap">~$246,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">Stays yours</p></div><div class="text-right"><p class="text-sm md:text-base font-semibold text-gray-500 whitespace-nowrap">~$82,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">Not returned</p></div><div class="text-right"><p class="text-sm md:text-base font-semibold text-navy whitespace-nowrap">~$328,000</p><p class="sm:hidden text-[8px] uppercase tracking-widest text-gray-400 font-bold mt-0.5">All-in</p></div></div>
                             <svg class="w-4 h-4 text-gold flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </summary>
-                        <div class="pl-5 md:pl-7 pb-7">
-                            <div class="grid grid-cols-3 gap-px bg-gray-100 border border-gray-100 rounded-sm overflow-hidden text-center"><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Deposit</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">RM1,000,000<br><span class="text-gray-400 font-normal">~$245,000</span></p><p class="text-[9px] uppercase tracking-widest text-emerald-700 font-bold mt-1">Stays yours</p></div><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Home</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">Not required</p><p class="text-[9px] uppercase tracking-widest text-gray-300 font-bold mt-1">&nbsp;</p></div><div class="bg-white px-2 py-3"><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Fees</p><p class="text-sm font-semibold text-navy mt-1 leading-snug">~$80,000</p><p class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mt-1">Spent</p></div></div>
-                            <p class="text-xs text-gray-500 font-light leading-relaxed mt-4">No age limit &middot; No minimum stay &middot; Work and business allowed &middot; Requires offshore income of RM40,000 a month &middot; Each dependant adds about $33,000 in fees.</p>
+                        <div class="pl-5 md:pl-7 pb-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="border border-emerald-200 rounded-sm p-5 bg-emerald-50/40">
+                                    <div class="flex justify-between items-baseline mb-2"><p class="text-[10px] uppercase tracking-widest font-bold text-emerald-700">Stays yours</p><p class="text-lg font-semibold text-emerald-700">~$246,000</p></div>
+                                    <ul class="text-xs"><li class="py-2 border-b border-emerald-100 last:border-0"><div class="flex justify-between gap-3"><span class="font-semibold text-navy">Fixed deposit</span><span class="font-semibold text-navy whitespace-nowrap">RM1,000,000 ($246,000)</span></div><p class="text-[11px] text-gray-500 font-light leading-relaxed mt-0.5">In your name at a Malaysian bank. Returned in full when you leave. No home purchase required.</p></li></ul>
+                                </div>
+                                <div class="border border-gray-200 rounded-sm p-5 bg-gray-50/60">
+                                    <div class="flex justify-between items-baseline mb-2"><p class="text-[10px] uppercase tracking-widest font-bold text-gray-500">Not returned</p><p class="text-lg font-semibold text-gray-600">~$82,000</p></div>
+                                    <ul class="text-xs"><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Government participation fee</span><span class="font-semibold text-navy whitespace-nowrap">RM200,000 (~$49,500)</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Licensed agent and professional fees</span><span class="font-semibold text-navy whitespace-nowrap">~$31,500</span></li><li class="py-2 border-b border-gray-100 last:border-0 flex justify-between gap-3"><span class="text-gray-600">Medical check, insurance and first-year pass fee (RM2,000 a year)</span><span class="font-semibold text-navy whitespace-nowrap">~$750</span></li></ul>
+                                    <p class="text-[11px] text-gray-400 font-light leading-relaxed mt-3">Professional fees are paid 20% on engagement and 80% only after approval.</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light leading-relaxed mt-4">No age limit &middot; No minimum stay &middot; Work and business allowed &middot; Income of RM40,000 a month, onshore or offshore &middot; Each dependant adds RM100,000 in government fee for 20 years (RM50,000 for 10) plus agent fees, about $33,000 in total, none of it returned.</p>
                             <a href="#contact" class="inline-block mt-4 text-[10px] uppercase tracking-widest font-bold text-navy border-b border-gold pb-0.5 hover:text-gold transition-colors">Ask about PVIP &rarr;</a>
                         </div>
                     </details>
-                    <p class="text-[11px] text-gray-400 font-light leading-relaxed mt-5">All-in means the deposit, the home where one is required, and fees, at RM4.09 to the dollar. The deposit and the home stay yours; only the fees are spent. Spouse, children and parents can be included on every option. None of the four is a route to permanent residence or citizenship.</p>
+                    <p class="text-[11px] text-gray-400 font-light leading-relaxed mt-5">Stays yours: the bank deposit and, on MM2H, the home, both held in your own name. Not returned: government, agent and professional fees. All-in is the two added together, at RM4.06 to the dollar. Home figures are the MM2H minimum; Kuala Lumpur and Selangor set higher ones. A fifth, lower MM2H tier exists for Johor's Forest City zone (deposit from US$32,000, 10 year pass, home bought inside the zone); we quote it on request. None of these is a route to permanent residence or citizenship.</p>
                     <div class="mt-10 text-center">
                         <a href="#contact" class="inline-block btn-gold px-10 py-4 rounded-sm uppercase text-[10px] tracking-widest font-bold">Book a Call About Malaysia &rarr;</a>
                     </div>
@@ -1694,89 +1737,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <script>
             (function () {
                 var rows = Array.prototype.slice.call(document.querySelectorAll('[data-my-row]'));
-                rows.forEach(function (r) {
-                    r.addEventListener('toggle', function () {
-                        if (r.open) { rows.forEach(function (o) { if (o !== r) { o.open = false; } }); }
-                    });
-                });
                 Array.prototype.slice.call(document.querySelectorAll('[data-my-go]')).forEach(function (a) {
                     a.addEventListener('click', function (e) {
-                        var r = document.getElementById('my-' + a.getAttribute('data-my-go'));
-                        if (!r) { return; }
+                        var ids = a.getAttribute('data-my-go').split(',');
+                        var first = null;
+                        rows.forEach(function (r) {
+                            var on = ids.indexOf(r.id.replace('my-', '')) > -1;
+                            r.open = on;
+                            if (on && !first) { first = r; }
+                        });
+                        if (!first) { return; }
                         e.preventDefault();
-                        r.open = true;
-                        r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        first.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     });
                 });
             })();
             </script>
-        </section>
-
-        <section id="how-we-are-paid" class="py-24 bg-gray-50 border-t border-gray-100 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-gold uppercase tracking-[0.3em] text-sm mb-4">Our Revenue Model</h2>
-                    <p class="text-4xl serif mb-6">You Pay Us Nothing.</p>
-                    <p class="text-gray-500 max-w-2xl mx-auto font-light">
-                        No advisory fee, no retainer, no success fee, no percentage of your investment. Most firms in this industry charge the client for the advice and then take a commission from the provider as well. We only do the second one, and we would rather tell you that ourselves than have you wonder about it.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
-                        <p class="text-2xl serif text-gold mb-4">i.</p>
-                        <h3 class="text-xl serif text-navy font-bold mb-3">Who Pays Us</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed">When a file closes, the fund manager, developer or licensed law firm on the other side pays us a commission out of their own margin. That is our entire income. It is a standard, disclosed intermediary arrangement, the same way most regulated distribution works.</p>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
-                        <p class="text-2xl serif text-gold mb-4">ii.</p>
-                        <h3 class="text-xl serif text-navy font-bold mb-3">What It Costs You</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed">Nothing extra. Your investment amount and your government fees are exactly the same figures you would pay walking into that fund or law firm on your own. Our commission is not added on top of your price. It comes out of theirs.</p>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-sm p-8 card-shadow">
-                        <p class="text-2xl serif text-gold mb-4">iii.</p>
-                        <h3 class="text-xl serif text-navy font-bold mb-3">Why We Can Still Be Neutral</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed">We hold no exclusivity with any program, fund or developer, so no single outcome is worth more to us than getting the fit right. And if you want to know what we earn on the route we recommend, ask us and we will tell you.</p>
-                    </div>
-                </div>
-
-                <div class="max-w-4xl mx-auto bg-white border border-gray-200 rounded-sm card-shadow overflow-hidden">
-                    <div class="px-8 py-4 bg-navy">
-                        <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gold">Where Every Euro Actually Goes</p>
-                    </div>
-                    <div class="divide-y divide-gray-100">
-                        <div class="px-8 py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                            <div class="max-w-xl">
-                                <p class="text-sm font-semibold text-navy">The investment or contribution</p>
-                                <p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Paid directly to the regulated fund, the developer or the state, never to us and never through us. On most programs this is the recoverable part.</p>
-                            </div>
-                            <p class="text-[10px] uppercase tracking-widest font-bold text-gray-400 whitespace-nowrap">To the fund / state</p>
-                        </div>
-                        <div class="px-8 py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                            <div class="max-w-xl">
-                                <p class="text-sm font-semibold text-navy">Government &amp; processing fees</p>
-                                <p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Application, due diligence, biometrics, permit issuance. Set by the government, non-negotiable, and non-recoverable on every program.</p>
-                            </div>
-                            <p class="text-[10px] uppercase tracking-widest font-bold text-gray-400 whitespace-nowrap">To the government</p>
-                        </div>
-                        <div class="px-8 py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                            <div class="max-w-xl">
-                                <p class="text-sm font-semibold text-navy">Local legal &amp; due-diligence fees</p>
-                                <p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Charged by the licensed firm that files your case in that jurisdiction. Quoted to you in writing before you commit to anything.</p>
-                            </div>
-                            <p class="text-[10px] uppercase tracking-widest font-bold text-gray-400 whitespace-nowrap">To the local firm</p>
-                        </div>
-                        <div class="px-8 py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 bg-gold/10 border-l-4 border-gold">
-                            <div class="max-w-xl">
-                                <p class="text-sm font-bold text-navy">Legacy Wealth &amp; Visa advisory fee</p>
-                                <p class="text-xs text-gray-500 font-light leading-relaxed mt-1">Program selection, structuring, partner management and running your file from first call to passport or permit in hand.</p>
-                            </div>
-                            <p class="text-lg serif font-bold text-navy whitespace-nowrap">&euro;0</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-[10px] text-gray-400 font-light leading-relaxed text-center max-w-2xl mx-auto mt-8">Fee structures are confirmed in writing before engagement. Legacy Wealth Visa is an independent consultancy, not a government agency or a licensed investment adviser, and does not provide investment, tax or legal advice.</p>
-            </div>
         </section>
 
         <section id="why-plan-b" class="py-24 bg-white border-b border-gray-100 overflow-hidden">
@@ -1836,27 +1812,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="eu-citizenship" class="py-24 bg-navy text-white border-t border-gold/30 relative overflow-hidden">
-            <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1485081669829-bacb8c7bb1f3?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/90 to-navy/40 z-0"></div>
-            <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
-                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 border border-gold/30 mb-6">
-                    <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                </div>
-                <h2 class="text-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4">For Larger Files</h2>
-                <p class="text-4xl serif mb-6">Faster Routes to European Citizenship</p>
-                <p class="text-sm text-gray-300 font-light leading-relaxed mb-8 max-w-3xl mx-auto">
-                    A standard European golden visa leads to citizenship in 8 to 10+ years, and some programs, such as Malta's MPRP, stop at permanent residence. For clients able to commit substantially more capital, usually seven figures, a small number of legal routes shorten this considerably. They are assessed case by case and discussed on a call, not on a web page.
-                </p>
-                <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-[11px] text-gray-400 mb-10">
-                    <span class="flex items-center uppercase tracking-widest font-semibold"><span class="text-gold mr-2">▪</span> Shorter Timelines</span>
-                    <span class="flex items-center uppercase tracking-widest font-semibold"><span class="text-gold mr-2">▪</span> Specialist Legal Counsel</span>
-                    <span class="flex items-center uppercase tracking-widest font-semibold"><span class="text-gold mr-2">▪</span> Seven-Figure Commitments</span>
-                </div>
-                <a href="#contact" class="inline-block bg-transparent border border-gold text-gold hover:bg-gold hover:text-navy px-10 py-4 text-xs uppercase tracking-widest font-bold transition-all duration-300">Ask About Faster Routes</a>
             </div>
         </section>
 
@@ -1972,24 +1927,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
                             <p class="mb-4">On most programs, yes. It is the single most misunderstood point in this industry.</p>
                             <ul class="list-disc ml-5 mb-4 space-y-2">
-                                <li><strong>Recoverable routes.</strong> Fund units (Portugal, Hungary, Bulgaria), property (Greece, Cyprus, the Bahamas, Uruguay), government bonds (Saint Lucia, Italy) and a bank deposit (Malaysia) all leave you holding a real asset. After the minimum holding period you can redeem or sell it. Saint Lucia&rsquo;s $300,000 bond returns 100% of your principal after five years.</li>
+                                <li><strong>Recoverable routes.</strong> Fund units (Portugal, Hungary, Bulgaria), property (Greece, Cyprus, the Bahamas, Uruguay), government bonds (Saint Lucia, Italy) and a bank deposit (Malaysia) all leave you holding a real asset. After the minimum holding period you can redeem or sell it. Saint Lucia&rsquo;s $300,000 bond returns 100% of your principal after five years, less a $50,000 government fee on that route that is not returned.</li>
                                 <li><strong>At-risk routes.</strong> Company equity (Latvia, Paraguay&rsquo;s SUACE route, Italy&rsquo;s startup route) is recoverable only if the business performs and you find a buyer.</li>
                                 <li><strong>Contributions.</strong> Caribbean donations, Malta&rsquo;s government contribution and Portugal&rsquo;s cultural-heritage route are payments, not investments. They are not returned.</li>
                             </ul>
                             <p class="bg-gray-50 p-4 border-l-2 border-gold font-medium">Government, legal and due-diligence fees are never recoverable on any program, and market value at exit is never guaranteed on any investment route. Each program card above states its own position explicitly.</p>
-                        </div>
-                    </details>
-
-                    <details class="group bg-white border border-gray-200 rounded-sm">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-navy">
-                            How does Legacy make money if I pay you nothing?
-                            <span class="text-gold group-open:rotate-180 transition-transform">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                            </span>
-                        </summary>
-                        <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
-                            <p class="mb-4">We are paid a commission by the fund, developer or licensed law firm when a file closes, out of their margin and not added to your price. You pay no advisory fee, no retainer and no success fee to us.</p>
-                            <p>The obvious follow-up question is whether that biases our advice. Two answers. First, we hold no exclusivity with any program or provider, so no single outcome is structurally worth more to us than getting the fit right and earning the referral. Second, if you want to know what we earn on the route we recommend, ask and we will tell you. Very few firms in this sector will say that in writing.</p>
                         </div>
                     </details>
 
@@ -2005,8 +1947,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <h4 class="font-bold text-navy mb-2">Citizenship by Investment (CBI): a second passport directly</h4>
                             <ul class="list-disc ml-5 mb-4 space-y-2">
                                 <li><strong>What it is:</strong> You make a qualifying contribution or investment and receive full nationality and a passport. The usual routes are a non-refundable state contribution, an approved real estate purchase or a government bond.</li>
-                                <li><strong>The benefits:</strong> You have the same rights as any other citizen: to live and work there without limit, to vote (in most jurisdictions), and to pass the citizenship on to your children.</li>
-                                <li><strong>Timeline and cost:</strong> Citizenship is usually granted within 3 to 18 months, with no residence or language requirement. Minimums start at roughly USD 130,000 all-in. The cheapest route is almost always the donation, and that is the one route that is not returned.</li>
+                                <li><strong>The benefits:</strong> You have the same rights as any other citizen: to live and work there without limit, to vote (in most jurisdictions; not in Vanuatu), and to pass the citizenship on to your children.</li>
+                                <li><strong>Timeline and cost:</strong> Citizenship is usually granted within 2 to 18 months, Saint Lucia currently longer, with no language requirement and, as of today, little or no residence requirement. Minimums start at roughly USD 138,000 all-in. The cheapest route is almost always the donation, and that is the one route that is not returned.</li>
                             </ul>
                             <h4 class="font-bold text-navy mb-2">Residency by Investment (RBI): the golden visa</h4>
                             <ul class="list-disc ml-5 mb-4 space-y-2">
@@ -2026,7 +1968,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </span>
                         </summary>
                         <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
-                            Yes. Every program on this site is written into the law of the country that runs it, and applications go through the government unit responsible for it. We do not work with discretionary or unofficial routes. What does change is the terms: governments adjust prices, close routes and add requirements, which is why we check every program against the current rules before quoting it.
+                            Yes. Every program on this site is written into the law of the country that runs it, and applications go through the government unit responsible for it. We do not work with discretionary or unofficial routes. What does change is the terms: governments adjust prices, close routes and add requirements, which is why we check every program against the current rules before quoting it. The change to watch now: in June 2026 the EU asked the five Caribbean states to end their citizenship programs by 2028, and Antigua may suspend its program in November 2026. The programs remain legal; what is at stake is their future and their visa-free access to Europe.
                         </div>
                     </details>
 
@@ -2050,7 +1992,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </span>
                         </summary>
                         <div class="px-6 pb-6 text-sm text-gray-600 leading-relaxed font-light">
-                            Usually not. Most Caribbean citizenship programs have no residence requirement, although Antigua and Grenada now ask for a few days and Saint Kitts has proposed the same. Among residence programs, Hungary has no minimum stay for its 10 year permit and Portugal asks for about seven days a year. The exception is a program built around actually living there: Malaysia's MM2H expects 90 days a year, which any family member can cover, while its premium visa (PVIP) has no minimum at all.
+                            Usually not. Most Caribbean citizenship programs have no residence requirement today: Antigua asks for 5 days in five years, Grenada's 30-day rule has been deferred, and the others have announced or proposed a 30-day rule under the new regional regulator. Among residence programs, Hungary has no minimum stay for its 10 year permit and Portugal asks for about seven days a year. The exception is a program built around actually living there: Malaysia's MM2H expects 90 days a year, which any family member can cover, while its premium visa (PVIP) has no minimum at all.
                         </div>
                     </details>
                 </div>
